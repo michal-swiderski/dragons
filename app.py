@@ -97,13 +97,13 @@ else:
                     log('Responding with ACK_JOB. Putting -1 into the map.')
 
                     job_map[job_id] = -1
-                    comm.send(job_id, dest=status.source, tag=Message.ACK_JOB)
+                    comm.send({'job_id': job_id}, dest=status.source, tag=Message.ACK_JOB)
                 else:
                     log('Adding a new job to the map. Changing state to REQUESTING JOB. Responding with ACK_JOB')
 
                     job_map[job_id] = -1
                     state = State.REQUESTING_JOB
-                    comm.send(job_id, dest=status.source, tag=Message.ACK_JOB)
+                    comm.send({'job_id': job_id}, dest=status.source, tag=Message.ACK_JOB)
 
         elif state == State.REQUESTING_JOB:
             job_id = data['job_id']
@@ -121,7 +121,7 @@ else:
                     log('Got ACKs from everyone. Sending HELLO to everyone. Changing state to AWAITING_PARTNERS')
                     for proc in range(1, size):
                         if proc != rank:
-                            comm.send(job_id, dest=proc, tag=Message.HELLO)
+                            comm.send({'job_id': job_id}, dest=proc, tag=Message.HELLO)
                     state = State.AWAITING_PARTNERS
 
 
