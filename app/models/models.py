@@ -7,11 +7,14 @@ class Message(IntEnum):
     ACK_JOB = 2
     REJECT_JOB = 3
     HELLO = 4
-    REQUEST_SKELETON = 5
-    ACK_SKELETON = 6
-    SKELETON_TAKEN = 7
-    START = 8
-    FINISH = 9
+    REQUEST_DESK = 5
+    ACK_DESK = 6
+    RELEASE_DESK = 7
+    REQUEST_SKELETON = 8
+    ACK_SKELETON = 9
+    SKELETON_TAKEN = 10
+    START = 11
+    FINISH = 12
 
 
 class State(IntEnum):
