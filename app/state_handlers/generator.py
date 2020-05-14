@@ -1,8 +1,8 @@
 from random import randint
 from time import sleep
 
-from log import log
-from models import Message
+from app.models.models import Message
+from app.logger.log import log
 
 
 def generator(comm, size):

@@ -51,7 +51,6 @@ def run():
 
         while True:
             status = MPI.Status()
-            print(rank, data.state)
             msg = comm.recv(source=MPI.ANY_SOURCE,
                             tag=MPI.ANY_TAG, status=status)
             tag = status.Get_tag()

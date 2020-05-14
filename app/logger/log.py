@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from models import State
+from app.models.models import State
 
 
 def log(msg, state, rank):
