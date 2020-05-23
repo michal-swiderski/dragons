@@ -2,7 +2,7 @@ from ..models.models import Message, State
 from ..logger.log import log
 
 
-def awaiting_job(comm, msg, status, data):
+def awaiting_job(*, comm, msg, status, data):
     tag = status.Get_tag()
     job_id = msg['job_id']
 

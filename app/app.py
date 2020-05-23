@@ -60,7 +60,7 @@ def run():
                     data.job_map[msg['job_id']] = 0
 
             if data.state == State.AWAITING_JOB:
-                awaiting_job.awaiting_job(comm, msg, status, data)
+                awaiting_job.awaiting_job(comm=comm, msg=msg, status=status, data=data)
 
             elif data.state == State.REQUESTING_JOB:
-                requesting_job.requesting_job(comm, msg, status, data)
+                requesting_job.requesting_job(comm=comm, msg=msg, status=status, data=data)
