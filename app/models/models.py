@@ -1,4 +1,20 @@
 from enum import IntEnum
+from datetime import datetime
+
+
+class GenericHandler:
+    def __init__(self, *, comm, data):
+        self.comm = comm
+        self.data = data
+
+    def __send(self, msg, *, dest, tag):
+        self.comm.send(msg, dest=dest, tag=tag)
+        self.data.lamport += 1
+
+    def __log(self, msg):
+        now = datetime.now().strftime("%H:%M:%S")
+        s = State(self.data.state).name if self.data.state != -1 else 'GENERATOR'
+        print(f'[{now} TID: {self.data.rank} state: {s}] {msg}')
 
 
 class Message(IntEnum):
