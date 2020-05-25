@@ -9,9 +9,11 @@ from app.models.models import Message, State, Specialization
 from app.logger.log import log
 from app.state_handlers import (
     generator,
-    awaiting_job,
     requesting_job
 )
+
+from app.state_handlers.awaiting_job import AwaitingJobHandler
+from app.state_handlers.requesting_job import RequestingJobHandler
 
 
 class Data:
@@ -30,6 +32,7 @@ class Data:
         self.skeleton_queue_ack = 0
         self.job_timeout = 0
         self.last_requested_job = None
+        self.lamport = 1
 
 
 def run():
@@ -41,13 +44,14 @@ def run():
     SKELETON_COUNT = 100
     SPECIALIST_COUNT = size - 1
 
-    # state = -1
-
     if rank == 0:
         generator.generator(comm, size)
 
     else:
         data = Data(rank, SKELETON_COUNT, SPECIALIST_COUNT, DESK_COUNT)
+
+        awaiting_job_handler = AwaitingJobHandler(comm=comm, data=data)
+        requesting_job_handler = RequestingJobHandler(comm=comm, data=data)
 
         while True:
             status = MPI.Status()
@@ -60,7 +64,7 @@ def run():
                     data.job_map[msg['job_id']] = 0
 
             if data.state == State.AWAITING_JOB:
-                awaiting_job.awaiting_job(comm=comm, msg=msg, status=status, data=data)
+                awaiting_job_handler(msg=msg, status=status)
 
             elif data.state == State.REQUESTING_JOB:
-                requesting_job.requesting_job(comm=comm, msg=msg, status=status, data=data)
+                requesting_job_handler(msg=msg, status=status)
