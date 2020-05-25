@@ -7,9 +7,17 @@ class GenericHandler:
         self.comm = comm
         self.data = data
 
+    def __call__(self, *, msg, status):
+        pass
+
     def _send(self, msg, *, dest, tag):
         self.comm.send(msg, dest=dest, tag=tag)
         self.data.lamport += 1
+
+    def _broadcast(self, msg, tag):
+        for proc in range(1, self.data.specialist_count + 1):
+            if proc != self.data.rank:
+                self._send(msg, dest=proc, tag=tag)
 
     def _log(self, msg):
         now = datetime.now().strftime("%H:%M:%S")

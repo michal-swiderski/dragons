@@ -13,6 +13,7 @@ from app.state_handlers import (
 )
 
 from app.state_handlers.awaiting_job import AwaitingJobHandler
+from app.state_handlers.requesting_job import RequestingJobHandler
 
 
 class Data:
@@ -50,6 +51,7 @@ def run():
         data = Data(rank, SKELETON_COUNT, SPECIALIST_COUNT, DESK_COUNT)
 
         awaiting_job_handler = AwaitingJobHandler(comm=comm, data=data)
+        requesting_job_handler = RequestingJobHandler(comm=comm, data=data)
 
         while True:
             status = MPI.Status()
@@ -65,4 +67,4 @@ def run():
                 awaiting_job_handler(msg=msg, status=status)
 
             elif data.state == State.REQUESTING_JOB:
-                requesting_job.requesting_job(comm=comm, msg=msg, status=status, data=data)
+                requesting_job_handler(msg=msg, status=status)
