@@ -6,23 +6,40 @@ class GenericHandler:
     def __init__(self, *, comm, data):
         self.comm = comm
         self.data = data
+        self.is_first_call = True
 
     def __call__(self, *, msg, status):
         pass
 
-    def _send(self, msg, *, dest, tag):
-        self.comm.send(msg, dest=dest, tag=tag)
-        self.data.lamport += 1
+    def _change_state(self, target_state):
+        self.is_first_call = True
+        self.data.state = target_state
 
-    def _broadcast(self, msg, tag):
+    def _send(self, msg, *, dest, tag):
+        self.data.timestamp += 1
+        msg['specialization'] = self.data.specialization
+        msg['timestamp'] = self.data.timestamp
+        self.comm.send(msg, dest=dest, tag=tag)
+
+    def _broadcast(self, msg, *, tag):
+        self.data.timestamp += 1
+        msg['specialization'] = self.data.specialization
+        msg['timestamp'] = self.data.timestamp
         for proc in range(1, self.data.specialist_count + 1):
             if proc != self.data.rank:
-                self._send(msg, dest=proc, tag=tag)
+                # self._send(msg, dest=proc, tag=tag)
+                self.comm.send(msg, dest=proc, tag=tag)
 
-    def _log(self, msg):
+    def _log(self, msg, msg_types=[]):
+        # messages_to_check = [Message.REJECT_JOB,
+        #                      Message.ACK_JOB, Message.REQUEST_JOB]
+        messages_to_check = []
         now = datetime.now().strftime("%H:%M:%S")
-        s = State(self.data.state).name if self.data.state != -1 else 'GENERATOR'
-        print(f'[{now} TID: {self.data.rank} state: {s}] {msg}')
+        s = State(self.data.state).name if self.data.state != - \
+            1 else 'GENERATOR'
+        if len(messages_to_check) == 0 or any(i in messages_to_check for i in msg_types):
+            print(
+                f'[{now} clock: {self.data.timestamp} TID: {self.data.rank} specialization: {Specialization(self.data.specialization).name} state: {s}] {msg}', end='\n\n')
 
 
 class Message(IntEnum):

@@ -14,6 +14,7 @@ from app.state_handlers import (
 
 from app.state_handlers.awaiting_job import AwaitingJobHandler
 from app.state_handlers.requesting_job import RequestingJobHandler
+from app.state_handlers.awaiting_partners import AwaitingPartnersHandler
 
 
 class Data:
@@ -32,7 +33,9 @@ class Data:
         self.skeleton_queue_ack = 0
         self.job_timeout = 0
         self.last_requested_job = None
-        self.lamport = 1
+        self.timestamp = 1
+        self.current_job_id = None
+        self.request_timestamp = None
 
 
 def run():
@@ -52,6 +55,8 @@ def run():
 
         awaiting_job_handler = AwaitingJobHandler(comm=comm, data=data)
         requesting_job_handler = RequestingJobHandler(comm=comm, data=data)
+        awaiting_partners_handler = AwaitingPartnersHandler(
+            comm=comm, data=data)
 
         while True:
             status = MPI.Status()
@@ -59,6 +64,7 @@ def run():
                             tag=MPI.ANY_TAG, status=status)
             tag = status.Get_tag()
 
+            data.timestamp = max(data.timestamp, msg['timestamp'])
             if data.state != State.AWAITING_JOB and tag == Message.NEW_JOB:
                 if msg['job_id'] not in data.job_map:
                     data.job_map[msg['job_id']] = 0
@@ -68,3 +74,6 @@ def run():
 
             elif data.state == State.REQUESTING_JOB:
                 requesting_job_handler(msg=msg, status=status)
+
+            elif data.state == State.AWAITING_PARTNERS:
+                awaiting_partners_handler(msg=msg, status=status)

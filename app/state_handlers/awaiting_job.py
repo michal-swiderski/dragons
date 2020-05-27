@@ -15,32 +15,55 @@ class AwaitingJobHandler(GenericHandler):
 
         if tag == Message.NEW_JOB:
             if job_id not in data.job_map:
-                self._log(f'Got a job with ID {job_id}, changing state to REQUESTING JOB')
                 data.job_map[job_id] = 0
                 data.job_timeout -= 1
                 if data.job_timeout <= 1:
-                    data.state = State.REQUESTING_JOB
+                    self.data.current_job_id = job_id
+                    self._log(
+                        f'Got a job with ID {job_id}, changing state to REQUESTING JOB', [Message.NEW_JOB, Message.REQUEST_JOB])
+                    self.__send_request_job()
+                    self._change_state(State.REQUESTING_JOB)
 
         elif tag == Message.REQUEST_JOB:
             job_id = msg['job_id']
-            if msg['specialization'] == data.specialization:
-                self._log('Responding with ACK_JOB. Putting -1 into the map.')
+            specialization = msg['specialization']
 
+            if specialization == data:
+                self._send({'job_id': job_id}, dest=status.source,
+                           tag=Message.ACK_JOB)
+                self._log('Got REQUEST_JOB from the same specialization {status.source}, responding with ACK_JOB. Putting -1 into the map.',
+                          [Message.REQUEST_JOB, Message.ACK_JOB])
                 data.job_map[job_id] = -1
-                # comm.send({'job_id': job_id},
-                #           dest=status.source, tag=Message.ACK_JOB)
-                self._send({'job_id': job_id},
-                           dest=status.source, tag=Message.ACK_JOB)
             else:
-                self._log('Adding a new job to the map. Changing state to REQUESTING JOB. Responding with ACK_JOB')
+                self._send({'job_id': job_id}, dest=status.source,
+                           tag=Message.ACK_JOB)
+                self._log(f'Got REQUEST_JOB from {status.source}, responding with ACK_JOB',
+                          [Message.REQUEST_JOB, Message.ACK_JOB])
 
-                data.job_map[job_id] = -1
-                data.state = State.REQUESTING_JOB
-                self._send({'job_id': job_id},
-                           dest=status.source, tag=Message.ACK_JOB)
+                self._log(data.job_map)
+
+                if data.job_map[job_id] != -1:
+                    self.data.job_map[job_id] = 0
+                    self.data.job_timeout -= 1
+                    if self.data.job_timeout <= 1:
+                        self.data.current_job_id = job_id
+                        self.__send_request_job()
+                        self._change_state(State.REQUESTING_JOB)
 
         elif tag == Message.REQUEST_DESK:
             self._send({}, dest=status.source, tag=Message.ACK_DESK)
 
         elif tag == Message.REQUEST_SKELETON:
-            self._send({'job_id': msg['job_id']}, dest=status.source, tag=Message.ACK_SKELETON)
+            self._send({'job_id': msg['job_id']},
+                       dest=status.source, tag=Message.ACK_SKELETON)
+            self._log(f'Got REQUEST_SKELETON from {status.source}, sent ACK_SKELETON', [
+                      Message.REQUEST_SKELETON, Message.ACK_SKELETON])
+
+    def __send_request_job(self):
+        self.data.request_timestamp = self.data.timestamp + 1
+        self._broadcast({
+            'job_id': self.data.current_job_id,
+            'jobs_done': self.data.jobs_done
+        },
+            tag=Message.REQUEST_JOB)
+        self._log('Sent REQUEST_JOB to everyone', [Message.REQUEST_JOB])

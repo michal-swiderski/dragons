@@ -14,32 +14,85 @@ class RequestingJobHandler(GenericHandler):
         # current_job = data.job_map[]
         # self._broadcast({'job_id' : })
 
+        # if self.is_first_call:
+        #     self._broadcast({'job_id': data.current_job_id},
+        #                     tag=Message.REQUEST_JOB)
+        #     self._log('Sent REQUEST_JOB to everyone')
+        #     self.is_first_call = False
+
         if tag == Message.REJECT_JOB:
-            self._log('Got rejected. Putting -1 into the map. Clearing partners. Changing state to AWAITING_JOB')
+            self._log(
+                f'Got REJECT_JOB from {source}. Putting -1 into the map. Clearing partners. Changing state to AWAITING_JOB', [Message.REJECT_JOB])
 
             data.job_map[msg['job_id']] = -1
             data.partners = []
-            data.state = State.AWAITING_JOB
+            self._change_state(State.AWAITING_JOB)
 
         elif tag == Message.ACK_JOB:
             job_id = msg['job_id']
-            self._log('Incrementing job count.')
-
             data.job_map[job_id] += 1
+            self._log(f'Got ACK_JOB from {status.source}. Incrementing ack count for {data.current_job_id} to {data.job_map[job_id]} of {data.specialist_count - 1} needed.', [
+                      Message.ACK_JOB])
+
             if data.job_map[job_id] == data.specialist_count - 1:
-                self._log('Got ACKs from everyone. Sending HELLO to everyone. Changing state to AWAITING_PARTNERS')
+                self._log(
+                    'Got ACKs from everyone. Sending HELLO to everyone. Changing state to AWAITING_PARTNERS', [Message.ACK_JOB, Message.HELLO])
 
                 for proc in range(1, data.specialist_count + 1):
                     if proc != data.rank:
-                        self._send({'job_id': job_id}, dest=proc, tag=Message.HELLO)
+                        self._send({'job_id': job_id},
+                                   dest=proc, tag=Message.HELLO)
                 data.jobs_done += 1
-                data.state = State.AWAITING_PARTNERS
+                self._change_state(State.AWAITING_PARTNERS)
 
         elif tag == Message.HELLO:
             data.partners.append(source)
 
         elif tag == Message.REQUEST_JOB:
             job_id = msg['job_id']
+            specialization = msg['specialization']
 
-            if job_id not in self.data.job_map:
-                self._send({'job_id': job_id}, dest=status.source, tag=Message.ACK_JOB)
+            if job_id != self.data.current_job_id:
+                self._send({'job_id': job_id}, tag=Message.ACK_JOB)
+                self._log(f'Got a REQUEST_JOB from {source}. Sending ACK_JOB', [
+                          Message.ACK_JOB, Message.REQUEST_JOB])
+                if specialization == self.data.specialization:
+                    self.data.job_map[job_id] = -1
+
+            else:
+                if specialization != self.data.specialization:
+                    self._send({'job_id': job_id}, dest=source,
+                               tag=Message.ACK_JOB)
+                    self._log(
+                        f'Got a REQUEST_JOB from {source}. Sending ACK_JOB', [Message.ACK_JOB, Message.REQUEST_JOB])
+                else:
+                    has_priority = self.__has_priority(
+                        msg['timestamp'], msg['jobs_done'], source)
+                    if has_priority:
+                        self._send({'job_id': job_id}, dest=source,
+                                   tag=Message.REJECT_JOB)
+                        self._log(
+                            f'Got a REQUEST_JOB from {source}. Sending REJECT_JOB', [Message.REJECT_JOB, Message.REQUEST_JOB])
+                    else:
+                        self._send({'job_id': job_id}, dest=source,
+                                   tag=Message.ACK_JOB)
+                        self._log(
+                            f'Got a REQUEST_JOB from {source}. Sending ACK_JOB', [Message.ACK_JOB, Message.REQUEST_JOB])
+
+    def __has_priority(self, source_timestamp, source_jobs_done, source_rank):
+        '''Returns true if I have priority'''
+        if self.data.rank % 3 == source_rank % 3:
+            print(self.data.rank, [self.data.request_timestamp, self.data.jobs_done, self.data.rank],
+                  [source_timestamp, source_jobs_done, source_rank])
+        if self.data.jobs_done < source_jobs_done:
+            return True
+        elif self.data.jobs_done > source_jobs_done:
+            return False
+        elif self.data.request_timestamp < source_timestamp:
+            return True
+        elif self.data.request_timestamp > source_timestamp:
+            return False
+        elif self.data.rank < source_rank:
+            return True
+        else:
+            return False
