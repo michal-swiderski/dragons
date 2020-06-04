@@ -81,11 +81,22 @@ class RequestingJobHandler(GenericHandler):
                         self._log(
                             f'Got a REQUEST_JOB from {source}. Sending ACK_JOB', [Message.ACK_JOB, Message.REQUEST_JOB])
 
+        elif tag == Message.REQUEST_DESK:
+            self._send({}, dest=source, tag=Message.ACK_DESK)
+            self._log(f'Got REQUEST_DESK from {source}. Sending ACK_DESK', [
+                      Message.ACK_DESK, Message.REQUEST_DESK])
+
+        elif tag == Message.REQUEST_SKELETON:
+            self._send({'job_id': msg['job_id']},
+                       dest=source, tag=Message.ACK_SKELETON)
+            self._log(f'Got REQUEST_SKELETON from {source}, sent ACK_SKELETON', [
+                Message.REQUEST_SKELETON, Message.ACK_SKELETON])
+
     def __has_priority(self, source_timestamp, source_jobs_done, source_rank):
         '''Returns true if I have priority'''
-        if self.data.rank % 3 == source_rank % 3:
-            print(self.data.rank, [self.data.request_timestamp, self.data.jobs_done, self.data.rank],
-                  [source_timestamp, source_jobs_done, source_rank])
+        # if self.data.rank % 3 == source_rank % 3:
+        #     print(self.data.rank, [self.data.request_timestamp, self.data.jobs_done, self.data.rank],
+        #           [source_timestamp, source_jobs_done, source_rank])
         if self.data.jobs_done < source_jobs_done:
             return True
         elif self.data.jobs_done > source_jobs_done:
