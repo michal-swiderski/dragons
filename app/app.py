@@ -15,6 +15,7 @@ from app.state_handlers import (
 from app.state_handlers.awaiting_job import AwaitingJobHandler
 from app.state_handlers.requesting_job import RequestingJobHandler
 from app.state_handlers.awaiting_partners import AwaitingPartnersHandler
+from app.state_handlers.awaiting_desk import AwaitingDeskHandler
 
 
 class Data:
@@ -36,6 +37,7 @@ class Data:
         self.timestamp = 1
         self.current_job_id = None
         self.request_timestamp = None
+        self.local_queue = []
 
 
 def run():
@@ -43,7 +45,7 @@ def run():
     rank = comm.Get_rank()
     size = comm.Get_size()
 
-    DESK_COUNT = 100
+    DESK_COUNT = 1
     SKELETON_COUNT = 100
     SPECIALIST_COUNT = size - 1
 
@@ -57,6 +59,7 @@ def run():
         requesting_job_handler = RequestingJobHandler(comm=comm, data=data)
         awaiting_partners_handler = AwaitingPartnersHandler(
             comm=comm, data=data)
+        awaiting_desk_handler = AwaitingDeskHandler(comm=comm, data=data)
 
         while True:
             status = MPI.Status()
@@ -77,3 +80,6 @@ def run():
 
             elif data.state == State.AWAITING_PARTNERS:
                 awaiting_partners_handler(msg=msg, status=status)
+
+            elif data.state == State.AWAITING_DESK:
+                awaiting_desk_handler(msg=msg, status=status)

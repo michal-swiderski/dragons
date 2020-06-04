@@ -13,13 +13,19 @@ class AwaitingPartnersHandler(GenericHandler):
         source = status.Get_source()
 
         if tag == Message.HELLO:
-            pass
-            # data.partners.append(source)
-            # if len(data.partners) == 2:
-            #     if data.rank < min(data.partners):
-            #         self._change_state(State.AWAITING_DESK)
-            #     else:
-            #         self._change_state(State.AWAITING_START)
+            if msg['job_id'] == data.current_job_id:
+                data.partners.append(source)
+                self._log(f'Add {source} to partners', [Message.HELLO])
+                if len(data.partners) == 2:
+                    if data.rank < min(data.partners):
+                        self._change_state(State.AWAITING_DESK)
+                        self._broadcast({}, tag=Message.REQUEST_DESK)
+
+                        self._log('Changing state to AWAITING_DESK, sending REQUEST_DESK to everyone', [
+                                  Message.REQUEST_DESK])
+                    else:
+                        self._change_state(State.AWAITING_START)
+                        self._log('Changing state to AWAITING_START')
 
         elif tag == Message.REQUEST_DESK:
             self._send({}, dest=source, tag=Message.ACK_DESK)

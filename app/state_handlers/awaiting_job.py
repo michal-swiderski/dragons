@@ -11,9 +11,10 @@ class AwaitingJobHandler(GenericHandler):
         data = self.data
 
         tag = status.Get_tag()
-        job_id = msg['job_id']
+        source = status.Get_source()
 
         if tag == Message.NEW_JOB:
+            job_id = msg['job_id']
             if job_id not in data.job_map:
                 data.job_map[job_id] = 0
                 data.job_timeout -= 1
@@ -52,6 +53,8 @@ class AwaitingJobHandler(GenericHandler):
 
         elif tag == Message.REQUEST_DESK:
             self._send({}, dest=status.source, tag=Message.ACK_DESK)
+            self._log(f'Got REQUEST_DESK from {source}. Sending ACK_DESK', [
+                      Message.ACK_DESK, Message.REQUEST_DESK])
 
         elif tag == Message.REQUEST_SKELETON:
             self._send({'job_id': msg['job_id']},
