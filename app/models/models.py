@@ -21,6 +21,14 @@ class GenericHandler:
         msg['timestamp'] = self.data.timestamp
         self.comm.send(msg, dest=dest, tag=tag)
 
+    def _send_to_targets(self, msg, *, targets, tag):
+        self.data.timestamp += 1
+        msg['specialization'] = self.data.specialization
+        msg['timestamp'] = self.data.timestamp
+
+        for target in targets:
+            self.comm.send(msg, dest=target, tag=tag)
+
     def _broadcast(self, msg, *, tag):
         self.data.timestamp += 1
         msg['specialization'] = self.data.specialization
@@ -31,8 +39,7 @@ class GenericHandler:
                 self.comm.send(msg, dest=proc, tag=tag)
 
     def _log(self, msg, msg_types=[]):
-        # messages_to_check = [Message.REJECT_JOB,
-        #                      Message.ACK_JOB, Message.REQUEST_JOB]
+        # messages_to_check = [Message.REQUEST_DESK, Message.ACK_DESK]
         messages_to_check = []
         now = datetime.now().strftime("%H:%M:%S")
         s = State(self.data.state).name if self.data.state != - \

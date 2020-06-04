@@ -4,7 +4,6 @@ from time import sleep
 from random import randint
 # import datetime
 
-# from app.models import Message, State, Specialization
 from app.models.models import Message, State, Specialization
 from app.logger.log import log
 from app.state_handlers import (
@@ -17,6 +16,7 @@ from app.state_handlers.requesting_job import RequestingJobHandler
 from app.state_handlers.awaiting_partners import AwaitingPartnersHandler
 from app.state_handlers.awaiting_desk import AwaitingDeskHandler
 from app.state_handlers.awaiting_start import AwaitingStartHandler
+from app.state_handlers.paper_work import PaperWorkHandler
 
 
 class Data:
@@ -62,6 +62,7 @@ def run():
             comm=comm, data=data)
         awaiting_desk_handler = AwaitingDeskHandler(comm=comm, data=data)
         awaiting_start_handler = AwaitingStartHandler(comm=comm, data=data)
+        paper_work_handler = PaperWorkHandler(comm=comm, data=data)
 
         while True:
             status = MPI.Status()

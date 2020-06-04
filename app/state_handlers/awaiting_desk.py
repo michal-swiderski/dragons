@@ -1,4 +1,7 @@
 from ..models.models import Message, State, GenericHandler
+import threading
+import time
+from random import randint
 
 
 class AwaitingDeskHandler(GenericHandler):
@@ -19,7 +22,9 @@ class AwaitingDeskHandler(GenericHandler):
             if data.desk_queue_ack >= needed:
                 # sekcja kryt
                 self._change_state(State.PAPER_WORK)
-                self._log('Changing state to PAPER_WORK')
+                threading.Thread(target=self.__do_work, daemon=True).start()
+                self._log(
+                    'Changing state to PAPER_WORK and start do_work thread')
 
         elif tag == Message.REQUEST_DESK:
             if self.data.timestamp < msg['timestamp']:
@@ -35,6 +40,8 @@ class AwaitingDeskHandler(GenericHandler):
                 self._log(f'Got REQUEST_DESK from {source}, sent ACK_DESK',
                           [Message.REQUEST_DESK, Message.REQUEST_SKELETON])
 
+        # RESPOND WITH ACKS
+
         elif tag == Message.REQUEST_SKELETON:
             self._send({'job_id': msg['job_id']},
                        dest=source, tag=Message.ACK_SKELETON)
@@ -46,3 +53,17 @@ class AwaitingDeskHandler(GenericHandler):
                        dest=source, tag=Message.ACK_JOB)
             self._log(f'Got REQEST_JOB from {source}, sent ACK_JOB', [
                 Message.REQUEST_JOB, Message.ACK_JOB])
+
+    def __do_work(self):
+        # sleep_time_range = (1, 5)
+        # time.sleep(randint(sleep_time_range[0], sleep_time_range[1]))
+        time.sleep(2)
+
+        self._send_to_targets(
+            {}, targets=self.data.local_queue, tag=Message.ACK_DESK)
+
+        self._change_state(State.ACQUIRE_SKELETON)
+        self.data.local_queue = []
+
+        self._log('Finished working. Relasing desk. Sending ACK_DESK to local_queue and changing state to ACQUIRE_SKELETON', [
+                  Message.ACK_DESK])
