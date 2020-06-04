@@ -1,20 +1,29 @@
 from ..models.models import Message, State, GenericHandler
 
 
-class AwaitingStartHandler(GenericHandler):
-
+class RevivingHandler(GenericHandler):
     def __init__(self, *, comm, data):
         super().__init__(comm=comm, data=data)
 
     def __call__(self, *, msg, status):
         data = self.data
-
         tag = status.Get_tag()
         source = status.Get_source()
 
-        if tag == Message.START:
-            self._change_state(State.REVIVING)
-            self._log('Got START, changing state to REVIVING', [Message.START])
+        if tag == Message.FINISH:
+            self._log(f'Got FINISH from {source}. Changing state to AWAITING_JOB', [
+                      Message.FINISH])
+            data.partners = []
+            data.desk_queue_ack = 0
+            data.skeleton_queue_ack = 0
+            data.job_timeout = 0
+            data.last_requested_job = None
+            data.current_job_id = None
+            data.local_queue = []
+
+            self._change_state(State.AWAITING_JOB)
+
+        # RESPOND WITH ACKs
 
         elif tag == Message.REQUEST_DESK:
             self._send({}, dest=source, tag=Message.ACK_DESK)
@@ -22,9 +31,10 @@ class AwaitingStartHandler(GenericHandler):
                 Message.ACK_DESK, Message.REQUEST_DESK])
 
         elif tag == Message.REQUEST_SKELETON:
-            self._send({}, dest=source, tag=Message.ACK_SKELETON)
+            self._send({'job_id': msg['job_id']},
+                       dest=source, tag=Message.ACK_SKELETON)
             self._log(f'Got REQUEST_SKELETON from {source}, sent ACK_SKELETON', [
-                Message.REQUEST_SKELETON, Message.ACK_SKELETON])
+                      Message.REQUEST_SKELETON, Message.ACK_SKELETON])
 
         elif tag == Message.REQUEST_JOB:
             self._send({'job_id': msg['job_id']},

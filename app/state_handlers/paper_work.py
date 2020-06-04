@@ -14,9 +14,9 @@ class PaperWorkHandler(GenericHandler):
         tag = status.Get_tag()
         source = status.Get_source()
 
-        if self.is_first_call:
-            threading.Thread(target=self.__do_work, deamon=True)
-            self.is_first_call = False
+        # if self.is_first_call:
+        #     threading.Thread(target=self.__do_work, deamon=True)
+        #     self.is_first_call = False
 
         if tag == Message.REQUEST_DESK:
             data.local_queue.append(source)
@@ -37,15 +37,19 @@ class PaperWorkHandler(GenericHandler):
             self._log(f'Got REQEST_JOB from {source}, sent ACK_JOB', [
                 Message.REQUEST_JOB, Message.ACK_JOB])
 
-    def __do_work(self):
-        sleep_time_range = (1, 5)
-        time.sleep(randint(sleep_time_range[0], sleep_time_range[1]))
+    # def __do_work(self):
+    #     sleep_time_range = (1, 5)
+    #     time.sleep(randint(sleep_time_range[0], sleep_time_range[1]))
 
-        self._send_to_targets(
-            {}, targets=self.data.local_queue, tag=Message.ACK_DESK)
+    #     self._send_to_targets(
+    #         {}, targets=self.data.local_queue, tag=Message.ACK_DESK)
 
-        self._change_state(State.ACQUIRE_SKELETON)
-        self.data.local_queue = []
+    #     self._change_state(State.ACQUIRE_SKELETON)
+    #     self.data.local_queue = []
 
-        self._log('Finished working. Relasing desk. Sending ACK_DESK to local_queue and changing state to ACQUIRE_SKELETON', [
-                  Message.ACK_DESK])
+    #     self._broadcast({}, tag=Message.REQUEST_SKELETON)
+
+    #     print('XD')
+
+    #     self._log('sdhjsdakdhsaFinished working. Relasing desk. Sending ACK_DESK to local_queue, REQUEST_SKELETON to all and changing state to ACQUIRE_SKELETON', [
+    #               Message.ACK_DESK, Message.REQUEST_SKELETON])

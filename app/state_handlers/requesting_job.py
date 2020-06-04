@@ -31,10 +31,6 @@ class RequestingJobHandler(GenericHandler):
                     'Got ACKs from everyone. Sending HELLO to everyone. Changing state to AWAITING_PARTNERS',
                     [Message.ACK_JOB, Message.HELLO])
 
-                # for proc in range(1, data.specialist_count + 1):
-                #     if proc != data.rank:
-                #         self._send({'job_id': job_id},
-                #                    dest=proc, tag=Message.HELLO)
                 data.jobs_done += 1
                 if len(data.partners) == 2:
                     if data.rank < min(data.partners):

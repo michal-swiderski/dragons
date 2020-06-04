@@ -17,6 +17,8 @@ from app.state_handlers.awaiting_partners import AwaitingPartnersHandler
 from app.state_handlers.awaiting_desk import AwaitingDeskHandler
 from app.state_handlers.awaiting_start import AwaitingStartHandler
 from app.state_handlers.paper_work import PaperWorkHandler
+from app.state_handlers.acquire_skeleton import AcquireSkeletonHandler
+from app.state_handlers.reviving import RevivingHandler
 
 
 class Data:
@@ -63,6 +65,8 @@ def run():
         awaiting_desk_handler = AwaitingDeskHandler(comm=comm, data=data)
         awaiting_start_handler = AwaitingStartHandler(comm=comm, data=data)
         paper_work_handler = PaperWorkHandler(comm=comm, data=data)
+        acquire_skeleton_handler = AcquireSkeletonHandler(comm=comm, data=data)
+        reviving_handler = RevivingHandler(comm=comm, data=data)
 
         while True:
             status = MPI.Status()
@@ -71,6 +75,12 @@ def run():
             tag = status.Get_tag()
 
             data.timestamp = max(data.timestamp, msg['timestamp'])
+
+            if tag == Message.SKELETON_TAKEN:
+                log('Skeleton taken \n', data.rank,
+                    msg_types=[Message.SKELETON_TAKEN])
+                data.skeleton_count -= 1
+
             if data.state != State.AWAITING_JOB and tag == Message.NEW_JOB:
                 if msg['job_id'] not in data.job_map:
                     data.job_map[msg['job_id']] = 0
@@ -87,5 +97,14 @@ def run():
             elif data.state == State.AWAITING_DESK:
                 awaiting_desk_handler(msg=msg, status=status)
 
+            elif data.state == State.PAPER_WORK:
+                paper_work_handler(msg=msg, status=status)
+
+            elif data.state == State.ACQUIRE_SKELETON:
+                acquire_skeleton_handler(msg=msg, status=status)
+
             elif data.state == State.AWAITING_START:
                 awaiting_start_handler(msg=msg, status=status)
+
+            elif data.state == State.REVIVING:
+                reviving_handler(msg=msg, status=status)

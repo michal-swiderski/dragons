@@ -73,7 +73,7 @@ class State(IntEnum):
     PAPER_WORK = 4
     ACQUIRE_SKELETON = 5
     AWAITING_START = 6
-    REVIVNG = 7
+    REVIVING = 7
 
 
 class Specialization(IntEnum):

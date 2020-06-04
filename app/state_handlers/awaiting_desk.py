@@ -25,6 +25,7 @@ class AwaitingDeskHandler(GenericHandler):
                 threading.Thread(target=self.__do_work, daemon=True).start()
                 self._log(
                     'Changing state to PAPER_WORK and start do_work thread')
+                data.desk_queue_ack = 0
 
         elif tag == Message.REQUEST_DESK:
             if self.data.timestamp < msg['timestamp']:
@@ -57,7 +58,20 @@ class AwaitingDeskHandler(GenericHandler):
     def __do_work(self):
         # sleep_time_range = (1, 5)
         # time.sleep(randint(sleep_time_range[0], sleep_time_range[1]))
-        time.sleep(2)
+        # time.sleep(2)
+
+        # self._send_to_targets(
+        #     {}, targets=self.data.local_queue, tag=Message.ACK_DESK)
+
+        # self._change_state(State.ACQUIRE_SKELETON)
+        # self.data.local_queue = []
+        # self.current_job_id = None
+
+        # self._log('Finished working. Relasing desk. Sending ACK_DESK to local_queue and changing state to ACQUIRE_SKELETON', [
+        #           Message.ACK_DESK])
+
+        sleep_time_range = (1, 5)
+        time.sleep(randint(sleep_time_range[0], sleep_time_range[1]))
 
         self._send_to_targets(
             {}, targets=self.data.local_queue, tag=Message.ACK_DESK)
@@ -65,5 +79,9 @@ class AwaitingDeskHandler(GenericHandler):
         self._change_state(State.ACQUIRE_SKELETON)
         self.data.local_queue = []
 
-        self._log('Finished working. Relasing desk. Sending ACK_DESK to local_queue and changing state to ACQUIRE_SKELETON', [
-                  Message.ACK_DESK])
+        self._broadcast({}, tag=Message.REQUEST_SKELETON)
+
+        print('XD')
+
+        self._log('sdhjsdakdhsaFinished working. Relasing desk. Sending ACK_DESK to local_queue, REQUEST_SKELETON to all and changing state to ACQUIRE_SKELETON', [
+                  Message.ACK_DESK, Message.REQUEST_SKELETON])

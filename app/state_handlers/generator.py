@@ -6,7 +6,7 @@ from app.logger.log import log
 
 
 def generator(comm, size):
-    JOBS = 2
+    JOBS = 1
     last_id = 0
     while last_id < JOBS:
         log(f'Generating a new job with id {last_id}', -1, 0)
