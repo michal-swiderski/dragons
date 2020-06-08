@@ -14,7 +14,6 @@ class RevivingHandler(GenericHandler):
             self._log(f'Got FINISH from {source}. Changing state to AWAITING_JOB', [
                       Message.FINISH])
             data.job_map[data.last_requested_job] = -1
-            data.partners = []
             data.desk_queue_ack = 0
             data.skeleton_queue_ack = 0
             data.job_timeout = 0
@@ -43,3 +42,5 @@ class RevivingHandler(GenericHandler):
                        dest=source, tag=Message.ACK_JOB)
             self._log(f'Got REQEST_JOB from {source}, sent ACK_JOB', [
                 Message.REQUEST_JOB, Message.ACK_JOB])
+            if msg['specialization'] == data.specialization:
+                data.job_map[msg['job_id']] = -1

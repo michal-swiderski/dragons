@@ -36,6 +36,8 @@ class PaperWorkHandler(GenericHandler):
                        dest=source, tag=Message.ACK_JOB)
             self._log(f'Got REQEST_JOB from {source}, sent ACK_JOB', [
                 Message.REQUEST_JOB, Message.ACK_JOB])
+            if msg['specialization'] == data.specialization:
+                data.job_map[msg['job_id']] = -1
 
     # def __do_work(self):
     #     sleep_time_range = (1, 5)

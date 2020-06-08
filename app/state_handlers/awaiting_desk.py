@@ -31,13 +31,13 @@ class AwaitingDeskHandler(GenericHandler):
             if self.data.timestamp < msg['timestamp']:
                 self.data.local_queue.append(source)
             elif self.data.timestamp < msg['timestamp']:
-                self._send({}, source, Message.ACK_DESK)
+                self._send({}, dest=source, tag=Message.ACK_DESK)
                 self._log(f'Got REQUEST_DESK from {source}, sent ACK_DESK',
                           [Message.REQUEST_DESK, Message.REQUEST_SKELETON])
             elif self.data.rank < source:
                 self.data.local_queue.append(source)
             else:
-                self._send({}, source, Message.ACK_DESK)
+                self._send({}, dest=source, tag=Message.ACK_DESK)
                 self._log(f'Got REQUEST_DESK from {source}, sent ACK_DESK',
                           [Message.REQUEST_DESK, Message.REQUEST_SKELETON])
 
@@ -54,6 +54,8 @@ class AwaitingDeskHandler(GenericHandler):
                        dest=source, tag=Message.ACK_JOB)
             self._log(f'Got REQEST_JOB from {source}, sent ACK_JOB', [
                 Message.REQUEST_JOB, Message.ACK_JOB])
+            if msg['specialization'] == data.specialization:
+                data.job_map[msg['job_id']] = -1
 
     def __do_work(self):
 

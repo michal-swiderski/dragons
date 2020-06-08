@@ -13,7 +13,7 @@ class RequestingJobHandler(GenericHandler):
 
         if tag == Message.REJECT_JOB:
             data.job_map[msg['job_id']] = -1
-            data.partners = []
+            data.partners[msg['job_id']] = []
             data.last_requested_job = data.current_job_id
             data.job_timeout += 1
             self._change_state(State.AWAITING_JOB)
@@ -36,8 +36,11 @@ class RequestingJobHandler(GenericHandler):
                     [Message.ACK_JOB, Message.HELLO])
 
                 data.jobs_done += 1
-                if len(data.partners) == 2:
-                    if data.rank < min(data.partners):
+                # if data.rank == 1:
+                #     print(data.rank, data.partners, job_id)
+                # self._log(f'{data.rank}, {data.partners}, {job_id}')
+                if len(data.partners[job_id]) == 2:
+                    if data.rank < min(data.partners[job_id]):
                         self._change_state(State.AWAITING_DESK)
                         self._broadcast({}, tag=Message.REQUEST_DESK)
                     else:
@@ -45,10 +48,10 @@ class RequestingJobHandler(GenericHandler):
                 else:
                     self._change_state(State.AWAITING_PARTNERS)
 
-        elif tag == Message.HELLO:
-            if msg['job_id'] == data.current_job_id:
-                data.partners.append(source)
-                self._log(f'Add {source} to partners', [Message.HELLO])
+        # elif tag == Message.HELLO:
+        #     if msg['job_id'] == data.current_job_id:
+        #         data.partners.append(source)
+        #         self._log(f'Add {source} to partners', [Message.HELLO])
 
         elif tag == Message.REQUEST_JOB:
             job_id = msg['job_id']

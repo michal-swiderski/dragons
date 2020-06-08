@@ -40,10 +40,10 @@ class GenericHandler:
 
     def _log(self, msg, msg_types=[]):
         messages_to_check = []
-        # messages_to_check = [Message.REQUEST_JOB]
+        # messages_to_check = [Message.FINISH]
 
         tids_to_check = []
-        # tids_to_check = [4]
+        # tids_to_check = [1]
 
         now = datetime.now().strftime("%H:%M:%S")
         s = State(self.data.state).name if self.data.state != - \
@@ -51,7 +51,7 @@ class GenericHandler:
         if len(messages_to_check) == 0 or any(i in messages_to_check for i in msg_types):
             if len(tids_to_check) == 0 or self.data.rank in tids_to_check:
                 print(
-                    f'[{now} clock: {self.data.timestamp} TID: {self.data.rank} specialization: {Specialization(self.data.specialization).name} state: {s}] {msg}', end='\n\n')
+                    f'[{now} clock: {self.data.timestamp} TID: {self.data.rank} spec: {Specialization(self.data.specialization).name} state: {s}] {msg}', end='\n\n')
 
     def _check_for_jobs(self):
         for job in self.data.job_map:

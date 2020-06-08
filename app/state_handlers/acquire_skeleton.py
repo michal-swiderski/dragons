@@ -26,9 +26,10 @@ class AcquireSkeletonHandler(GenericHandler):
                 self._send_to_targets(
                     {}, targets=data.local_queue, tag=Message.ACK_SKELETON)
                 self._send_to_targets(
-                    {}, targets=data.partners, tag=Message.START)
+                    {}, targets=data.partners[data.current_job_id], tag=Message.START)
                 self._change_state(State.REVIVING)
 
+                data.skeleton_count -= 1
                 data.local_queue = []
                 data.skeleton_queue_ack = 0
 
@@ -41,13 +42,13 @@ class AcquireSkeletonHandler(GenericHandler):
             if self.data.timestamp < msg['timestamp']:
                 self.data.local_queue.append(source)
             elif self.data.timestamp < msg['timestamp']:
-                self._send({}, source, Message.ACK_SKELETON)
+                self._send({}, dest=source, tag=Message.ACK_SKELETON)
                 self._log(f'Got REQUEST_SKELETON from {source}, sent ACK_SKELETON',
                           [Message.REQUEST_SKELETON, Message.ACK_SKELETON])
             elif self.data.rank < source:
                 self.data.local_queue.append(source)
             else:
-                self._send({}, source, Message.ACK_SKELETON)
+                self._send({}, dest=source, tag=Message.ACK_SKELETON)
                 self._log(f'Got REQUEST_DESK from {source}, sent ACK_SKELETON',
                           [Message.REQUEST_SKELETON, Message.ACK_SKELETON])
 
@@ -63,17 +64,20 @@ class AcquireSkeletonHandler(GenericHandler):
                        dest=source, tag=Message.ACK_JOB)
             self._log(f'Got REQEST_JOB from {source}, sent ACK_JOB', [
                 Message.REQUEST_JOB, Message.ACK_JOB])
+            if msg['specialization'] == data.specialization:
+                data.job_map[msg['job_id']] = -1
 
     def start_reviving(self):
         # sleep_time_range = (1, 5)
         # time.sleep(randint(sleep_time_range[0], sleep_time_range[1]))
         time.sleep(2)
 
+        print(self.data.rank, self.data.partners[self.data.current_job_id])
         self._send_to_targets(
-            {}, targets=self.data.partners, tag=Message.FINISH)
+            {}, targets=self.data.partners[self.data.current_job_id], tag=Message.FINISH)
 
         self._change_state(State.AWAITING_JOB)
-        self.data.partners = []
+        # self.data.partners = []
 
         self._log('Finished reviving. Send FINISH to partners and change state to AWAITING_JOB', [
                   Message.FINISH])

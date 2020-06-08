@@ -14,10 +14,10 @@ class AwaitingPartnersHandler(GenericHandler):
 
         if tag == Message.HELLO:
             if msg['job_id'] == data.current_job_id:
-                data.partners.append(source)
+                data.partners[msg['job_id']].append(source)
                 self._log(f'Add {source} to partners', [Message.HELLO])
-                if len(data.partners) == 2:
-                    if data.rank < min(data.partners):
+                if len(data.partners[msg['job_id']]) == 2:
+                    if data.rank < min(data.partners[msg['job_id']]):
                         self._change_state(State.AWAITING_DESK)
                         self._broadcast({}, tag=Message.REQUEST_DESK)
 
@@ -26,6 +26,8 @@ class AwaitingPartnersHandler(GenericHandler):
                     else:
                         self._change_state(State.AWAITING_START)
                         self._log('Changing state to AWAITING_START')
+            else:
+                data.partners[msg['job_id']].append(source)
 
         elif tag == Message.REQUEST_DESK:
             self._send({}, dest=source, tag=Message.ACK_DESK)
@@ -41,5 +43,7 @@ class AwaitingPartnersHandler(GenericHandler):
         elif tag == Message.REQUEST_JOB:
             self._send({'job_id': msg['job_id']},
                        dest=source, tag=Message.ACK_JOB)
-            self._log(f'Got REQEST_JOB from {source}, sent ACK_JOB', [
+            self._log(f'Got REQEST_JOB from {source} for job_id = {msg["job_id"]}, sent ACK_JOB', [
                 Message.REQUEST_JOB, Message.ACK_JOB])
+            if msg['specialization'] == data.specialization:
+                data.job_map[msg['job_id']] = -1

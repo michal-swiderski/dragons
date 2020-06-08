@@ -31,7 +31,7 @@ class Data:
         self.desk_count = desk_count
         self.skeleton_count = skeleton_count
         self.specialist_count = specialist_count
-        self.partners = []
+        self.partners = {}
         self.job_map = {}
         self.desk_queue_ack = 0
         self.skeleton_queue_ack = 0
@@ -73,6 +73,7 @@ def run():
             msg = comm.recv(source=MPI.ANY_SOURCE,
                             tag=MPI.ANY_TAG, status=status)
             tag = status.Get_tag()
+            source = status.Get_source()
 
             data.timestamp = max(data.timestamp, msg['timestamp'])
 
@@ -84,6 +85,15 @@ def run():
             if data.state != State.AWAITING_JOB and tag == Message.NEW_JOB:
                 if msg['job_id'] not in data.job_map:
                     data.job_map[msg['job_id']] = 0
+
+                data.partners[msg['job_id']] = []
+                # print(data.partners)
+
+            if data.rank == 1:
+                print(data.partners)
+
+            if data.state != State.AWAITING_PARTNERS and tag == Message.HELLO:
+                data.partners[msg['job_id']].append(source)
 
             if data.state == State.AWAITING_JOB:
                 awaiting_job_handler(msg=msg, status=status)

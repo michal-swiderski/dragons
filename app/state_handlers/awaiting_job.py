@@ -15,6 +15,9 @@ class AwaitingJobHandler(GenericHandler):
 
         if tag == Message.NEW_JOB:
             job_id = msg['job_id']
+            if job_id not in data.partners:
+                data.partners[job_id] = []
+
             if job_id not in data.job_map:
                 data.job_map[job_id] = 0
                 data.job_timeout -= 1
@@ -80,4 +83,5 @@ class AwaitingJobHandler(GenericHandler):
             'jobs_done': self.data.jobs_done
         },
             tag=Message.REQUEST_JOB)
-        self._log('Sent REQUEST_JOB to everyone', [Message.REQUEST_JOB])
+        self._log(f'Sent REQUEST_JOB to everyone for job_id = {self.data.current_job_id}', [
+                  Message.REQUEST_JOB])
