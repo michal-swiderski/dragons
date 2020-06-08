@@ -77,9 +77,9 @@ def run():
             data.timestamp = max(data.timestamp, msg['timestamp'])
 
             if tag == Message.SKELETON_TAKEN:
-                log('Skeleton taken \n', data.rank,
-                    msg_types=[Message.SKELETON_TAKEN])
                 data.skeleton_count -= 1
+                log(f'Got SKELETON_TAKEN from {status.Get_source()}. Decrementing skeleton count to {data.skeleton_count} \n', data.rank,
+                    msg_types=[Message.SKELETON_TAKEN])
 
             if data.state != State.AWAITING_JOB and tag == Message.NEW_JOB:
                 if msg['job_id'] not in data.job_map:

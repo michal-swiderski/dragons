@@ -26,7 +26,7 @@ class PaperWorkHandler(GenericHandler):
         # RESPOND TO ALL REQUESTS WITH AN ACK MSG
 
         elif tag == Message.REQUEST_SKELETON:
-            self._send({'job_id': msg['job_id']},
+            self._send({},
                        dest=source, tag=Message.ACK_SKELETON)
             self._log(f'Got REQUEST_SKELETON from {source}, sent ACK_SKELETON', [
                       Message.REQUEST_SKELETON, Message.ACK_SKELETON])

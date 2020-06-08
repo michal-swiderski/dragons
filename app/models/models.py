@@ -39,14 +39,35 @@ class GenericHandler:
                 self.comm.send(msg, dest=proc, tag=tag)
 
     def _log(self, msg, msg_types=[]):
-        # messages_to_check = [Message.REQUEST_DESK, Message.ACK_DESK]
         messages_to_check = []
+        # messages_to_check = [Message.REQUEST_JOB]
+
+        tids_to_check = []
+        tids_to_check = [4]
+
         now = datetime.now().strftime("%H:%M:%S")
         s = State(self.data.state).name if self.data.state != - \
             1 else 'GENERATOR'
         if len(messages_to_check) == 0 or any(i in messages_to_check for i in msg_types):
-            print(
-                f'[{now} clock: {self.data.timestamp} TID: {self.data.rank} specialization: {Specialization(self.data.specialization).name} state: {s}] {msg}', end='\n\n')
+            if len(tids_to_check) == 0 or self.data.rank in tids_to_check:
+                print(
+                    f'[{now} clock: {self.data.timestamp} TID: {self.data.rank} specialization: {Specialization(self.data.specialization).name} state: {s}] {msg}', end='\n\n')
+
+    def _check_for_jobs(self):
+        for job in self.data.job_map:
+            if self.data.job_map[job] == 0:
+                self.data.request_timestamp = self.data.timestamp + 1
+                self.current_job_id = job
+                self.data.job_timeout = 0
+                self._broadcast({
+                    'job_id': self.data.current_job_id,
+                    'jobs_done': self.data.jobs_done
+                }, tag=Message.REQUEST_JOB)
+                self._log(f'Sent REQUEST_JOB to everyone for job_id = {self.data.current_job_id}',
+                          [Message.REQUEST_JOB])
+                self._change_state(State.REQUESTING_JOB)
+                break
+        # self._log(f'{job}, {self.data.job_map[job]}')
 
 
 class Message(IntEnum):

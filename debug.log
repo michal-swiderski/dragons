@@ -1,0 +1,81 @@
+[19:54:40 TID: 0] Generating a new job with id 0
+
+[19:54:40 TID: 0] Generating a new job with id 1
+
+[19:54:40 clock: 1 TID: 4 specialization: BODY state: AWAITING_JOB] Got a job with ID 0, changing state to REQUESTING JOB
+
+[19:54:40 TID: 0] Generating a new job with id 2
+
+[19:54:40 clock: 2 TID: 4 specialization: BODY state: AWAITING_JOB] Sent REQUEST_JOB to everyone
+
+[19:54:40 TID: -1] No more jobs will be generated
+[19:54:40 clock: 3 TID: 4 specialization: BODY state: REQUESTING_JOB] Got a REQUEST_JOB from 2. Sending ACK_JOB
+
+[19:54:40 clock: 4 TID: 4 specialization: BODY state: REQUESTING_JOB] Got a REQUEST_JOB from 1. Sending ACK_JOB
+
+[19:54:40 clock: 5 TID: 4 specialization: BODY state: REQUESTING_JOB] Got a REQUEST_JOB from 3. Sending ACK_JOB
+
+[19:54:40 clock: 6 TID: 4 specialization: BODY state: REQUESTING_JOB] Got a REQUEST_JOB from 5. Sending ACK_JOB
+
+[19:54:40 clock: 7 TID: 4 specialization: BODY state: REQUESTING_JOB] Got a REQUEST_JOB from 6. Sending ACK_JOB
+
+[19:54:40 clock: 8 TID: 4 specialization: BODY state: REQUESTING_JOB] Got a REQUEST_JOB from 7. Sending REJECT_JOB
+
+[19:54:40 clock: 8 TID: 4 specialization: BODY state: REQUESTING_JOB] Got ACK_JOB from 2. Incrementing ack count for 0 to 1 of 6 needed.
+
+[19:54:40 clock: 8 TID: 4 specialization: BODY state: AWAITING_JOB] Got REJECT_JOB from 1. Putting -1 into the map. Incrementing job_timeout to 1. Clearing partners. Changing state to AWAITING_JOB and searching fo jobs
+
+[19:54:40 clock: 9 TID: 4 specialization: BODY state: AWAITING_JOB] Sent REQUEST_JOB to everyone for job_id = 0
+
+[19:54:40 clock: 9 TID: 4 specialization: BODY state: REQUESTING_JOB] Add 2 to partners
+
+[19:54:40 clock: 9 TID: 4 specialization: BODY state: REQUESTING_JOB] Got ACK_JOB from 3. Incrementing ack count for 0 to 0 of 6 needed.
+
+[19:54:40 clock: 9 TID: 4 specialization: BODY state: REQUESTING_JOB] Got ACK_JOB from 5. Incrementing ack count for 0 to 1 of 6 needed.
+
+[19:54:40 clock: 9 TID: 4 specialization: BODY state: REQUESTING_JOB] Got ACK_JOB from 6. Incrementing ack count for 0 to 2 of 6 needed.
+
+[19:54:40 clock: 9 TID: 4 specialization: BODY state: REQUESTING_JOB] Got ACK_JOB from 7. Incrementing ack count for 0 to 3 of 6 needed.
+
+[19:54:40 clock: 10 TID: 4 specialization: BODY state: REQUESTING_JOB] Got a REQUEST_JOB from 6. Sending ACK_JOB
+
+[19:54:40 clock: 10 TID: 4 specialization: BODY state: REQUESTING_JOB] Add 1 to partners
+
+[19:54:40 clock: 11 TID: 4 specialization: BODY state: REQUESTING_JOB] Got a REQUEST_JOB from 7. Sending REJECT_JOB
+
+[19:54:40 clock: 14 TID: 4 specialization: BODY state: REQUESTING_JOB] Got REQUEST_DESK from 1. Sending ACK_DESK
+
+[19:54:40 clock: 14 TID: 4 specialization: BODY state: REQUESTING_JOB] Got ACK_JOB from 2. Incrementing ack count for 0 to 4 of 6 needed.
+
+[19:54:40 clock: 14 TID: 4 specialization: BODY state: REQUESTING_JOB] Add 3 to partners
+
+[19:54:40 clock: 15 TID: 4 specialization: BODY state: REQUESTING_JOB] Got a REQUEST_JOB from 5. Sending ACK_JOB
+
+[19:54:40 clock: 15 TID: 4 specialization: BODY state: REQUESTING_JOB] Got ACK_JOB from 6. Incrementing ack count for 0 to 5 of 6 needed.
+
+[19:54:40 clock: 16 TID: 4 specialization: BODY state: REQUESTING_JOB] Got a REQUEST_JOB from 7. Sending REJECT_JOB
+
+[19:54:40 clock: 16 TID: 4 specialization: BODY state: REQUESTING_JOB] Got ACK_JOB from 1. Incrementing ack count for 0 to 6 of 6 needed.
+
+[19:54:40 clock: 17 TID: 4 specialization: BODY state: REQUESTING_JOB] Got ACKs from everyone. Sending HELLO to everyone. Changing state to AWAITING_PARTNERS
+
+[19:54:40 clock: 17 TID: 4 specialization: BODY state: AWAITING_PARTNERS] Add 6 to partners
+
+[19:54:40 clock: 17 TID: 4 specialization: BODY state: AWAITING_PARTNERS] Add 7 to partners
+
+[19:54:40 clock: 17 TID: 4 specialization: BODY state: AWAITING_PARTNERS] Add 5 to partners
+
+[19:54:41 clock: 20 TID: 4 specialization: BODY state: AWAITING_PARTNERS] Got REQUEST_SKELETON from 1, sent ACK_SKELETON
+
+[19:54:41 TID: 2] Got SKELETON_TAKEN from 1. Decrementing skeleton count to 99 
+
+[19:54:41 TID: 3] Got SKELETON_TAKEN from 1. Decrementing skeleton count to 99 
+
+[19:54:41 TID: 5] Got SKELETON_TAKEN from 1. Decrementing skeleton count to 99 
+
+[19:54:41 TID: 6] Got SKELETON_TAKEN from 1. Decrementing skeleton count to 99 
+
+[19:54:41 TID: 7] Got SKELETON_TAKEN from 1. Decrementing skeleton count to 99 
+
+[19:54:41 TID: 4] Got SKELETON_TAKEN from 1. Decrementing skeleton count to 99 
+

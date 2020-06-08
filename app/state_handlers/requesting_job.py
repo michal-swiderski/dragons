@@ -12,12 +12,16 @@ class RequestingJobHandler(GenericHandler):
         source = status.Get_source()
 
         if tag == Message.REJECT_JOB:
-            self._log(
-                f'Got REJECT_JOB from {source}. Putting -1 into the map. Clearing partners. Changing state to AWAITING_JOB', [Message.REJECT_JOB])
-
             data.job_map[msg['job_id']] = -1
             data.partners = []
+            data.last_requested_job = data.current_job_id
+            data.job_timeout += 1
             self._change_state(State.AWAITING_JOB)
+
+            self._log(
+                f'Got REJECT_JOB from {source}. Putting -1 into the map. Incrementing job_timeout to {data.job_timeout}. Clearing partners. Changing state to AWAITING_JOB and searching fo jobs', [Message.REJECT_JOB])
+
+            self._check_for_jobs()
 
         elif tag == Message.ACK_JOB:
             job_id = msg['job_id']
@@ -83,7 +87,7 @@ class RequestingJobHandler(GenericHandler):
                       Message.ACK_DESK, Message.REQUEST_DESK])
 
         elif tag == Message.REQUEST_SKELETON:
-            self._send({'job_id': msg['job_id']},
+            self._send({},
                        dest=source, tag=Message.ACK_SKELETON)
             self._log(f'Got REQUEST_SKELETON from {source}, sent ACK_SKELETON', [
                 Message.REQUEST_SKELETON, Message.ACK_SKELETON])
