@@ -77,3 +77,5 @@ class AcquireSkeletonHandler(GenericHandler):
 
         self._log('Finished reviving. Send FINISH to partners and change state to AWAITING_JOB', [
                   Message.FINISH])
+
+        self._check_for_jobs()

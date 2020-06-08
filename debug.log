@@ -1,81 +1,271 @@
-[19:54:40 TID: 0] Generating a new job with id 0
+[20:19:45 TID: 0] Generating a new job with id 0
 
-[19:54:40 TID: 0] Generating a new job with id 1
+[20:19:45 TID: 0] Generating a new job with id 1
 
-[19:54:40 clock: 1 TID: 4 specialization: BODY state: AWAITING_JOB] Got a job with ID 0, changing state to REQUESTING JOB
+[20:19:45 TID: 0] Generating a new job with id 2
 
-[19:54:40 TID: 0] Generating a new job with id 2
+[20:19:45 clock: 1 TID: 1 specialization: BODY state: AWAITING_JOB] Got a job with ID 0, changing state to REQUESTING JOB
 
-[19:54:40 clock: 2 TID: 4 specialization: BODY state: AWAITING_JOB] Sent REQUEST_JOB to everyone
+[20:19:45 clock: 1 TID: 2 specialization: TAIL state: AWAITING_JOB] Got a job with ID 0, changing state to REQUESTING JOB
 
-[19:54:40 TID: -1] No more jobs will be generated
-[19:54:40 clock: 3 TID: 4 specialization: BODY state: REQUESTING_JOB] Got a REQUEST_JOB from 2. Sending ACK_JOB
+[20:19:45 clock: 1 TID: 3 specialization: HEAD state: AWAITING_JOB] Got a job with ID 0, changing state to REQUESTING JOB
 
-[19:54:40 clock: 4 TID: 4 specialization: BODY state: REQUESTING_JOB] Got a REQUEST_JOB from 1. Sending ACK_JOB
+[20:19:45 TID: -1] No more jobs will be generated
+[20:19:45 clock: 2 TID: 2 specialization: TAIL state: AWAITING_JOB] Sent REQUEST_JOB to everyone
 
-[19:54:40 clock: 5 TID: 4 specialization: BODY state: REQUESTING_JOB] Got a REQUEST_JOB from 3. Sending ACK_JOB
+[20:19:45 clock: 2 TID: 3 specialization: HEAD state: AWAITING_JOB] Sent REQUEST_JOB to everyone
 
-[19:54:40 clock: 6 TID: 4 specialization: BODY state: REQUESTING_JOB] Got a REQUEST_JOB from 5. Sending ACK_JOB
+[20:19:45 clock: 2 TID: 1 specialization: BODY state: AWAITING_JOB] Sent REQUEST_JOB to everyone
 
-[19:54:40 clock: 7 TID: 4 specialization: BODY state: REQUESTING_JOB] Got a REQUEST_JOB from 6. Sending ACK_JOB
+[20:19:45 clock: 3 TID: 2 specialization: TAIL state: REQUESTING_JOB] Got a REQUEST_JOB from 1. Sending ACK_JOB
 
-[19:54:40 clock: 8 TID: 4 specialization: BODY state: REQUESTING_JOB] Got a REQUEST_JOB from 7. Sending REJECT_JOB
+[20:19:45 clock: 3 TID: 3 specialization: HEAD state: REQUESTING_JOB] Got a REQUEST_JOB from 1. Sending ACK_JOB
 
-[19:54:40 clock: 8 TID: 4 specialization: BODY state: REQUESTING_JOB] Got ACK_JOB from 2. Incrementing ack count for 0 to 1 of 6 needed.
+[20:19:45 clock: 4 TID: 2 specialization: TAIL state: REQUESTING_JOB] Got a REQUEST_JOB from 3. Sending ACK_JOB
 
-[19:54:40 clock: 8 TID: 4 specialization: BODY state: AWAITING_JOB] Got REJECT_JOB from 1. Putting -1 into the map. Incrementing job_timeout to 1. Clearing partners. Changing state to AWAITING_JOB and searching fo jobs
+[20:19:45 clock: 3 TID: 1 specialization: BODY state: REQUESTING_JOB] Got a REQUEST_JOB from 2. Sending ACK_JOB
 
-[19:54:40 clock: 9 TID: 4 specialization: BODY state: AWAITING_JOB] Sent REQUEST_JOB to everyone for job_id = 0
+[20:19:45 clock: 4 TID: 2 specialization: TAIL state: REQUESTING_JOB] Got ACK_JOB from 1. Incrementing ack count for 0 to 1 of 2 needed.
 
-[19:54:40 clock: 9 TID: 4 specialization: BODY state: REQUESTING_JOB] Add 2 to partners
+[20:19:45 clock: 4 TID: 3 specialization: HEAD state: REQUESTING_JOB] Got a REQUEST_JOB from 2. Sending ACK_JOB
 
-[19:54:40 clock: 9 TID: 4 specialization: BODY state: REQUESTING_JOB] Got ACK_JOB from 3. Incrementing ack count for 0 to 0 of 6 needed.
+[20:19:45 clock: 4 TID: 1 specialization: BODY state: REQUESTING_JOB] Got a REQUEST_JOB from 3. Sending ACK_JOB
 
-[19:54:40 clock: 9 TID: 4 specialization: BODY state: REQUESTING_JOB] Got ACK_JOB from 5. Incrementing ack count for 0 to 1 of 6 needed.
+[20:19:45 clock: 4 TID: 2 specialization: TAIL state: REQUESTING_JOB] Got ACK_JOB from 3. Incrementing ack count for 0 to 2 of 2 needed.
 
-[19:54:40 clock: 9 TID: 4 specialization: BODY state: REQUESTING_JOB] Got ACK_JOB from 6. Incrementing ack count for 0 to 2 of 6 needed.
+[20:19:45 clock: 4 TID: 3 specialization: HEAD state: REQUESTING_JOB] Got ACK_JOB from 2. Incrementing ack count for 0 to 1 of 2 needed.
 
-[19:54:40 clock: 9 TID: 4 specialization: BODY state: REQUESTING_JOB] Got ACK_JOB from 7. Incrementing ack count for 0 to 3 of 6 needed.
+[20:19:45 clock: 5 TID: 2 specialization: TAIL state: REQUESTING_JOB] Got ACKs from everyone. Sending HELLO to everyone. Changing state to AWAITING_PARTNERS
 
-[19:54:40 clock: 10 TID: 4 specialization: BODY state: REQUESTING_JOB] Got a REQUEST_JOB from 6. Sending ACK_JOB
+[20:19:45 clock: 4 TID: 1 specialization: BODY state: REQUESTING_JOB] Got ACK_JOB from 2. Incrementing ack count for 0 to 1 of 2 needed.
 
-[19:54:40 clock: 10 TID: 4 specialization: BODY state: REQUESTING_JOB] Add 1 to partners
+[20:19:45 clock: 4 TID: 3 specialization: HEAD state: REQUESTING_JOB] Got ACK_JOB from 1. Incrementing ack count for 0 to 2 of 2 needed.
 
-[19:54:40 clock: 11 TID: 4 specialization: BODY state: REQUESTING_JOB] Got a REQUEST_JOB from 7. Sending REJECT_JOB
+[20:19:45 clock: 4 TID: 1 specialization: BODY state: REQUESTING_JOB] Got ACK_JOB from 3. Incrementing ack count for 0 to 2 of 2 needed.
 
-[19:54:40 clock: 14 TID: 4 specialization: BODY state: REQUESTING_JOB] Got REQUEST_DESK from 1. Sending ACK_DESK
+[20:19:45 clock: 5 TID: 3 specialization: HEAD state: REQUESTING_JOB] Got ACKs from everyone. Sending HELLO to everyone. Changing state to AWAITING_PARTNERS
 
-[19:54:40 clock: 14 TID: 4 specialization: BODY state: REQUESTING_JOB] Got ACK_JOB from 2. Incrementing ack count for 0 to 4 of 6 needed.
+[20:19:45 clock: 5 TID: 2 specialization: TAIL state: AWAITING_PARTNERS] Add 3 to partners
 
-[19:54:40 clock: 14 TID: 4 specialization: BODY state: REQUESTING_JOB] Add 3 to partners
+[20:19:45 clock: 5 TID: 1 specialization: BODY state: REQUESTING_JOB] Got ACKs from everyone. Sending HELLO to everyone. Changing state to AWAITING_PARTNERS
 
-[19:54:40 clock: 15 TID: 4 specialization: BODY state: REQUESTING_JOB] Got a REQUEST_JOB from 5. Sending ACK_JOB
+[20:19:45 clock: 5 TID: 3 specialization: HEAD state: AWAITING_PARTNERS] Add 2 to partners
 
-[19:54:40 clock: 15 TID: 4 specialization: BODY state: REQUESTING_JOB] Got ACK_JOB from 6. Incrementing ack count for 0 to 5 of 6 needed.
+[20:19:45 clock: 5 TID: 2 specialization: TAIL state: AWAITING_PARTNERS] Add 1 to partners
 
-[19:54:40 clock: 16 TID: 4 specialization: BODY state: REQUESTING_JOB] Got a REQUEST_JOB from 7. Sending REJECT_JOB
+[20:19:45 clock: 5 TID: 2 specialization: TAIL state: AWAITING_START] Changing state to AWAITING_START
 
-[19:54:40 clock: 16 TID: 4 specialization: BODY state: REQUESTING_JOB] Got ACK_JOB from 1. Incrementing ack count for 0 to 6 of 6 needed.
+[20:19:45 clock: 5 TID: 3 specialization: HEAD state: AWAITING_PARTNERS] Add 1 to partners
 
-[19:54:40 clock: 17 TID: 4 specialization: BODY state: REQUESTING_JOB] Got ACKs from everyone. Sending HELLO to everyone. Changing state to AWAITING_PARTNERS
+[20:19:45 clock: 5 TID: 1 specialization: BODY state: AWAITING_PARTNERS] Add 2 to partners
 
-[19:54:40 clock: 17 TID: 4 specialization: BODY state: AWAITING_PARTNERS] Add 6 to partners
+[20:19:45 clock: 5 TID: 3 specialization: HEAD state: AWAITING_START] Changing state to AWAITING_START
 
-[19:54:40 clock: 17 TID: 4 specialization: BODY state: AWAITING_PARTNERS] Add 7 to partners
+[20:19:45 clock: 5 TID: 1 specialization: BODY state: AWAITING_PARTNERS] Add 3 to partners
 
-[19:54:40 clock: 17 TID: 4 specialization: BODY state: AWAITING_PARTNERS] Add 5 to partners
+[20:19:45 clock: 6 TID: 1 specialization: BODY state: AWAITING_DESK] Changing state to AWAITING_DESK, sending REQUEST_DESK to everyone
 
-[19:54:41 clock: 20 TID: 4 specialization: BODY state: AWAITING_PARTNERS] Got REQUEST_SKELETON from 1, sent ACK_SKELETON
+[20:19:45 clock: 7 TID: 2 specialization: TAIL state: AWAITING_START] Got REQUEST_DESK from 1. Sending ACK_DESK
 
-[19:54:41 TID: 2] Got SKELETON_TAKEN from 1. Decrementing skeleton count to 99 
+[20:19:45 clock: 7 TID: 1 specialization: BODY state: AWAITING_DESK] Got ACK_DESK from 2. Incrementing DESK_QUEUE_ACK to 1 of 1 needed
 
-[19:54:41 TID: 3] Got SKELETON_TAKEN from 1. Decrementing skeleton count to 99 
+[20:19:45 clock: 7 TID: 3 specialization: HEAD state: AWAITING_START] Got REQUEST_DESK from 1. Sending ACK_DESK
 
-[19:54:41 TID: 5] Got SKELETON_TAKEN from 1. Decrementing skeleton count to 99 
+[20:19:45 clock: 7 TID: 1 specialization: BODY state: PAPER_WORK] Changing state to PAPER_WORK and start do_work thread
 
-[19:54:41 TID: 6] Got SKELETON_TAKEN from 1. Decrementing skeleton count to 99 
+[20:19:50 clock: 9 TID: 1 specialization: BODY state: ACQUIRE_SKELETON] Finished working. Relasing desk. Sending ACK_DESK to local_queue, REQUEST_SKELETON to all and changing state to ACQUIRE_SKELETON
 
-[19:54:41 TID: 7] Got SKELETON_TAKEN from 1. Decrementing skeleton count to 99 
+[20:19:50 clock: 10 TID: 3 specialization: HEAD state: AWAITING_START] Got REQUEST_SKELETON from 1, sent ACK_SKELETON
 
-[19:54:41 TID: 4] Got SKELETON_TAKEN from 1. Decrementing skeleton count to 99 
+[20:19:50 clock: 10 TID: 2 specialization: TAIL state: AWAITING_START] Got REQUEST_SKELETON from 1, sent ACK_SKELETON
+
+[20:19:50 clock: 10 TID: 1 specialization: BODY state: ACQUIRE_SKELETON] Got ACK_SKELETON from 2. Incrementing skeleton_queue_ack to 1 of -97 needed
+
+[20:19:50 TID: 3] Got SKELETON_TAKEN from 1. Decrementing skeleton count to 99 
+
+[20:19:50 TID: 2] Got SKELETON_TAKEN from 1. Decrementing skeleton count to 99 
+
+[20:19:50 clock: 13 TID: 3 specialization: HEAD state: REVIVING] Got START, changing state to REVIVING
+
+[20:19:50 clock: 13 TID: 2 specialization: TAIL state: REVIVING] Got START, changing state to REVIVING
+
+[20:19:50 clock: 13 TID: 1 specialization: BODY state: REVIVING] Skeleton taken. Sending SKELETON_TAKEN to everyone, ACK_SKELETON to local queue, START to partners and change state to REVIVING
+
+[20:19:52 clock: 14 TID: 1 specialization: BODY state: AWAITING_JOB] Finished reviving. Send FINISH to partners and change state to AWAITING_JOB
+
+[20:19:52 clock: 14 TID: 2 specialization: TAIL state: REVIVING] Got FINISH from 1. Changing state to AWAITING_JOB
+
+[20:19:52 clock: 15 TID: 1 specialization: BODY state: AWAITING_JOB] Sent REQUEST_JOB to everyone for job_id = 1
+
+[20:19:52 clock: 15 TID: 2 specialization: TAIL state: AWAITING_JOB] Sent REQUEST_JOB to everyone for job_id = 1
+
+[20:19:52 clock: 14 TID: 3 specialization: HEAD state: REVIVING] Got FINISH from 1. Changing state to AWAITING_JOB
+
+[20:19:52 clock: 16 TID: 2 specialization: TAIL state: REQUESTING_JOB] Got a REQUEST_JOB from 1. Sending ACK_JOB
+
+[20:19:52 clock: 15 TID: 3 specialization: HEAD state: AWAITING_JOB] Sent REQUEST_JOB to everyone for job_id = 1
+
+[20:19:52 clock: 16 TID: 1 specialization: BODY state: REQUESTING_JOB] Got a REQUEST_JOB from 2. Sending ACK_JOB
+
+[20:19:52 clock: 17 TID: 2 specialization: TAIL state: REQUESTING_JOB] Got a REQUEST_JOB from 3. Sending ACK_JOB
+
+[20:19:52 clock: 17 TID: 2 specialization: TAIL state: REQUESTING_JOB] Got ACK_JOB from 1. Incrementing ack count for 1 to 1 of 2 needed.
+
+[20:19:52 clock: 16 TID: 3 specialization: HEAD state: REQUESTING_JOB] Got a REQUEST_JOB from 1. Sending ACK_JOB
+
+[20:19:52 clock: 17 TID: 1 specialization: BODY state: REQUESTING_JOB] Got a REQUEST_JOB from 3. Sending ACK_JOB
+
+[20:19:52 clock: 17 TID: 2 specialization: TAIL state: REQUESTING_JOB] Got ACK_JOB from 3. Incrementing ack count for 1 to 2 of 2 needed.
+
+[20:19:52 clock: 17 TID: 3 specialization: HEAD state: REQUESTING_JOB] Got a REQUEST_JOB from 2. Sending ACK_JOB
+
+[20:19:52 clock: 17 TID: 1 specialization: BODY state: REQUESTING_JOB] Got ACK_JOB from 2. Incrementing ack count for 1 to 1 of 2 needed.
+
+[20:19:52 clock: 17 TID: 1 specialization: BODY state: REQUESTING_JOB] Got ACK_JOB from 3. Incrementing ack count for 1 to 2 of 2 needed.
+
+[20:19:52 clock: 17 TID: 3 specialization: HEAD state: REQUESTING_JOB] Got ACK_JOB from 2. Incrementing ack count for 1 to 1 of 2 needed.
+
+[20:19:52 clock: 18 TID: 2 specialization: TAIL state: REQUESTING_JOB] Got ACKs from everyone. Sending HELLO to everyone. Changing state to AWAITING_PARTNERS
+
+[20:19:52 clock: 18 TID: 1 specialization: BODY state: REQUESTING_JOB] Got ACKs from everyone. Sending HELLO to everyone. Changing state to AWAITING_PARTNERS
+
+[20:19:52 clock: 18 TID: 2 specialization: TAIL state: AWAITING_PARTNERS] Add 1 to partners
+
+[20:19:52 clock: 17 TID: 3 specialization: HEAD state: REQUESTING_JOB] Got ACK_JOB from 1. Incrementing ack count for 1 to 2 of 2 needed.
+
+[20:19:52 clock: 18 TID: 1 specialization: BODY state: AWAITING_PARTNERS] Add 2 to partners
+
+[20:19:52 clock: 18 TID: 2 specialization: TAIL state: AWAITING_PARTNERS] Add 3 to partners
+
+[20:19:52 clock: 18 TID: 1 specialization: BODY state: AWAITING_PARTNERS] Add 3 to partners
+
+[20:19:52 clock: 18 TID: 3 specialization: HEAD state: REQUESTING_JOB] Got ACKs from everyone. Sending HELLO to everyone. Changing state to AWAITING_PARTNERS
+
+[20:19:52 clock: 18 TID: 3 specialization: HEAD state: AWAITING_PARTNERS] Add 1 to partners
+
+[20:19:52 clock: 18 TID: 2 specialization: TAIL state: AWAITING_START] Changing state to AWAITING_START
+
+[20:19:52 clock: 19 TID: 1 specialization: BODY state: AWAITING_DESK] Changing state to AWAITING_DESK, sending REQUEST_DESK to everyone
+
+[20:19:52 clock: 20 TID: 2 specialization: TAIL state: AWAITING_START] Got REQUEST_DESK from 1. Sending ACK_DESK
+
+[20:19:52 clock: 18 TID: 3 specialization: HEAD state: AWAITING_PARTNERS] Add 2 to partners
+
+[20:19:52 clock: 18 TID: 3 specialization: HEAD state: AWAITING_START] Changing state to AWAITING_START
+
+[20:19:52 clock: 20 TID: 1 specialization: BODY state: AWAITING_DESK] Got ACK_DESK from 2. Incrementing DESK_QUEUE_ACK to 1 of 1 needed
+
+[20:19:52 clock: 20 TID: 3 specialization: HEAD state: AWAITING_START] Got REQUEST_DESK from 1. Sending ACK_DESK
+
+[20:19:52 clock: 20 TID: 1 specialization: BODY state: PAPER_WORK] Changing state to PAPER_WORK and start do_work thread
+
+[20:19:56 clock: 22 TID: 1 specialization: BODY state: ACQUIRE_SKELETON] Finished working. Relasing desk. Sending ACK_DESK to local_queue, REQUEST_SKELETON to all and changing state to ACQUIRE_SKELETON
+
+[20:19:56 clock: 23 TID: 2 specialization: TAIL state: AWAITING_START] Got REQUEST_SKELETON from 1, sent ACK_SKELETON
+
+[20:19:56 clock: 23 TID: 3 specialization: HEAD state: AWAITING_START] Got REQUEST_SKELETON from 1, sent ACK_SKELETON
+
+[20:19:56 clock: 23 TID: 1 specialization: BODY state: ACQUIRE_SKELETON] Got ACK_SKELETON from 2. Incrementing skeleton_queue_ack to 1 of -97 needed
+
+[20:19:56 TID: 2] Got SKELETON_TAKEN from 1. Decrementing skeleton count to 98 
+
+[20:19:56 TID: 3] Got SKELETON_TAKEN from 1. Decrementing skeleton count to 98 
+
+[20:19:56 clock: 26 TID: 2 specialization: TAIL state: REVIVING] Got START, changing state to REVIVING
+
+[20:19:56 clock: 26 TID: 3 specialization: HEAD state: REVIVING] Got START, changing state to REVIVING
+
+[20:19:56 clock: 26 TID: 1 specialization: BODY state: REVIVING] Skeleton taken. Sending SKELETON_TAKEN to everyone, ACK_SKELETON to local queue, START to partners and change state to REVIVING
+
+[20:19:58 clock: 27 TID: 2 specialization: TAIL state: REVIVING] Got FINISH from 1. Changing state to AWAITING_JOB
+
+[20:19:58 clock: 27 TID: 1 specialization: BODY state: AWAITING_JOB] Finished reviving. Send FINISH to partners and change state to AWAITING_JOB
+
+[20:19:58 clock: 28 TID: 1 specialization: BODY state: AWAITING_JOB] Sent REQUEST_JOB to everyone for job_id = 2
+
+[20:19:58 clock: 27 TID: 3 specialization: HEAD state: REVIVING] Got FINISH from 1. Changing state to AWAITING_JOB
+
+[20:19:58 clock: 28 TID: 2 specialization: TAIL state: AWAITING_JOB] Sent REQUEST_JOB to everyone for job_id = 2
+
+[20:19:58 clock: 29 TID: 1 specialization: BODY state: REQUESTING_JOB] Got a REQUEST_JOB from 2. Sending ACK_JOB
+
+[20:19:58 clock: 28 TID: 3 specialization: HEAD state: AWAITING_JOB] Sent REQUEST_JOB to everyone for job_id = 2
+
+[20:19:58 clock: 29 TID: 2 specialization: TAIL state: REQUESTING_JOB] Got a REQUEST_JOB from 1. Sending ACK_JOB
+
+[20:19:58 clock: 29 TID: 2 specialization: TAIL state: REQUESTING_JOB] Got ACK_JOB from 1. Incrementing ack count for 2 to 1 of 2 needed.
+
+[20:19:58 clock: 30 TID: 1 specialization: BODY state: REQUESTING_JOB] Got a REQUEST_JOB from 3. Sending ACK_JOB
+
+[20:19:58 clock: 29 TID: 3 specialization: HEAD state: REQUESTING_JOB] Got a REQUEST_JOB from 1. Sending ACK_JOB
+
+[20:19:58 clock: 30 TID: 2 specialization: TAIL state: REQUESTING_JOB] Got a REQUEST_JOB from 3. Sending ACK_JOB
+
+[20:19:58 clock: 30 TID: 1 specialization: BODY state: REQUESTING_JOB] Got ACK_JOB from 2. Incrementing ack count for 2 to 1 of 2 needed.
+
+[20:19:58 clock: 30 TID: 2 specialization: TAIL state: REQUESTING_JOB] Got ACK_JOB from 3. Incrementing ack count for 2 to 2 of 2 needed.
+
+[20:19:58 clock: 30 TID: 3 specialization: HEAD state: REQUESTING_JOB] Got a REQUEST_JOB from 2. Sending ACK_JOB
+
+[20:19:58 clock: 30 TID: 1 specialization: BODY state: REQUESTING_JOB] Got ACK_JOB from 3. Incrementing ack count for 2 to 2 of 2 needed.
+
+[20:19:58 clock: 30 TID: 3 specialization: HEAD state: REQUESTING_JOB] Got ACK_JOB from 1. Incrementing ack count for 2 to 1 of 2 needed.
+
+[20:19:58 clock: 31 TID: 2 specialization: TAIL state: REQUESTING_JOB] Got ACKs from everyone. Sending HELLO to everyone. Changing state to AWAITING_PARTNERS
+
+[20:19:58 clock: 31 TID: 1 specialization: BODY state: REQUESTING_JOB] Got ACKs from everyone. Sending HELLO to everyone. Changing state to AWAITING_PARTNERS
+
+[20:19:58 clock: 31 TID: 2 specialization: TAIL state: AWAITING_PARTNERS] Add 1 to partners
+
+[20:19:58 clock: 30 TID: 3 specialization: HEAD state: REQUESTING_JOB] Got ACK_JOB from 2. Incrementing ack count for 2 to 2 of 2 needed.
+
+[20:19:58 clock: 31 TID: 1 specialization: BODY state: AWAITING_PARTNERS] Add 2 to partners
+
+[20:19:58 clock: 31 TID: 3 specialization: HEAD state: REQUESTING_JOB] Got ACKs from everyone. Sending HELLO to everyone. Changing state to AWAITING_PARTNERS
+
+[20:19:58 clock: 31 TID: 2 specialization: TAIL state: AWAITING_PARTNERS] Add 3 to partners
+
+[20:19:58 clock: 31 TID: 1 specialization: BODY state: AWAITING_PARTNERS] Add 3 to partners
+
+[20:19:58 clock: 31 TID: 2 specialization: TAIL state: AWAITING_START] Changing state to AWAITING_START
+
+[20:19:58 clock: 31 TID: 3 specialization: HEAD state: AWAITING_PARTNERS] Add 1 to partners
+
+[20:19:58 clock: 32 TID: 1 specialization: BODY state: AWAITING_DESK] Changing state to AWAITING_DESK, sending REQUEST_DESK to everyone
+
+[20:19:58 clock: 31 TID: 3 specialization: HEAD state: AWAITING_PARTNERS] Add 2 to partners
+
+[20:19:58 clock: 33 TID: 2 specialization: TAIL state: AWAITING_START] Got REQUEST_DESK from 1. Sending ACK_DESK
+
+[20:19:58 clock: 31 TID: 3 specialization: HEAD state: AWAITING_START] Changing state to AWAITING_START
+
+[20:19:58 clock: 33 TID: 1 specialization: BODY state: AWAITING_DESK] Got ACK_DESK from 2. Incrementing DESK_QUEUE_ACK to 1 of 1 needed
+
+[20:19:58 clock: 33 TID: 3 specialization: HEAD state: AWAITING_START] Got REQUEST_DESK from 1. Sending ACK_DESK
+
+[20:19:58 clock: 33 TID: 1 specialization: BODY state: PAPER_WORK] Changing state to PAPER_WORK and start do_work thread
+
+[20:20:01 clock: 35 TID: 1 specialization: BODY state: ACQUIRE_SKELETON] Finished working. Relasing desk. Sending ACK_DESK to local_queue, REQUEST_SKELETON to all and changing state to ACQUIRE_SKELETON
+
+[20:20:01 clock: 36 TID: 3 specialization: HEAD state: AWAITING_START] Got REQUEST_SKELETON from 1, sent ACK_SKELETON
+
+[20:20:01 clock: 36 TID: 2 specialization: TAIL state: AWAITING_START] Got REQUEST_SKELETON from 1, sent ACK_SKELETON
+
+[20:20:01 clock: 36 TID: 1 specialization: BODY state: ACQUIRE_SKELETON] Got ACK_SKELETON from 2. Incrementing skeleton_queue_ack to 1 of -97 needed
+
+[20:20:01 TID: 2] Got SKELETON_TAKEN from 1. Decrementing skeleton count to 97 
+
+[20:20:01 TID: 3] Got SKELETON_TAKEN from 1. Decrementing skeleton count to 97 
+
+[20:20:01 clock: 39 TID: 2 specialization: TAIL state: REVIVING] Got START, changing state to REVIVING
+
+[20:20:01 clock: 39 TID: 3 specialization: HEAD state: REVIVING] Got START, changing state to REVIVING
+
+[20:20:01 clock: 39 TID: 1 specialization: BODY state: REVIVING] Skeleton taken. Sending SKELETON_TAKEN to everyone, ACK_SKELETON to local queue, START to partners and change state to REVIVING
+
+[20:20:03 clock: 40 TID: 1 specialization: BODY state: AWAITING_JOB] Finished reviving. Send FINISH to partners and change state to AWAITING_JOB
+
+[20:20:03 clock: 40 TID: 3 specialization: HEAD state: REVIVING] Got FINISH from 1. Changing state to AWAITING_JOB
+
+[20:20:03 clock: 40 TID: 2 specialization: TAIL state: REVIVING] Got FINISH from 1. Changing state to AWAITING_JOB
 

@@ -23,6 +23,7 @@ class RevivingHandler(GenericHandler):
             data.local_queue = []
 
             self._change_state(State.AWAITING_JOB)
+            self._check_for_jobs()
 
         # RESPOND WITH ACKs
 

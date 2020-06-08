@@ -43,7 +43,7 @@ class GenericHandler:
         # messages_to_check = [Message.REQUEST_JOB]
 
         tids_to_check = []
-        tids_to_check = [4]
+        # tids_to_check = [4]
 
         now = datetime.now().strftime("%H:%M:%S")
         s = State(self.data.state).name if self.data.state != - \
@@ -57,10 +57,11 @@ class GenericHandler:
         for job in self.data.job_map:
             if self.data.job_map[job] == 0:
                 self.data.request_timestamp = self.data.timestamp + 1
-                self.current_job_id = job
+                self.data.current_job_id = job
                 self.data.job_timeout = 0
+                # self._log(f'{job}, {')
                 self._broadcast({
-                    'job_id': self.data.current_job_id,
+                    'job_id': job,
                     'jobs_done': self.data.jobs_done
                 }, tag=Message.REQUEST_JOB)
                 self._log(f'Sent REQUEST_JOB to everyone for job_id = {self.data.current_job_id}',

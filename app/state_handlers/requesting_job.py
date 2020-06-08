@@ -55,7 +55,8 @@ class RequestingJobHandler(GenericHandler):
             specialization = msg['specialization']
 
             if job_id != self.data.current_job_id:
-                self._send({'job_id': job_id}, tag=Message.ACK_JOB)
+                self._send({'job_id': job_id}, dest=source,
+                           tag=Message.ACK_JOB)
                 self._log(f'Got a REQUEST_JOB from {source}. Sending ACK_JOB', [
                           Message.ACK_JOB, Message.REQUEST_JOB])
                 if specialization == self.data.specialization:
