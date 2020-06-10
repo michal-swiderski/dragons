@@ -33,7 +33,7 @@ class AwaitingPartnersHandler(GenericHandler):
             self._send({}, dest=source, tag=Message.ACK_DESK)
 
         elif tag == Message.REQUEST_SKELETON:
+            self.log(f'Got REQUEST_SKELETON from {status.source}, sent ACK_SKELETON', [
+                Message.REQUEST_SKELETON, Message.ACK_SKELETON])
             self._send({},
                        dest=status.source, tag=Message.ACK_SKELETON)
-            self._log(f'Got REQUEST_SKELETON from {status.source}, sent ACK_SKELETON', [
-                      Message.REQUEST_SKELETON, Message.ACK_SKELETON])
