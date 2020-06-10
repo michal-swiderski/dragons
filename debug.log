@@ -1,515 +1,144 @@
-[20:13:43 TID: 0] Generating a new job with id 0
-
-[20:13:43 TID: 0] Generating a new job with id 1
-
-[20:13:43 TID: 0] Generating a new job with id 2
-
-[20:13:43 TID: 0] Generating a new job with id 3
-
-[20:13:43 TID: 0] Generating a new job with id 4
-
-[20:13:43 TID: 0] Generating a new job with id 5
-
-[20:13:43 TID: 0] Generating a new job with id 6
-
-[20:13:43 TID: 0] Generating a new job with id 7
-
-[20:13:43 TID: 0] Generating a new job with id 8
-
-[20:13:43 TID: 0] Generating a new job with id 9
-
-[20:13:43 TID: -1] No more jobs will be generated
-1 {0: [2], 1: [], 2: [], 3: [], 4: [], 5: [], 6: [], 7: [], 8: [], 9: []}
-4 {0: [2], 1: [], 2: [], 3: [], 4: [], 5: [], 6: [], 7: [], 8: [], 9: []}
-4 {0: [2, 3], 1: [], 2: [], 3: [], 4: [], 5: [], 6: [], 7: [], 8: [], 9: []}
-5 {0: [2], 1: [], 2: [], 3: [], 4: [], 5: [], 6: [], 7: [], 8: [], 9: []}
-5 {0: [2, 3], 1: [], 2: [], 3: [], 4: [], 5: [], 6: [], 7: [], 8: [], 9: []}
-9 {0: [2], 1: [], 2: [], 3: [], 4: [], 5: [], 6: [], 7: [], 8: [], 9: []}
-10 {0: [2], 1: [], 2: [], 3: [], 4: [], 5: [], 6: [], 7: [], 8: [], 9: []}
-10 {0: [2, 3], 1: [], 2: [], 3: [], 4: [], 5: [], 6: [], 7: [], 8: [], 9: []}
-11 {0: [2], 1: [], 2: [], 3: [], 4: [], 5: [], 6: [], 7: [], 8: [], 9: []}
-11 {0: [2, 3], 1: [], 2: [], 3: [], 4: [], 5: [], 6: [], 7: [], 8: [], 9: []}
-[20:13:43 clock: 39 TID: 2 spec: TAIL state: REQUESTING_JOB] Got ACKs from everyone. Sending HELLO to everyone. Changing state to AWAITING_PARTNERS
-
-2 3 0 AWAITING_PARRRRR
-[20:13:43 clock: 39 TID: 2 spec: TAIL state: AWAITING_PARTNERS] Add 3 to partners
-
-[20:13:43 clock: 39 TID: 3 spec: HEAD state: REQUESTING_JOB] Got ACKs from everyone. Sending HELLO to everyone. Changing state to AWAITING_PARTNERS
-
-3 2 0 AWAITING_PARRRRR
-1 {0: [2, 3], 1: [], 2: [], 3: [], 4: [], 5: [], 6: [], 7: [], 8: [], 9: []}
-8 {0: [2], 1: [], 2: [], 3: [], 4: [], 5: [], 6: [], 7: [], 8: [], 9: []}
-8 {0: [2, 3], 1: [], 2: [], 3: [], 4: [], 5: [], 6: [], 7: [], 8: [], 9: []}
-[20:13:43 clock: 39 TID: 3 spec: HEAD state: AWAITING_PARTNERS] Add 2 to partners
-
-9 {0: [2, 3], 1: [], 2: [], 3: [], 4: [], 5: [], 6: [], 7: [], 8: [], 9: []}
-6 {0: [2], 1: [], 2: [], 3: [], 4: [], 5: [], 6: [], 7: [], 8: [], 9: []}
-6 {0: [2, 3], 1: [], 2: [], 3: [], 4: [], 5: [], 6: [], 7: [], 8: [], 9: []}
-2 5 4 AWAITING_PARRRRR
-3 5 4 AWAITING_PARRRRR
-6 {0: [2, 3], 1: [], 2: [], 3: [], 4: [5], 5: [], 6: [], 7: [], 8: [], 9: []}
-11 {0: [2, 3], 1: [], 2: [], 3: [], 4: [5], 5: [], 6: [], 7: [], 8: [], 9: []}
-1 {0: [2, 3], 1: [], 2: [], 3: [], 4: [5], 5: [], 6: [], 7: [], 8: [], 9: []}
-[20:13:43 clock: 51 TID: 5 spec: TAIL state: REQUESTING_JOB] Got ACKs from everyone. Sending HELLO to everyone. Changing state to AWAITING_PARTNERS
-
-10 {0: [], 1: [], 2: [], 3: [], 4: [5], 5: [], 6: [], 7: [], 8: [], 9: []}
-4 {0: [2, 3], 1: [], 2: [], 3: [], 4: [5], 5: [], 6: [], 7: [], 8: [], 9: []}
-9 {0: [], 1: [], 2: [], 3: [], 4: [5], 5: [], 6: [], 7: [], 8: [], 9: []}
-6 {0: [2, 3], 1: [], 2: [], 3: [], 4: [5], 5: [], 6: [], 7: [11], 8: [], 9: []}
-3 11 7 AWAITING_PARRRRR
-1 {0: [2, 3], 1: [], 2: [], 3: [], 4: [5], 5: [], 6: [], 7: [11], 8: [], 9: []}
-2 11 7 AWAITING_PARRRRR
-5 11 7 AWAITING_PARRRRR
-9 {0: [], 1: [], 2: [], 3: [], 4: [5], 5: [], 6: [], 7: [11], 8: [], 9: []}
-10 {0: [], 1: [], 2: [], 3: [], 4: [5], 5: [], 6: [], 7: [11], 8: [], 9: []}
-[20:13:43 clock: 52 TID: 11 spec: TAIL state: REQUESTING_JOB] Got ACKs from everyone. Sending HELLO to everyone. Changing state to AWAITING_PARTNERS
-
-7 {0: [2], 1: [], 2: [], 3: [], 4: [], 5: [], 6: [], 7: [], 8: [], 9: []}
-3 1 0 AWAITING_PARRRRR
-2 1 0 AWAITING_PARRRRR
-5 1 0 AWAITING_PARRRRR
-6 {0: [2, 3, 1], 1: [], 2: [], 3: [], 4: [5], 5: [], 6: [], 7: [11], 8: [], 9: []}
-[20:13:43 clock: 53 TID: 3 spec: HEAD state: AWAITING_PARTNERS] Add 1 to partners
-
-[20:13:43 clock: 53 TID: 2 spec: TAIL state: AWAITING_PARTNERS] Add 1 to partners
-
-9 {0: [1], 1: [], 2: [], 3: [], 4: [5], 5: [], 6: [], 7: [11], 8: [], 9: []}
-11 1 0 AWAITING_PARRRRR
-10 {0: [1], 1: [], 2: [], 3: [], 4: [5], 5: [], 6: [], 7: [11], 8: [], 9: []}
-[20:13:43 clock: 53 TID: 1 spec: BODY state: REQUESTING_JOB] Got ACKs from everyone. Sending HELLO to everyone. Changing state to AWAITING_PARTNERS
-
-4 {0: [2, 3], 1: [], 2: [], 3: [], 4: [5], 5: [], 6: [], 7: [11], 8: [], 9: []}
-4 {0: [2, 3, 1], 1: [], 2: [], 3: [], 4: [5], 5: [], 6: [], 7: [11], 8: [], 9: []}
-7 {0: [3], 1: [], 2: [], 3: [], 4: [], 5: [], 6: [], 7: [], 8: [], 9: []}
-7 {0: [3], 1: [], 2: [], 3: [], 4: [], 5: [], 6: [], 7: [11], 8: [], 9: []}
-7 {0: [3, 1], 1: [], 2: [], 3: [], 4: [], 5: [], 6: [], 7: [11], 8: [], 9: []}
-3 {0: [2, 1], 1: [], 2: [4], 3: [], 4: [5], 5: [], 6: [], 7: [11], 8: [], 9: []}
-5 4 2 AWAITING_PARRRRR
-2 {0: [3, 1], 1: [], 2: [4], 3: [], 4: [5], 5: [], 6: [], 7: [11], 8: [], 9: []}
-6 {0: [2, 3, 1], 1: [], 2: [4], 3: [], 4: [5], 5: [], 6: [], 7: [11], 8: [], 9: []}
-7 {0: [3, 1], 1: [], 2: [], 3: [], 4: [5], 5: [], 6: [], 7: [11], 8: [], 9: []}
-9 {0: [1], 1: [], 2: [4], 3: [], 4: [5], 5: [], 6: [], 7: [11], 8: [], 9: []}
-11 4 2 AWAITING_PARRRRR
-[20:13:43 clock: 58 TID: 4 spec: BODY state: REQUESTING_JOB] Got ACKs from everyone. Sending HELLO to everyone. Changing state to AWAITING_PARTNERS
-
-10 {0: [1], 1: [], 2: [4], 3: [], 4: [5], 5: [], 6: [], 7: [11], 8: [], 9: []}
-6 {0: [2, 3, 1], 1: [], 2: [4, 9], 3: [], 4: [5], 5: [], 6: [], 7: [11], 8: [], 9: []}
-3 {0: [2, 1], 1: [], 2: [4, 9], 3: [], 4: [5], 5: [], 6: [], 7: [11], 8: [], 9: []}
-5 9 2 AWAITING_PARRRRR
-5 10 4 AWAITING_PARRRRR
-4 9 2 AWAITING_PARRRRR
-2 {0: [3, 1], 1: [], 2: [4, 9], 3: [], 4: [5], 5: [], 6: [], 7: [11], 8: [], 9: []}
-2 {0: [3, 1], 1: [], 2: [4, 9], 3: [], 4: [5, 10], 5: [], 6: [], 7: [11], 8: [], 9: []}
-6 {0: [2, 3, 1], 1: [], 2: [4, 9], 3: [], 4: [5, 10], 5: [], 6: [], 7: [11], 8: [], 9: []}
-[20:13:43 clock: 60 TID: 6 spec: HEAD state: REQUESTING_JOB] Got ACKs from everyone. Sending HELLO to everyone. Changing state to AWAITING_PARTNERS
+[17:09:49 clock: 2 TID: 1 spec: BODY state: AWAITING_JOB] Got NEW_JOB with job_id = 0
 
-6 7 2 AWAITING_PARRRRR
-3 {0: [2, 1], 1: [], 2: [4, 9], 3: [], 4: [5, 10], 5: [], 6: [], 7: [11], 8: [], 9: []}
-3 {0: [2, 1], 1: [], 2: [4, 9], 3: [6], 4: [5, 10], 5: [], 6: [], 7: [11], 8: [], 9: []}
-3 {0: [2, 1], 1: [], 2: [4, 9, 7], 3: [6], 4: [5, 10], 5: [], 6: [], 7: [11], 8: [], 9: []}
-[20:13:43 clock: 60 TID: 7 spec: BODY state: REQUESTING_JOB] Got ACKs from everyone. Sending HELLO to everyone. Changing state to AWAITING_PARTNERS
+[17:09:49 clock: 2 TID: 1 spec: BODY state: AWAITING_JOB] Changing state to REQUESTING_JOB
 
-7 4 2 AWAITING_PARRRRR
-[20:13:43 clock: 60 TID: 7 spec: BODY state: AWAITING_PARTNERS] Add 4 to partners
+[17:09:49 clock: 2 TID: 2 spec: TAIL state: AWAITING_JOB] Got NEW_JOB with job_id = 0
 
-7 9 2 AWAITING_PARRRRR
-[20:13:43 clock: 60 TID: 7 spec: BODY state: AWAITING_PARTNERS] Add 9 to partners
+[17:09:49 clock: 2 TID: 3 spec: HEAD state: AWAITING_JOB] Got NEW_JOB with job_id = 0
 
-7 {0: [3, 1], 1: [], 2: [4, 9], 3: [6], 4: [5], 5: [], 6: [], 7: [11], 8: [], 9: []}
-7 {0: [3, 1], 1: [], 2: [4, 9], 3: [6], 4: [5, 10], 5: [], 6: [], 7: [11], 8: [], 9: []}
-[20:13:43 clock: 59 TID: 9 spec: HEAD state: REQUESTING_JOB] Got ACKs from everyone. Sending HELLO to everyone. Changing state to AWAITING_PARTNERS
+[17:09:49 clock: 2 TID: 3 spec: HEAD state: AWAITING_JOB] Changing state to REQUESTING_JOB
 
-9 10 4 AWAITING_PARRRRR
-9 6 3 AWAITING_PARRRRR
-9 7 2 AWAITING_PARRRRR
-[20:13:43 clock: 60 TID: 9 spec: HEAD state: AWAITING_PARTNERS] Add 7 to partners
+[17:09:49 clock: 2 TID: 3 spec: HEAD state: REQUESTING_JOB] Sending REQUEST_JOBs for job_id = 0
 
-11 9 2 AWAITING_PARRRRR
-11 10 4 AWAITING_PARRRRR
-11 6 3 AWAITING_PARRRRR
-11 7 2 AWAITING_PARRRRR
-[20:13:43 clock: 59 TID: 5 spec: TAIL state: AWAITING_PARTNERS] Add 10 to partners
-
-5 6 3 AWAITING_PARRRRR
-5 7 2 AWAITING_PARRRRR
-[20:13:43 clock: 59 TID: 4 spec: BODY state: AWAITING_PARTNERS] Add 9 to partners
-
-4 10 4 AWAITING_PARRRRR
-4 6 3 AWAITING_PARRRRR
-4 7 2 AWAITING_PARRRRR
-[20:13:43 clock: 60 TID: 4 spec: BODY state: AWAITING_PARTNERS] Add 7 to partners
-
-2 {0: [3, 1], 1: [], 2: [4, 9], 3: [6], 4: [5, 10], 5: [], 6: [], 7: [11], 8: [], 9: []}
-2 {0: [3, 1], 1: [], 2: [4, 9, 7], 3: [6], 4: [5, 10], 5: [], 6: [], 7: [11], 8: [], 9: []}
-[20:13:43 clock: 59 TID: 10 spec: BODY state: REQUESTING_JOB] Got ACKs from everyone. Sending HELLO to everyone. Changing state to AWAITING_PARTNERS
-
-10 9 2 AWAITING_PARRRRR
-10 6 3 AWAITING_PARRRRR
-10 7 2 AWAITING_PARRRRR
-8 {0: [2, 3], 1: [], 2: [], 3: [], 4: [5], 5: [], 6: [], 7: [], 8: [], 9: []}
-8 {0: [2, 3], 1: [], 2: [4], 3: [], 4: [5], 5: [], 6: [], 7: [], 8: [], 9: []}
-8 {0: [2, 3], 1: [], 2: [4], 3: [6], 4: [5], 5: [], 6: [], 7: [], 8: [], 9: []}
-2 {0: [3, 1], 1: [], 2: [4, 9, 7], 3: [6], 4: [5, 10], 5: [], 6: [8], 7: [11], 8: [], 9: []}
-4 {0: [2, 3, 1], 1: [], 2: [9, 7], 3: [6], 4: [5, 10], 5: [], 6: [8], 7: [11], 8: [], 9: []}
-10 8 6 AWAITING_PARRRRR
-6 8 6 AWAITING_PARRRRR
-3 {0: [2, 1], 1: [], 2: [4, 9, 7], 3: [6], 4: [5, 10], 5: [], 6: [8], 7: [11], 8: [], 9: []}
-7 {0: [3, 1], 1: [], 2: [4, 9], 3: [6], 4: [5, 10], 5: [], 6: [8], 7: [11], 8: [], 9: []}
-9 {0: [1], 1: [], 2: [4, 7], 3: [6], 4: [5, 10], 5: [], 6: [8], 7: [11], 8: [], 9: []}
-11 8 6 AWAITING_PARRRRR
-5 8 6 AWAITING_PARRRRR
-8 {0: [2, 3], 1: [], 2: [4, 9], 3: [6], 4: [5], 5: [], 6: [], 7: [], 8: [], 9: []}
-8 {0: [2, 3], 1: [], 2: [4, 9], 3: [6], 4: [5, 10], 5: [], 6: [], 7: [], 8: [], 9: []}
-8 {0: [2, 3], 1: [], 2: [4, 9], 3: [6], 4: [5, 10], 5: [], 6: [], 7: [11], 8: [], 9: []}
-8 {0: [2, 3, 1], 1: [], 2: [4, 9], 3: [6], 4: [5, 10], 5: [], 6: [], 7: [11], 8: [], 9: []}
-[20:13:43 clock: 63 TID: 8 spec: TAIL state: REQUESTING_JOB] Got ACKs from everyone. Sending HELLO to everyone. Changing state to AWAITING_PARTNERS
-
-8 7 2 AWAITING_PARRRRR
-1 {0: [2, 3], 1: [], 2: [], 3: [6], 4: [5], 5: [], 6: [], 7: [11], 8: [], 9: []}
-1 {0: [2, 3], 1: [], 2: [], 3: [6], 4: [5], 5: [], 6: [8], 7: [11], 8: [], 9: []}
-1 {0: [2, 3], 1: [], 2: [9], 3: [6], 4: [5], 5: [], 6: [8], 7: [11], 8: [], 9: []}
-1 {0: [2, 3], 1: [], 2: [9], 3: [6], 4: [5, 10], 5: [], 6: [8], 7: [11], 8: [], 9: []}
-1 {0: [2, 3], 1: [], 2: [9, 4], 3: [6], 4: [5, 10], 5: [], 6: [8], 7: [11], 8: [], 9: []}
-1 {0: [2, 3], 1: [], 2: [9, 4, 7], 3: [6], 4: [5, 10], 5: [], 6: [8], 7: [11], 8: [], 9: []}
-[20:13:44 TID: 5] Got SKELETON_TAKEN from 1. Decrementing skeleton count to 99 
-
-[20:13:44 TID: 2] Got SKELETON_TAKEN from 1. Decrementing skeleton count to 99 
-[20:13:44 TID: 4] Got SKELETON_TAKEN from 1. Decrementing skeleton count to 99 
-
-[20:13:44 TID: 10] Got SKELETON_TAKEN from 1. Decrementing skeleton count to 99 
-
-[20:13:44 TID: 8] Got SKELETON_TAKEN from 1. Decrementing skeleton count to 99 
-
-[20:13:44 TID: 6] Got SKELETON_TAKEN from 1. Decrementing skeleton count to 99 
-
-[20:13:44 TID: 3] Got SKELETON_TAKEN from 1. Decrementing skeleton count to 99 
-
-[20:13:44 TID: 7] Got SKELETON_TAKEN from 1. Decrementing skeleton count to 99 
-
-[20:13:44 TID: 9] Got SKELETON_TAKEN from 1. Decrementing skeleton count to 99 
-
-[20:13:44 TID: 11] Got SKELETON_TAKEN from 1. Decrementing skeleton count to 99 
-
-
-[20:13:45 TID: 1] Got SKELETON_TAKEN from 4. Decrementing skeleton count to 98 
-
-[20:13:45 TID: 5] Got SKELETON_TAKEN from 4. Decrementing skeleton count to 98 
-
-[20:13:45 TID: 11] Got SKELETON_TAKEN from 4. Decrementing skeleton count to 98 
-
-[20:13:45 TID: 10] Got SKELETON_TAKEN from 4. Decrementing skeleton count to 98 
-
-[20:13:45 TID: 8] Got SKELETON_TAKEN from 4. Decrementing skeleton count to 98 
-
-[20:13:45 TID: 6] Got SKELETON_TAKEN from 4. Decrementing skeleton count to 98 
-
-[20:13:45 TID: 3] Got SKELETON_TAKEN from 4. Decrementing skeleton count to 98 
-
-[20:13:45 TID: 7] Got SKELETON_TAKEN from 4. Decrementing skeleton count to 98 
-
-[20:13:45 TID: 9] Got SKELETON_TAKEN from 4. Decrementing skeleton count to 98 
-
-[20:13:45 TID: 2] Got SKELETON_TAKEN from 4. Decrementing skeleton count to 98 
-
-1 [2, 3]
-HERE {'job_id': 5, 'jobs_done': 1}
-2 {0: [3, 1], 1: [], 2: [4, 9, 7], 3: [6], 4: [5, 10], 5: [1], 6: [8], 7: [11], 8: [], 9: []}
-10 1 5 AWAITING_PARRRRR
-8 1 5 AWAITING_PARRRRR
-6 1 5 AWAITING_PARRRRR
-3 {0: [2, 1], 1: [], 2: [4, 9, 7], 3: [6], 4: [5, 10], 5: [1], 6: [8], 7: [11], 8: [], 9: []}
-7 {0: [3, 1], 1: [], 2: [4, 9], 3: [6], 4: [5, 10], 5: [1], 6: [8], 7: [11], 8: [], 9: []}
-7 {0: [3, 1], 1: [], 2: [4, 9], 3: [6], 4: [5, 10], 5: [1], 6: [8], 7: [11], 8: [2], 9: []}
-[20:13:46 clock: 77 TID: 1 spec: BODY state: REQUESTING_JOB] Got ACKs from everyone. Sending HELLO to everyone. Changing state to AWAITING_PARTNERS
-
-1 2 8 AWAITING_PARRRRR
-1 3 4 AWAITING_PARRRRR
-9 {0: [1], 1: [], 2: [4, 7], 3: [6], 4: [5, 10], 5: [1], 6: [8], 7: [11], 8: [], 9: []}
-9 {0: [1], 1: [], 2: [4, 7], 3: [6], 4: [5, 10], 5: [1], 6: [8], 7: [11], 8: [2], 9: []}
-9 {0: [1], 1: [], 2: [4, 7], 3: [6], 4: [5, 10, 3], 5: [1], 6: [8], 7: [11], 8: [2], 9: []}
-7 {0: [3, 1], 1: [], 2: [4, 9], 3: [6], 4: [5, 10, 3], 5: [1], 6: [8], 7: [11], 8: [2], 9: []}
-5 1 5 AWAITING_PARRRRR
-5 2 8 AWAITING_PARRRRR
-5 3 4 AWAITING_PARRRRR
-[20:13:46 clock: 78 TID: 5 spec: TAIL state: AWAITING_PARTNERS] Add 3 to partners
-
-4 {0: [2, 3, 1], 1: [], 2: [9, 7], 3: [6], 4: [5, 10], 5: [1], 6: [8], 7: [11], 8: [], 9: []}
-4 {0: [2, 3, 1], 1: [], 2: [9, 7], 3: [6], 4: [5, 10], 5: [1], 6: [8], 7: [11], 8: [2], 9: []}
-4 {0: [2, 3, 1], 1: [], 2: [9, 7], 3: [6], 4: [5, 10, 3], 5: [1], 6: [8], 7: [11], 8: [2], 9: []}
-11 1 5 AWAITING_PARRRRR
-11 2 8 AWAITING_PARRRRR
-11 3 4 AWAITING_PARRRRR
-[20:13:46 clock: 78 TID: 2 spec: TAIL state: REQUESTING_JOB] Got ACKs from everyone. Sending HELLO to everyone. Changing state to AWAITING_PARTNERS
-
-2 3 4 AWAITING_PARRRRR
-10 2 8 AWAITING_PARRRRR
-10 3 4 AWAITING_PARRRRR
-[20:13:46 clock: 78 TID: 10 spec: BODY state: AWAITING_PARTNERS] Add 3 to partners
-
-8 2 8 AWAITING_PARRRRR
-8 3 4 AWAITING_PARRRRR
-6 2 8 AWAITING_PARRRRR
-6 3 4 AWAITING_PARRRRR
-[20:13:46 clock: 78 TID: 3 spec: HEAD state: REQUESTING_JOB] Got ACKs from everyone. Sending HELLO to everyone. Changing state to AWAITING_PARTNERS
-
-3 {0: [2, 1], 1: [], 2: [4, 9, 7], 3: [6], 4: [5, 10], 5: [1], 6: [8], 7: [11], 8: [2], 9: []}
-4 [9, 7]
-1 9 5 AWAITING_PARRRRR
-[20:13:47 clock: 86 TID: 1 spec: BODY state: AWAITING_PARTNERS] Add 9 to partners
-
-[20:13:47 clock: 86 TID: 9 spec: HEAD state: REQUESTING_JOB] Got ACKs from everyone. Sending HELLO to everyone. Changing state to AWAITING_PARTNERS
-
-7 {0: [3, 1], 1: [], 2: [4, 9], 3: [6], 4: [5, 10, 3], 5: [1, 9], 6: [8], 7: [11], 8: [2], 9: []}
-5 {0: [2, 3, 1], 1: [], 2: [4, 9, 7], 3: [6], 4: [10, 3], 5: [1, 9], 6: [8], 7: [11], 8: [2], 9: []}
-3 {0: [2, 1], 1: [], 2: [4, 9, 7], 3: [6], 4: [5, 10], 5: [1, 9], 6: [8], 7: [11], 8: [2], 9: []}
-11 9 5 AWAITING_PARRRRR
-2 9 5 AWAITING_PARRRRR
-10 {0: [1], 1: [], 2: [4, 9, 7], 3: [6], 4: [5, 3], 5: [1, 9], 6: [8], 7: [11], 8: [2], 9: []}
-8 9 5 AWAITING_PARRRRR
-6 9 5 AWAITING_PARRRRR
-1 4 6 AWAITING_PARRRRR
-5 {0: [2, 3, 1], 1: [], 2: [4, 9, 7], 3: [6], 4: [10, 3], 5: [1, 9], 6: [8, 4], 7: [11], 8: [2], 9: []}
-3 {0: [2, 1], 1: [], 2: [4, 9, 7], 3: [6], 4: [5, 10], 5: [1, 9], 6: [8, 4], 7: [11], 8: [2], 9: []}
-2 4 6 AWAITING_PARRRRR
-8 4 6 AWAITING_PARRRRR
-[20:13:47 clock: 88 TID: 8 spec: TAIL state: AWAITING_PARTNERS] Add 4 to partners
-
-6 4 6 AWAITING_PARRRRR
-9 4 6 AWAITING_PARRRRR
-11 4 6 AWAITING_PARRRRR
-[20:13:47 clock: 85 TID: 4 spec: BODY state: REQUESTING_JOB] Got ACKs from everyone. Sending HELLO to everyone. Changing state to AWAITING_PARTNERS
-
-4 9 5 AWAITING_PARRRRR
-10 {0: [1], 1: [], 2: [4, 9, 7], 3: [6], 4: [5, 3], 5: [1, 9], 6: [8, 4], 7: [11], 8: [2], 9: []}
-7 {0: [3, 1], 1: [], 2: [4, 9], 3: [6], 4: [5, 10, 3], 5: [1, 9], 6: [4], 7: [11], 8: [2], 9: []}
-1 7 7 AWAITING_PARRRRR
-4 7 7 AWAITING_PARRRRR
-2 7 7 AWAITING_PARRRRR
-8 7 7 AWAITING_PARRRRR
-6 7 7 AWAITING_PARRRRR
-10 {0: [1], 1: [], 2: [4, 9, 7], 3: [6], 4: [5, 3], 5: [1, 9], 6: [8, 4], 7: [11, 7], 8: [2], 9: []}
-[20:13:47 clock: 89 TID: 7 spec: BODY state: REQUESTING_JOB] Got ACKs from everyone. Sending HELLO to everyone. Changing state to AWAITING_PARTNERS
-
-5 {0: [2, 3, 1], 1: [], 2: [4, 9, 7], 3: [6], 4: [10, 3], 5: [1, 9], 6: [8, 4], 7: [11, 7], 8: [2], 9: []}
-9 7 7 AWAITING_PARRRRR
-11 7 7 AWAITING_PARRRRR
-[20:13:47 clock: 89 TID: 11 spec: TAIL state: AWAITING_PARTNERS] Add 7 to partners
-
-3 {0: [2, 1], 1: [], 2: [4, 9, 7], 3: [6], 4: [5, 10], 5: [1, 9], 6: [8, 4], 7: [11, 7], 8: [2], 9: []}
-[20:13:50 TID: 2] Got SKELETON_TAKEN from 3. Decrementing skeleton count to 97 
-
-[20:13:50 TID: 8] Got SKELETON_TAKEN from 3. Decrementing skeleton count to 97 
-
-[20:13:50 TID: 6] Got SKELETON_TAKEN from 3. Decrementing skeleton count to 97 
-
-[20:13:50 TID: 10] Got SKELETON_TAKEN from 3. Decrementing skeleton count to 97 
-
-[20:13:50 TID: 7] Got SKELETON_TAKEN from 3. Decrementing skeleton count to 97 
-
-[20:13:50 TID: 5] Got SKELETON_TAKEN from 3. Decrementing skeleton count to 97 
-
-[20:13:50 TID: 11] Got SKELETON_TAKEN from 3. Decrementing skeleton count to 97 
-
-[20:13:50 TID: 1] Got SKELETON_TAKEN from 3. Decrementing skeleton count to 97 
-
-[20:13:50 TID: 9] Got SKELETON_TAKEN from 3. Decrementing skeleton count to 97 
-
-[20:13:50 TID: 4] Got SKELETON_TAKEN from 3. Decrementing skeleton count to 97 
-
-3 [5, 10]
-1 5 9 AWAITING_PARRRRR
-1 10 8 AWAITING_PARRRRR
-1 3 6 AWAITING_PARRRRR
-4 5 9 AWAITING_PARRRRR
-4 10 8 AWAITING_PARRRRR
-4 3 6 AWAITING_PARRRRR
-[20:13:52 clock: 101 TID: 4 spec: BODY state: AWAITING_PARTNERS] Add 3 to partners
-
-2 5 9 AWAITING_PARRRRR
-2 10 8 AWAITING_PARRRRR
-[20:13:52 clock: 101 TID: 2 spec: TAIL state: AWAITING_PARTNERS] Add 10 to partners
-
-2 3 6 AWAITING_PARRRRR
-8 5 9 AWAITING_PARRRRR
-8 10 8 AWAITING_PARRRRR
-8 3 6 AWAITING_PARRRRR
-[20:13:52 clock: 101 TID: 8 spec: TAIL state: AWAITING_PARTNERS] Add 3 to partners
-
-6 5 9 AWAITING_PARRRRR
-6 10 8 AWAITING_PARRRRR
-6 3 6 AWAITING_PARRRRR
-[20:13:52 clock: 101 TID: 10 spec: BODY state: REQUESTING_JOB] Got ACKs from everyone. Sending HELLO to everyone. Changing state to AWAITING_PARTNERS
-
-10 5 9 AWAITING_PARRRRR
-10 3 6 AWAITING_PARRRRR
-7 5 9 AWAITING_PARRRRR
-7 10 8 AWAITING_PARRRRR
-7 3 6 AWAITING_PARRRRR
-[20:13:52 clock: 100 TID: 5 spec: TAIL state: REQUESTING_JOB] Got ACKs from everyone. Sending HELLO to everyone. Changing state to AWAITING_PARTNERS
-
-5 10 8 AWAITING_PARRRRR
-5 3 6 AWAITING_PARRRRR
-11 5 9 AWAITING_PARRRRR
-11 10 8 AWAITING_PARRRRR
-11 3 6 AWAITING_PARRRRR
-9 5 9 AWAITING_PARRRRR
-9 10 8 AWAITING_PARRRRR
-9 3 6 AWAITING_PARRRRR
-[20:13:52 clock: 100 TID: 3 spec: HEAD state: REQUESTING_JOB] Got ACKs from everyone. Sending HELLO to everyone. Changing state to AWAITING_PARTNERS
-
-3 {0: [2, 1], 1: [], 2: [4, 9, 7], 3: [6], 4: [5, 10], 5: [1, 9], 6: [8, 4], 7: [11, 7], 8: [2], 9: [5]}
-3 {0: [2, 1], 1: [], 2: [4, 9, 7], 3: [6], 4: [5, 10], 5: [1, 9], 6: [8, 4], 7: [11, 7], 8: [2, 10], 9: [5]}
-[20:13:57 TID: 9] Got SKELETON_TAKEN from 3. Decrementing skeleton count to 96 
+[17:09:49 clock: 2 TID: 4 spec: BODY state: AWAITING_JOB] Got NEW_JOB with job_id = 0
 
-[20:13:57 TID: 1] Got SKELETON_TAKEN from 3. Decrementing skeleton count to 96 
+[17:09:49 clock: 2 TID: 4 spec: BODY state: AWAITING_JOB] Changing state to REQUESTING_JOB
 
-[20:13:57 TID: 4] Got SKELETON_TAKEN from 3. Decrementing skeleton count to 96 
+[17:09:49 clock: 2 TID: 4 spec: BODY state: REQUESTING_JOB] Sending REQUEST_JOBs for job_id = 0
 
-[20:13:57 TID: 2] Got SKELETON_TAKEN from 3. Decrementing skeleton count to 96 
+[17:09:49 clock: 2 TID: 1 spec: BODY state: REQUESTING_JOB] Sending REQUEST_JOBs for job_id = 0
 
-[20:13:57 TID: 8] Got SKELETON_TAKEN from 3. Decrementing skeleton count to 96 
+[17:09:49 clock: 2 TID: 2 spec: TAIL state: AWAITING_JOB] Changing state to REQUESTING_JOB
 
-[20:13:57 TID: 6] Got SKELETON_TAKEN from 3. Decrementing skeleton count to 96 
+[17:09:49 clock: 2 TID: 2 spec: TAIL state: REQUESTING_JOB] Sending REQUEST_JOBs for job_id = 0
 
-[20:13:57 TID: 10] Got SKELETON_TAKEN from 3. Decrementing skeleton count to 96 
+[17:09:49 clock: 4 TID: 4 spec: BODY state: REQUESTING_JOB] Got NEW_JOB with job_id = 1
 
-[20:13:57 TID: 7] Got SKELETON_TAKEN from 3. Decrementing skeleton count to 96 
+[17:09:49 clock: 4 TID: 1 spec: BODY state: REQUESTING_JOB] Got NEW_JOB with job_id = 1
 
-[20:13:57 TID: 5] Got SKELETON_TAKEN from 3. Decrementing skeleton count to 96 
+[17:09:49 clock: 4 TID: 3 spec: HEAD state: REQUESTING_JOB] Got NEW_JOB with job_id = 1
 
-[20:13:57 TID: 11] Got SKELETON_TAKEN from 3. Decrementing skeleton count to 96 
+[17:09:49 clock: 5 TID: 1 spec: BODY state: REQUESTING_JOB] Got REQUEST_JOB from 3 for job_id = 0. Sending ACK_JOB
 
-3 [8, 4]
-No jobs currently {0: -1, 1: -1, 2: 4, 3: -1, 4: -1, 5: -1, 6: -1, 7: -1, 8: -1, 9: -1} {0: [2, 3, 1], 1: [], 2: [4, 9, 7], 3: [6], 4: [5, 10, 3], 5: [1, 9], 6: [4, 3], 7: [11, 7], 8: [2, 10], 9: [5]}
-1 4 9 AWAITING_PARRRRR
-2 4 9 AWAITING_PARRRRR
-2 3 7 AWAITING_PARRRRR
-6 4 9 AWAITING_PARRRRR
-7 4 9 AWAITING_PARRRRR
-5 4 9 AWAITING_PARRRRR
-[20:13:59 clock: 113 TID: 5 spec: TAIL state: AWAITING_PARTNERS] Add 4 to partners
+[17:09:49 clock: 5 TID: 4 spec: BODY state: REQUESTING_JOB] Got REQUEST_JOB from 1 for job_id = 0. Sending ACK_JOB
 
-8 {0: [2, 3, 1], 1: [], 2: [4, 9, 7], 3: [6], 4: [5, 10, 3], 5: [1, 9], 6: [4, 3], 7: [11, 7], 8: [2, 10], 9: [5, 4]}
-11 3 7 AWAITING_PARRRRR
-9 4 9 AWAITING_PARRRRR
-5 3 7 AWAITING_PARRRRR
-[20:13:59 clock: 113 TID: 4 spec: BODY state: REQUESTING_JOB] Got ACKs from everyone. Sending HELLO to everyone. Changing state to AWAITING_PARTNERS
+[17:09:49 clock: 5 TID: 3 spec: HEAD state: REQUESTING_JOB] Got REQUEST_JOB from 1 for job_id = 0. Sending ACK_JOB
 
-[20:13:59 clock: 113 TID: 3 spec: HEAD state: REQUESTING_JOB] Got ACKs from everyone. Sending HELLO to everyone. Changing state to AWAITING_PARTNERS
+[17:09:49 clock: 4 TID: 2 spec: TAIL state: REQUESTING_JOB] Got NEW_JOB with job_id = 1
 
-10 3 7 AWAITING_PARRRRR
-6 3 7 AWAITING_PARRRRR
-8 {0: [2, 3, 1], 1: [], 2: [4, 9, 7], 3: [6], 4: [5, 10, 3], 5: [1, 9], 6: [4, 3], 7: [11, 7, 3], 8: [2, 10], 9: [5, 4]}
-[20:13:59 clock: 113 TID: 11 spec: TAIL state: AWAITING_PARTNERS] Add 3 to partners
+[17:09:49 clock: 7 TID: 1 spec: BODY state: REQUESTING_JOB] Got REQUEST_JOB from 4 for job_id = 0. Sending REJECT_JOB
 
-9 3 7 AWAITING_PARRRRR
-4 3 7 AWAITING_PARRRRR
-10 4 9 AWAITING_PARRRRR
-7 3 7 AWAITING_PARRRRR
-[20:13:59 clock: 113 TID: 7 spec: BODY state: AWAITING_PARTNERS] Add 3 to partners
+[17:09:49 clock: 7 TID: 4 spec: BODY state: REQUESTING_JOB] Got REQUEST_JOB from 3 for job_id = 0. Sending ACK_JOB
 
-3 {0: [2, 1], 1: [], 2: [4, 9, 7], 3: [6], 4: [5, 10], 5: [1, 9], 6: [8, 4], 7: [11, 7], 8: [2, 10], 9: [5, 4]}
-11 {0: [2, 3, 1], 1: [], 2: [4, 9, 7], 3: [6], 4: [5, 10, 3], 5: [1, 9], 6: [8, 4, 3], 7: [7, 3], 8: [2, 10], 9: [5, 4]}
-1 3 7 AWAITING_PARRRRR
-[20:14:00 TID: 6] Got SKELETON_TAKEN from 3. Decrementing skeleton count to 95 
+[17:09:49 clock: 7 TID: 3 spec: HEAD state: REQUESTING_JOB] Got REQUEST_JOB from 4 for job_id = 0. Sending ACK_JOB
 
-[20:14:00 TID: 8] Got SKELETON_TAKEN from 3. Decrementing skeleton count to 95 
+[17:09:49 clock: 5 TID: 2 spec: TAIL state: REQUESTING_JOB] Got REQUEST_JOB from 1 for job_id = 0. Sending ACK_JOB
 
-[20:14:00 TID: 5] Got SKELETON_TAKEN from 3. Decrementing skeleton count to 95 
+[17:09:49 clock: 9 TID: 1 spec: BODY state: REQUESTING_JOB] Got REQUEST_JOB from 2 for job_id = 0. Sending ACK_JOB
 
-[20:14:00 TID: 11] Got SKELETON_TAKEN from 3. Decrementing skeleton count to 95 
+[17:09:49 clock: 9 TID: 4 spec: BODY state: REQUESTING_JOB] Got REQUEST_JOB from 2 for job_id = 0. Sending ACK_JOB
 
-[20:14:00 TID: 9] Got SKELETON_TAKEN from 3. Decrementing skeleton count to 95 
+[17:09:49 clock: 11 TID: 1 spec: BODY state: REQUESTING_JOB] Got ACK_JOB from 3. Incrementing ack count for job_id = 0 to 1 of 3 needed.
 
-[20:14:00 TID: 2] Got SKELETON_TAKEN from 3. Decrementing skeleton count to 95 
+[17:09:49 clock: 9 TID: 3 spec: HEAD state: REQUESTING_JOB] Got REQUEST_JOB from 2 for job_id = 0. Sending ACK_JOB
 
-[20:14:00 TID: 7] Got SKELETON_TAKEN from 3. Decrementing skeleton count to 95 
+[17:09:49 clock: 7 TID: 2 spec: TAIL state: REQUESTING_JOB] Got REQUEST_JOB from 3 for job_id = 0. Sending ACK_JOB
 
-[20:14:00 TID: 4] Got SKELETON_TAKEN from 3. Decrementing skeleton count to 95 
+[17:09:49 clock: 11 TID: 4 spec: BODY state: REQUESTING_JOB] Got REJECT_JOB from 1. Changing state to AWAITING_JOB
 
-[20:14:00 TID: 10] Got SKELETON_TAKEN from 3. Decrementing skeleton count to 95 
+[17:09:49 clock: 11 TID: 4 spec: BODY state: AWAITING_JOB] Changing state to REQUESTING_JOB
 
-[20:14:00 TID: 1] Got SKELETON_TAKEN from 3. Decrementing skeleton count to 95 
+[17:09:49 clock: 12 TID: 1 spec: BODY state: REQUESTING_JOB] Got ACK_JOB from 4. Incrementing ack count for job_id = 0 to 2 of 3 needed.
 
-3 [11, 7]
-No jobs currently {0: -1, 1: 3, 2: -1, 3: 4, 4: -1, 5: 4, 6: -1, 7: -1, 8: -1, 9: -1} {0: [2, 3, 1], 1: [], 2: [4, 9, 7], 3: [6], 4: [5, 10, 3], 5: [1, 9], 6: [8, 4, 3], 7: [7, 3], 8: [2, 10], 9: [5, 4]}
-No jobs currently {0: -1, 1: -1, 2: -1, 3: -1, 4: -1, 5: -1, 6: -1, 7: -1, 8: -1, 9: -1} {0: [3, 1], 1: [], 2: [4, 9], 3: [6], 4: [5, 10, 3], 5: [1, 9], 6: [4, 3], 7: [11, 3], 8: [2, 10], 9: [5, 4]}
-1 3 8 AWAITING_PARRRRR
-5 3 8 AWAITING_PARRRRR
-2 3 8 AWAITING_PARRRRR
-[20:14:02 clock: 125 TID: 2 spec: TAIL state: AWAITING_PARTNERS] Add 3 to partners
+[17:09:49 clock: 9 TID: 2 spec: TAIL state: REQUESTING_JOB] Got REQUEST_JOB from 4 for job_id = 0. Sending ACK_JOB
 
-11 {0: [2, 3, 1], 1: [], 2: [4, 9, 7], 3: [6], 4: [5, 10, 3], 5: [1, 9], 6: [8, 4, 3], 7: [7, 3], 8: [2, 10, 3], 9: [5, 4]}
-4 3 8 AWAITING_PARRRRR
-7 {0: [3, 1], 1: [], 2: [4, 9], 3: [6], 4: [5, 10, 3], 5: [1, 9], 6: [4, 3], 7: [11, 3], 8: [2, 10, 3], 9: [5, 4]}
-10 3 8 AWAITING_PARRRRR
-[20:14:02 clock: 125 TID: 10 spec: BODY state: AWAITING_PARTNERS] Add 3 to partners
+[17:09:49 clock: 11 TID: 4 spec: BODY state: REQUESTING_JOB] Sending REQUEST_JOBs for job_id = 1
 
-6 3 8 AWAITING_PARRRRR
-8 {0: [2, 3, 1], 1: [], 2: [4, 9, 7], 3: [6], 4: [5, 10, 3], 5: [1, 9], 6: [4, 3], 7: [11, 7, 3], 8: [2, 10, 3], 9: [5, 4]}
-[20:14:02 clock: 125 TID: 3 spec: HEAD state: REQUESTING_JOB] Got ACKs from everyone. Sending HELLO to everyone. Changing state to AWAITING_PARTNERS
+[17:09:49 clock: 11 TID: 3 spec: HEAD state: REQUESTING_JOB] Got ACK_JOB from 1. Incrementing ack count for job_id = 0 to 1 of 3 needed.
 
-9 3 8 AWAITING_PARRRRR
-[20:14:07 TID: 7] Got SKELETON_TAKEN from 2. Decrementing skeleton count to 94 
+[17:09:49 clock: 13 TID: 1 spec: BODY state: REQUESTING_JOB] Got ACK_JOB from 2. Incrementing ack count for job_id = 0 to 3 of 3 needed.
 
-[20:14:07 TID: 10] Got SKELETON_TAKEN from 2. Decrementing skeleton count to 94 
+[17:09:49 clock: 13 TID: 1 spec: BODY state: REQUESTING_JOB] Received all job ACKs. Broadcasting HELLO.
 
-[20:14:07 TID: 6] Got SKELETON_TAKEN from 2. Decrementing skeleton count to 94 
+[17:09:49 clock: 12 TID: 3 spec: HEAD state: REQUESTING_JOB] Got ACK_JOB from 4. Incrementing ack count for job_id = 0 to 2 of 3 needed.
 
-[20:14:07 TID: 1] Got SKELETON_TAKEN from 2. Decrementing skeleton count to 94 
+[17:09:49 clock: 14 TID: 1 spec: BODY state: REQUESTING_JOB] Changing state to AWAITING_PARTNERS
 
-[20:14:07 TID: 8] Got SKELETON_TAKEN from 2. Decrementing skeleton count to 94 
+[17:09:49 clock: 15 TID: 4 spec: BODY state: REQUESTING_JOB] Got HELLO from 1 for job_id = 0
 
-[20:14:07 TID: 3] Got SKELETON_TAKEN from 2. Decrementing skeleton count to 94 
+[17:09:49 clock: 13 TID: 3 spec: HEAD state: REQUESTING_JOB] Got ACK_JOB from 2. Incrementing ack count for job_id = 0 to 3 of 3 needed.
 
-[20:14:07 TID: 5] Got SKELETON_TAKEN from 2. Decrementing skeleton count to 94 
+[17:09:49 clock: 13 TID: 3 spec: HEAD state: REQUESTING_JOB] Received all job ACKs. Broadcasting HELLO.
 
-[20:14:07 TID: 11] Got SKELETON_TAKEN from 2. Decrementing skeleton count to 94 
+[17:09:49 clock: 11 TID: 2 spec: TAIL state: REQUESTING_JOB] Got ACK_JOB from 1. Incrementing ack count for job_id = 0 to 1 of 3 needed.
 
-[20:14:07 TID: 9] Got SKELETON_TAKEN from 2. Decrementing skeleton count to 94 
+[17:09:49 clock: 15 TID: 2 spec: TAIL state: REQUESTING_JOB] Got HELLO from 1 for job_id = 0
 
-[20:14:07 TID: 4] Got SKELETON_TAKEN from 2. Decrementing skeleton count to 94 
+[17:09:49 clock: 15 TID: 1 spec: BODY state: AWAITING_PARTNERS] Got REQUEST_JOB from 4 for job_id = 1. Sending ACK_JOB
 
-2 [10, 3]
-No jobs currently {0: -1, 1: -1, 2: -1, 3: -1, 4: -1, 5: -1, 6: -1, 7: -1, 8: 10, 9: -1} {0: [3, 1], 1: [], 2: [4, 9, 7], 3: [6], 4: [5, 10, 3], 5: [1, 9], 6: [8, 4, 3], 7: [11, 7, 3], 8: [10, 3], 9: [5, 4]}
-No jobs currently {0: -1, 1: 7, 2: -1, 3: 9, 4: -1, 5: -1, 6: -1, 7: -1, 8: -1, 9: -1} {0: [1], 1: [], 2: [4, 9, 7], 3: [6], 4: [5, 3], 5: [1, 9], 6: [8, 4, 3], 7: [11, 7, 3], 8: [2, 3], 9: [5, 4]}
-2 {0: [3, 1], 1: [], 2: [4, 9, 7], 3: [6], 4: [5, 10, 3], 5: [1, 9], 6: [8, 4, 3], 7: [11, 7, 3], 8: [10, 3], 9: [5, 4, 3]}
-6 3 9 AWAITING_PARRRRR
-1 3 9 AWAITING_PARRRRR
-8 {0: [2, 3, 1], 1: [], 2: [4, 9, 7], 3: [6], 4: [5, 10, 3], 5: [1, 9], 6: [4, 3], 7: [11, 7, 3], 8: [2, 10, 3], 9: [5, 4, 3]}
-[20:14:09 clock: 137 TID: 3 spec: HEAD state: REQUESTING_JOB] Got ACKs from everyone. Sending HELLO to everyone. Changing state to AWAITING_PARTNERS
+[17:09:49 clock: 17 TID: 4 spec: BODY state: REQUESTING_JOB] Got ACK_JOB from 1. Incrementing ack count for job_id = 1 to 1 of 3 needed.
 
-4 3 9 AWAITING_PARRRRR
-[20:14:09 clock: 137 TID: 4 spec: BODY state: AWAITING_PARTNERS] Add 3 to partners
+[17:09:49 clock: 17 TID: 1 spec: BODY state: AWAITING_PARTNERS] Got HELLO from 3 for job_id = 0
 
-5 3 9 AWAITING_PARRRRR
-[20:14:09 clock: 137 TID: 5 spec: TAIL state: AWAITING_PARTNERS] Add 3 to partners
+[17:09:49 clock: 14 TID: 3 spec: HEAD state: REQUESTING_JOB] Changing state to AWAITING_PARTNERS
 
-10 {0: [1], 1: [], 2: [4, 9, 7], 3: [6], 4: [5, 3], 5: [1, 9], 6: [8, 4, 3], 7: [11, 7, 3], 8: [2, 3], 9: [5, 4, 3]}
-11 {0: [2, 3, 1], 1: [], 2: [4, 9, 7], 3: [6], 4: [5, 10, 3], 5: [1, 9], 6: [8, 4, 3], 7: [7, 3], 8: [2, 10, 3], 9: [5, 4, 3]}
-7 {0: [3, 1], 1: [], 2: [4, 9], 3: [6], 4: [5, 10, 3], 5: [1, 9], 6: [4, 3], 7: [11, 3], 8: [2, 10, 3], 9: [5, 4, 3]}
-9 3 9 AWAITING_PARRRRR
-[20:14:13 TID: 10] Got SKELETON_TAKEN from 3. Decrementing skeleton count to 93 
+[17:09:49 clock: 18 TID: 4 spec: BODY state: REQUESTING_JOB] Got HELLO from 3 for job_id = 0
 
-[20:14:13 TID: 11] Got SKELETON_TAKEN from 3. Decrementing skeleton count to 93 
+[17:09:49 clock: 16 TID: 2 spec: TAIL state: REQUESTING_JOB] Got ACK_JOB from 3. Incrementing ack count for job_id = 0 to 2 of 3 needed.
 
-[20:14:13 TID: 7] Got SKELETON_TAKEN from 3. Decrementing skeleton count to 93 
+[17:09:49 clock: 15 TID: 3 spec: HEAD state: AWAITING_PARTNERS] Got HELLO from 1 for job_id = 0
 
-[20:14:13 TID: 5] Got SKELETON_TAKEN from 3. Decrementing skeleton count to 93 
+[17:09:49 clock: 17 TID: 2 spec: TAIL state: REQUESTING_JOB] Got ACK_JOB from 4. Incrementing ack count for job_id = 0 to 3 of 3 needed.
 
-[20:14:13 TID: 2] Got SKELETON_TAKEN from 3. Decrementing skeleton count to 93 
+[17:09:49 clock: 17 TID: 2 spec: TAIL state: REQUESTING_JOB] Received all job ACKs. Broadcasting HELLO.
 
-[20:14:13 TID: 6] Got SKELETON_TAKEN from 3. Decrementing skeleton count to 93 
+[17:09:49 clock: 16 TID: 3 spec: HEAD state: AWAITING_PARTNERS] Got REQUEST_JOB from 4 for job_id = 1. Sending ACK_JOB
 
-[20:14:13 TID: 1] Got SKELETON_TAKEN from 3. Decrementing skeleton count to 93 
-[20:14:13 TID: 8] Got SKELETON_TAKEN from 3. Decrementing skeleton count to 93 
+[17:09:49 clock: 18 TID: 2 spec: TAIL state: REQUESTING_JOB] Changing state to AWAITING_PARTNERS
 
-[20:14:13 TID: 4] Got SKELETON_TAKEN from 3. Decrementing skeleton count to 93 
+[17:09:49 clock: 19 TID: 1 spec: BODY state: AWAITING_PARTNERS] Got HELLO from 2 for job_id = 0
 
-[20:14:13 TID: 9] Got SKELETON_TAKEN from 3. Decrementing skeleton count to 93 
+[17:09:49 clock: 19 TID: 1 spec: BODY state: AWAITING_PARTNERS] Changing state to AWAITING_DESK
 
+[17:09:49 clock: 19 TID: 4 spec: BODY state: REQUESTING_JOB] Got ACK_JOB from 3. Incrementing ack count for job_id = 1 to 2 of 3 needed.
 
-3 [5, 4]
-No jobs currently {0: -1, 1: -1, 2: -1, 3: -1, 4: 10, 5: -1, 6: 10, 7: 10, 8: -1, 9: 10} {0: [2, 1], 1: [], 2: [4, 9, 7], 3: [6], 4: [5, 10], 5: [1, 9], 6: [8, 4], 7: [11, 7], 8: [2, 10], 9: [5, 4]}
-No jobs currently {0: -1, 1: -1, 2: 10, 3: -1, 4: -1, 5: -1, 6: -1, 7: -1, 8: -1, 9: -1} {0: [2, 3, 1], 1: [], 2: [9, 7], 3: [6], 4: [5, 10, 3], 5: [1, 9], 6: [8, 3], 7: [11, 7, 3], 8: [2, 10, 3], 9: [5, 3]}
-No jobs currently {0: -1, 1: -1, 2: -1, 3: -1, 4: -1, 5: -1, 6: -1, 7: -1, 8: -1, 9: -1} {0: [2, 3, 1], 1: [], 2: [4, 9, 7], 3: [6], 4: [10, 3], 5: [1, 9], 6: [8, 4, 3], 7: [11, 7, 3], 8: [2, 10, 3], 9: [4, 3]}
+[17:09:49 clock: 20 TID: 4 spec: BODY state: REQUESTING_JOB] Got HELLO from 2 for job_id = 0
+
+[17:09:49 clock: 19 TID: 3 spec: HEAD state: AWAITING_PARTNERS] Got HELLO from 2 for job_id = 0
+
+[17:09:49 clock: 19 TID: 1 spec: BODY state: AWAITING_DESK] Broadcasting REQUEST_DESK.
+
+[17:09:49 clock: 19 TID: 3 spec: HEAD state: AWAITING_PARTNERS] Changing state to AWAITING_START
+
+[17:09:49 clock: 21 TID: 4 spec: BODY state: REQUESTING_JOB] Got REQUEST_DESK from 1. Responding with ACK_DESK
+
+[17:09:49 clock: 19 TID: 2 spec: TAIL state: AWAITING_PARTNERS] Got REQUEST_JOB from 4 for job_id = 1. Sending ACK_JOB
+
+[17:09:49 clock: 23 TID: 4 spec: BODY state: REQUESTING_JOB] Got ACK_JOB from 2. Incrementing ack count for job_id = 1 to 3 of 3 needed.
+
+[17:09:49 clock: 23 TID: 4 spec: BODY state: REQUESTING_JOB] Received all job ACKs. Broadcasting HELLO.
+
+[17:09:49 clock: 23 TID: 1 spec: BODY state: AWAITING_DESK] Got ACK_DESK from 4. Incrementing DESK_QUEUE_ACK to 1 of 2 needed
+
+[17:09:49 clock: 21 TID: 2 spec: TAIL state: AWAITING_PARTNERS] Got HELLO from 3 for job_id = 0
+
+[17:09:49 clock: 25 TID: 1 spec: BODY state: AWAITING_DESK] Got HELLO from 4 for job_id = 1
+
+[17:09:49 clock: 24 TID: 4 spec: BODY state: REQUESTING_JOB] Changing state to AWAITING_PARTNERS
+
+[17:09:49 clock: 21 TID: 2 spec: TAIL state: AWAITING_PARTNERS] Changing state to AWAITING_START
+
+[17:09:49 clock: 25 TID: 3 spec: HEAD state: AWAITING_START] Got HELLO from 4 for job_id = 1
+
+[17:09:49 clock: 25 TID: 2 spec: TAIL state: AWAITING_START] Got HELLO from 4 for job_id = 1
+

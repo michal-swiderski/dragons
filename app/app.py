@@ -7,6 +7,7 @@ from app.models.models import Message, State
 from app.state_handlers.AwaitingJobHandler import AwaitingJobHandler
 from app.state_handlers.RequestingJobHandler import RequestingJobHandler
 from app.state_handlers.AwaitingPartnersHandler import AwaitingPartnersHandler
+from app.state_handlers.AwaitingDeskHandler import AwaitingDeskHandler
 
 
 def run():
@@ -14,7 +15,7 @@ def run():
     rank = comm.Get_rank()
     size = comm.Get_size()
 
-    DESK_COUNT = 10
+    DESK_COUNT = 2
     SKELETON_COUNT = 10
     SPECIALIST_COUNT = size - 1
     JOBS = 2
@@ -31,6 +32,9 @@ def run():
             comm=comm, data=data, state=State.REQUESTING_JOB)
         awaiting_partners_handler = AwaitingPartnersHandler(
             comm=comm, data=data, state=State.AWAITING_PARTNERS)
+        awaiting_desk_handler = AwaitingDeskHandler(
+            comm=comm, data=data, state=State.AWAITING_DESK)
+
         # main loop
         data.state = State.AWAITING_JOB
         while True:
@@ -63,7 +67,7 @@ def run():
             elif data.state == State.AWAITING_PARTNERS:
                 awaiting_partners_handler(msg=msg, status=status)
             elif data.state == State.AWAITING_DESK:
-                pass
+                awaiting_desk_handler(msg=msg, status=status)
             elif data.state == State.PAPER_WORK:
                 pass
             elif data.state == State.ACQUIRE_SKELETON:
