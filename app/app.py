@@ -5,6 +5,8 @@ from app.models.data import Data
 from app.models.models import Message, State
 
 from app.state_handlers.AwaitingJobHandler import AwaitingJobHandler
+from app.state_handlers.RequestingJobHandler import RequestingJobHandler
+from app.state_handlers.AwaitingPartnersHandler import AwaitingPartnersHandler
 
 
 def run():
@@ -15,7 +17,7 @@ def run():
     DESK_COUNT = 10
     SKELETON_COUNT = 10
     SPECIALIST_COUNT = size - 1
-    JOBS = 1
+    JOBS = 2
 
     if rank == 0:
         generator(comm, size, JOBS)
@@ -25,6 +27,10 @@ def run():
         # handlers init
         awaiting_job_handler = AwaitingJobHandler(
             comm=comm, data=data, state=State.AWAITING_JOB)
+        requesting_job_handler = RequestingJobHandler(
+            comm=comm, data=data, state=State.REQUESTING_JOB)
+        awaiting_partners_handler = AwaitingPartnersHandler(
+            comm=comm, data=data, state=State.AWAITING_PARTNERS)
         # main loop
         data.state = State.AWAITING_JOB
         while True:
@@ -53,9 +59,9 @@ def run():
             if data.state == State.AWAITING_JOB:
                 awaiting_job_handler(msg=msg, status=status)
             elif data.state == State.REQUESTING_JOB:
-                pass
+                requesting_job_handler(msg=msg, status=status)
             elif data.state == State.AWAITING_PARTNERS:
-                pass
+                awaiting_partners_handler(msg=msg, status=status)
             elif data.state == State.AWAITING_DESK:
                 pass
             elif data.state == State.PAPER_WORK:

@@ -10,4 +10,4 @@ def generator(comm, size, jobs):
             msg = {'job_id': idx, 'timestamp': idx}
             comm.send(msg, dest=proc, tag=Message.NEW_JOB)
 
-        sleep(randint(0, 5))
+        # sleep(randint(0, 5))

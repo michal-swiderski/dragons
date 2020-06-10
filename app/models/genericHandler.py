@@ -55,4 +55,4 @@ class GenericHandler:
         if len(messages_to_check) == 0 or any(i in messages_to_check for i in msg_types):
             if len(tids_to_check) == 0 or data.rank in tids_to_check:
                 print(
-                    f'[{now} clock: {data.timestamp} TID: {data.rank} specialization: {Specialization(data.specialization).name} state: {s}] {msg}', end='\n\n')
+                    f'[{now} clock: {data.timestamp} TID: {data.rank} spec: {Specialization(data.specialization).name} state: {s}] {msg}', end='\n\n')

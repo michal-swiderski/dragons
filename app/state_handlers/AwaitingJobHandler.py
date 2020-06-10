@@ -7,8 +7,19 @@ class AwaitingJobHandler(GenericHandler):
         super().__init__(comm=comm, data=data, state=state)
 
     def _on_state_enter(self):
-        # print('on state enter hook')
-        pass
+        for job in self._data.job_map:
+            if self._data.job_map[job] == 0:
+                # print(job)
+                self._data.request_timestamp = self._data.timestamp
+                self._data.current_job_id = job
+                self._data.job_timeout = 0
+
+                self.log(
+                    f'Changing state to REQUESTING_JOB')
+                # self._broadcast(
+                #     {'job_id': job, 'jobs_done': self.data.jobs_done}, tag=Message.REQUEST_JOB)
+                self._change_state(State.REQUESTING_JOB)
+                break
 
     def __call__(self, *, msg, status):
         tag = status.Get_tag()
@@ -23,10 +34,9 @@ class AwaitingJobHandler(GenericHandler):
                 data.current_job_id = job_id
 
                 data.request_timestamp = data.timestamp
-                self.log(f'Sent REQUEST_JOB to everyone for job_id = {job_id}. Changing state to REQUESTING_JOB', [
-                         Message.REQUEST_JOB])
-                self._broadcast(
-                    {'job_id': job_id, 'jobs_done': data.jobs_done}, tag=Message.REQUEST_JOB)
+                self.log(f'Changing state to REQUESTING_JOB')
+                # self._broadcast(
+                #     {'job_id': job_id, 'jobs_done': data.jobs_done}, tag=Message.REQUEST_JOB)
                 self._change_state(State.REQUESTING_JOB)
 
         elif tag == Message.REQUEST_JOB:
