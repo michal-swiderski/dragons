@@ -1,6 +1,7 @@
 from time import sleep
 from random import randint
 import threading
+from termcolor import colored
 
 from app.models.genericHandler import GenericHandler
 from app.models.models import Message, State
@@ -13,7 +14,7 @@ class RevivingHandler(GenericHandler):
     def _on_state_enter(self):
         def revive():
             sleep(randint(1, 5))
-            self.log(f'Finished reviving. Sending FINISH to partners. Changing state to AWAITING_JOB.', [
+            self.log(colored(f'Finished reviving. Sending FINISH to partners. Changing state to AWAITING_JOB.', 'green'), [
                 Message.FINISH])
             self._send_to_targets(
                 {}, targets=self._data.partners[self._data.current_job_id], tag=Message.FINISH)
