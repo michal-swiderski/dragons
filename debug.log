@@ -1,144 +1,362 @@
-[17:09:49 clock: 2 TID: 1 spec: BODY state: AWAITING_JOB] Got NEW_JOB with job_id = 0
+[17:15:19 clock: 2 TID: 2 spec: TAIL state: AWAITING_JOB] Got NEW_JOB with job_id = 0
 
-[17:09:49 clock: 2 TID: 1 spec: BODY state: AWAITING_JOB] Changing state to REQUESTING_JOB
+[17:15:19 clock: 2 TID: 2 spec: TAIL state: AWAITING_JOB] Changing state to REQUESTING_JOB
 
-[17:09:49 clock: 2 TID: 2 spec: TAIL state: AWAITING_JOB] Got NEW_JOB with job_id = 0
+[17:15:19 clock: 2 TID: 2 spec: TAIL state: REQUESTING_JOB] Sending REQUEST_JOBs for job_id = 0
 
-[17:09:49 clock: 2 TID: 3 spec: HEAD state: AWAITING_JOB] Got NEW_JOB with job_id = 0
+[17:15:19 clock: 2 TID: 3 spec: HEAD state: AWAITING_JOB] Got NEW_JOB with job_id = 0
 
-[17:09:49 clock: 2 TID: 3 spec: HEAD state: AWAITING_JOB] Changing state to REQUESTING_JOB
+[17:15:19 clock: 2 TID: 3 spec: HEAD state: AWAITING_JOB] Changing state to REQUESTING_JOB
 
-[17:09:49 clock: 2 TID: 3 spec: HEAD state: REQUESTING_JOB] Sending REQUEST_JOBs for job_id = 0
+[17:15:19 clock: 2 TID: 3 spec: HEAD state: REQUESTING_JOB] Sending REQUEST_JOBs for job_id = 0
 
-[17:09:49 clock: 2 TID: 4 spec: BODY state: AWAITING_JOB] Got NEW_JOB with job_id = 0
+[17:15:19 clock: 2 TID: 5 spec: TAIL state: AWAITING_JOB] Got NEW_JOB with job_id = 0
 
-[17:09:49 clock: 2 TID: 4 spec: BODY state: AWAITING_JOB] Changing state to REQUESTING_JOB
+[17:15:19 clock: 2 TID: 5 spec: TAIL state: AWAITING_JOB] Changing state to REQUESTING_JOB
 
-[17:09:49 clock: 2 TID: 4 spec: BODY state: REQUESTING_JOB] Sending REQUEST_JOBs for job_id = 0
+[17:15:19 clock: 2 TID: 5 spec: TAIL state: REQUESTING_JOB] Sending REQUEST_JOBs for job_id = 0
 
-[17:09:49 clock: 2 TID: 1 spec: BODY state: REQUESTING_JOB] Sending REQUEST_JOBs for job_id = 0
+[17:15:19 clock: 2 TID: 6 spec: HEAD state: AWAITING_JOB] Got NEW_JOB with job_id = 0
 
-[17:09:49 clock: 2 TID: 2 spec: TAIL state: AWAITING_JOB] Changing state to REQUESTING_JOB
+[17:15:19 clock: 2 TID: 6 spec: HEAD state: AWAITING_JOB] Changing state to REQUESTING_JOB
 
-[17:09:49 clock: 2 TID: 2 spec: TAIL state: REQUESTING_JOB] Sending REQUEST_JOBs for job_id = 0
+[17:15:19 clock: 2 TID: 6 spec: HEAD state: REQUESTING_JOB] Sending REQUEST_JOBs for job_id = 0
 
-[17:09:49 clock: 4 TID: 4 spec: BODY state: REQUESTING_JOB] Got NEW_JOB with job_id = 1
+[17:15:19 clock: 4 TID: 2 spec: TAIL state: REQUESTING_JOB] Got NEW_JOB with job_id = 1
 
-[17:09:49 clock: 4 TID: 1 spec: BODY state: REQUESTING_JOB] Got NEW_JOB with job_id = 1
+[17:15:19 clock: 5 TID: 2 spec: TAIL state: REQUESTING_JOB] Got REQUEST_JOB from 3 for job_id = 0. Sending ACK_JOB
 
-[17:09:49 clock: 4 TID: 3 spec: HEAD state: REQUESTING_JOB] Got NEW_JOB with job_id = 1
+[17:15:19 clock: 7 TID: 2 spec: TAIL state: REQUESTING_JOB] Got REQUEST_JOB from 5 for job_id = 0. Sending REJECT_JOB
 
-[17:09:49 clock: 5 TID: 1 spec: BODY state: REQUESTING_JOB] Got REQUEST_JOB from 3 for job_id = 0. Sending ACK_JOB
+[17:15:19 clock: 9 TID: 2 spec: TAIL state: REQUESTING_JOB] Got REQUEST_JOB from 6 for job_id = 0. Sending ACK_JOB
 
-[17:09:49 clock: 5 TID: 4 spec: BODY state: REQUESTING_JOB] Got REQUEST_JOB from 1 for job_id = 0. Sending ACK_JOB
+[17:15:19 clock: 11 TID: 2 spec: TAIL state: REQUESTING_JOB] Got ACK_JOB from 3. Incrementing ack count for job_id = 0 to 1 of 5 needed.
 
-[17:09:49 clock: 5 TID: 3 spec: HEAD state: REQUESTING_JOB] Got REQUEST_JOB from 1 for job_id = 0. Sending ACK_JOB
+[17:15:19 clock: 12 TID: 2 spec: TAIL state: REQUESTING_JOB] Got ACK_JOB from 5. Incrementing ack count for job_id = 0 to 2 of 5 needed.
 
-[17:09:49 clock: 4 TID: 2 spec: TAIL state: REQUESTING_JOB] Got NEW_JOB with job_id = 1
+[17:15:19 clock: 13 TID: 2 spec: TAIL state: REQUESTING_JOB] Got ACK_JOB from 6. Incrementing ack count for job_id = 0 to 3 of 5 needed.
 
-[17:09:49 clock: 7 TID: 1 spec: BODY state: REQUESTING_JOB] Got REQUEST_JOB from 4 for job_id = 0. Sending REJECT_JOB
+[17:15:19 clock: 14 TID: 2 spec: TAIL state: REQUESTING_JOB] Got REQUEST_JOB from 5 for job_id = 1. Sending ACK_JOB
 
-[17:09:49 clock: 7 TID: 4 spec: BODY state: REQUESTING_JOB] Got REQUEST_JOB from 3 for job_id = 0. Sending ACK_JOB
+[17:15:19 clock: 16 TID: 2 spec: TAIL state: REQUESTING_JOB] Got REQUEST_JOB from 6 for job_id = 1. Sending ACK_JOB
 
-[17:09:49 clock: 7 TID: 3 spec: HEAD state: REQUESTING_JOB] Got REQUEST_JOB from 4 for job_id = 0. Sending ACK_JOB
+[17:15:19 clock: 2 TID: 4 spec: BODY state: AWAITING_JOB] Got NEW_JOB with job_id = 0
 
-[17:09:49 clock: 5 TID: 2 spec: TAIL state: REQUESTING_JOB] Got REQUEST_JOB from 1 for job_id = 0. Sending ACK_JOB
+[17:15:19 clock: 2 TID: 4 spec: BODY state: AWAITING_JOB] Changing state to REQUESTING_JOB
 
-[17:09:49 clock: 9 TID: 1 spec: BODY state: REQUESTING_JOB] Got REQUEST_JOB from 2 for job_id = 0. Sending ACK_JOB
+[17:15:19 clock: 4 TID: 3 spec: HEAD state: REQUESTING_JOB] Got NEW_JOB with job_id = 1
 
-[17:09:49 clock: 9 TID: 4 spec: BODY state: REQUESTING_JOB] Got REQUEST_JOB from 2 for job_id = 0. Sending ACK_JOB
+[17:15:19 clock: 5 TID: 3 spec: HEAD state: REQUESTING_JOB] Got REQUEST_JOB from 2 for job_id = 0. Sending ACK_JOB
 
-[17:09:49 clock: 11 TID: 1 spec: BODY state: REQUESTING_JOB] Got ACK_JOB from 3. Incrementing ack count for job_id = 0 to 1 of 3 needed.
+[17:15:19 clock: 7 TID: 3 spec: HEAD state: REQUESTING_JOB] Got REQUEST_JOB from 5 for job_id = 0. Sending ACK_JOB
 
-[17:09:49 clock: 9 TID: 3 spec: HEAD state: REQUESTING_JOB] Got REQUEST_JOB from 2 for job_id = 0. Sending ACK_JOB
+[17:15:19 clock: 9 TID: 3 spec: HEAD state: REQUESTING_JOB] Got REQUEST_JOB from 6 for job_id = 0. Sending REJECT_JOB
 
-[17:09:49 clock: 7 TID: 2 spec: TAIL state: REQUESTING_JOB] Got REQUEST_JOB from 3 for job_id = 0. Sending ACK_JOB
+[17:15:19 clock: 11 TID: 3 spec: HEAD state: REQUESTING_JOB] Got ACK_JOB from 2. Incrementing ack count for job_id = 0 to 1 of 5 needed.
 
-[17:09:49 clock: 11 TID: 4 spec: BODY state: REQUESTING_JOB] Got REJECT_JOB from 1. Changing state to AWAITING_JOB
+[17:15:19 clock: 12 TID: 3 spec: HEAD state: REQUESTING_JOB] Got ACK_JOB from 5. Incrementing ack count for job_id = 0 to 2 of 5 needed.
 
-[17:09:49 clock: 11 TID: 4 spec: BODY state: AWAITING_JOB] Changing state to REQUESTING_JOB
+[17:15:19 clock: 13 TID: 3 spec: HEAD state: REQUESTING_JOB] Got ACK_JOB from 6. Incrementing ack count for job_id = 0 to 3 of 5 needed.
 
-[17:09:49 clock: 12 TID: 1 spec: BODY state: REQUESTING_JOB] Got ACK_JOB from 4. Incrementing ack count for job_id = 0 to 2 of 3 needed.
+[17:15:19 clock: 14 TID: 3 spec: HEAD state: REQUESTING_JOB] Got REQUEST_JOB from 5 for job_id = 1. Sending ACK_JOB
 
-[17:09:49 clock: 9 TID: 2 spec: TAIL state: REQUESTING_JOB] Got REQUEST_JOB from 4 for job_id = 0. Sending ACK_JOB
+[17:15:19 clock: 16 TID: 3 spec: HEAD state: REQUESTING_JOB] Got REQUEST_JOB from 6 for job_id = 1. Sending ACK_JOB
 
-[17:09:49 clock: 11 TID: 4 spec: BODY state: REQUESTING_JOB] Sending REQUEST_JOBs for job_id = 1
+[17:15:19 clock: 4 TID: 5 spec: TAIL state: REQUESTING_JOB] Got NEW_JOB with job_id = 1
 
-[17:09:49 clock: 11 TID: 3 spec: HEAD state: REQUESTING_JOB] Got ACK_JOB from 1. Incrementing ack count for job_id = 0 to 1 of 3 needed.
+[17:15:19 clock: 5 TID: 5 spec: TAIL state: REQUESTING_JOB] Got REQUEST_JOB from 2 for job_id = 0. Sending ACK_JOB
 
-[17:09:49 clock: 13 TID: 1 spec: BODY state: REQUESTING_JOB] Got ACK_JOB from 2. Incrementing ack count for job_id = 0 to 3 of 3 needed.
+[17:15:19 clock: 7 TID: 5 spec: TAIL state: REQUESTING_JOB] Got REQUEST_JOB from 3 for job_id = 0. Sending ACK_JOB
 
-[17:09:49 clock: 13 TID: 1 spec: BODY state: REQUESTING_JOB] Received all job ACKs. Broadcasting HELLO.
+[17:15:19 clock: 9 TID: 5 spec: TAIL state: REQUESTING_JOB] Got REQUEST_JOB from 6 for job_id = 0. Sending ACK_JOB
 
-[17:09:49 clock: 12 TID: 3 spec: HEAD state: REQUESTING_JOB] Got ACK_JOB from 4. Incrementing ack count for job_id = 0 to 2 of 3 needed.
+[17:15:19 clock: 11 TID: 5 spec: TAIL state: REQUESTING_JOB] Got REJECT_JOB from 2. Changing state to AWAITING_JOB
 
-[17:09:49 clock: 14 TID: 1 spec: BODY state: REQUESTING_JOB] Changing state to AWAITING_PARTNERS
+[17:15:19 clock: 11 TID: 5 spec: TAIL state: AWAITING_JOB] Changing state to REQUESTING_JOB
 
-[17:09:49 clock: 15 TID: 4 spec: BODY state: REQUESTING_JOB] Got HELLO from 1 for job_id = 0
+[17:15:19 clock: 11 TID: 5 spec: TAIL state: REQUESTING_JOB] Sending REQUEST_JOBs for job_id = 1
 
-[17:09:49 clock: 13 TID: 3 spec: HEAD state: REQUESTING_JOB] Got ACK_JOB from 2. Incrementing ack count for job_id = 0 to 3 of 3 needed.
+[17:15:19 clock: 16 TID: 5 spec: TAIL state: REQUESTING_JOB] Got ACK_JOB from 2. Incrementing ack count for job_id = 1 to 1 of 5 needed.
 
-[17:09:49 clock: 13 TID: 3 spec: HEAD state: REQUESTING_JOB] Received all job ACKs. Broadcasting HELLO.
+[17:15:19 clock: 17 TID: 5 spec: TAIL state: REQUESTING_JOB] Got ACK_JOB from 3. Incrementing ack count for job_id = 1 to 2 of 5 needed.
 
-[17:09:49 clock: 11 TID: 2 spec: TAIL state: REQUESTING_JOB] Got ACK_JOB from 1. Incrementing ack count for job_id = 0 to 1 of 3 needed.
+[17:15:19 clock: 18 TID: 5 spec: TAIL state: REQUESTING_JOB] Got REQUEST_JOB from 6 for job_id = 1. Sending ACK_JOB
 
-[17:09:49 clock: 15 TID: 2 spec: TAIL state: REQUESTING_JOB] Got HELLO from 1 for job_id = 0
+[17:15:19 clock: 20 TID: 5 spec: TAIL state: REQUESTING_JOB] Got ACK_JOB from 6. Incrementing ack count for job_id = 1 to 3 of 5 needed.
 
-[17:09:49 clock: 15 TID: 1 spec: BODY state: AWAITING_PARTNERS] Got REQUEST_JOB from 4 for job_id = 1. Sending ACK_JOB
+[17:15:19 clock: 4 TID: 6 spec: HEAD state: REQUESTING_JOB] Got NEW_JOB with job_id = 1
 
-[17:09:49 clock: 17 TID: 4 spec: BODY state: REQUESTING_JOB] Got ACK_JOB from 1. Incrementing ack count for job_id = 1 to 1 of 3 needed.
+[17:15:19 clock: 5 TID: 6 spec: HEAD state: REQUESTING_JOB] Got REQUEST_JOB from 2 for job_id = 0. Sending ACK_JOB
 
-[17:09:49 clock: 17 TID: 1 spec: BODY state: AWAITING_PARTNERS] Got HELLO from 3 for job_id = 0
+[17:15:19 clock: 7 TID: 6 spec: HEAD state: REQUESTING_JOB] Got REQUEST_JOB from 3 for job_id = 0. Sending ACK_JOB
 
-[17:09:49 clock: 14 TID: 3 spec: HEAD state: REQUESTING_JOB] Changing state to AWAITING_PARTNERS
+[17:15:19 clock: 9 TID: 6 spec: HEAD state: REQUESTING_JOB] Got REQUEST_JOB from 5 for job_id = 0. Sending ACK_JOB
 
-[17:09:49 clock: 18 TID: 4 spec: BODY state: REQUESTING_JOB] Got HELLO from 3 for job_id = 0
+[17:15:19 clock: 11 TID: 6 spec: HEAD state: REQUESTING_JOB] Got ACK_JOB from 2. Incrementing ack count for job_id = 0 to 1 of 5 needed.
 
-[17:09:49 clock: 16 TID: 2 spec: TAIL state: REQUESTING_JOB] Got ACK_JOB from 3. Incrementing ack count for job_id = 0 to 2 of 3 needed.
+[17:15:19 clock: 12 TID: 6 spec: HEAD state: REQUESTING_JOB] Got REJECT_JOB from 3. Changing state to AWAITING_JOB
 
-[17:09:49 clock: 15 TID: 3 spec: HEAD state: AWAITING_PARTNERS] Got HELLO from 1 for job_id = 0
+[17:15:19 clock: 12 TID: 6 spec: HEAD state: AWAITING_JOB] Changing state to REQUESTING_JOB
 
-[17:09:49 clock: 17 TID: 2 spec: TAIL state: REQUESTING_JOB] Got ACK_JOB from 4. Incrementing ack count for job_id = 0 to 3 of 3 needed.
+[17:15:19 clock: 12 TID: 6 spec: HEAD state: REQUESTING_JOB] Sending REQUEST_JOBs for job_id = 1
 
-[17:09:49 clock: 17 TID: 2 spec: TAIL state: REQUESTING_JOB] Received all job ACKs. Broadcasting HELLO.
+[17:15:19 clock: 15 TID: 6 spec: HEAD state: REQUESTING_JOB] Got REQUEST_JOB from 5 for job_id = 1. Sending ACK_JOB
 
-[17:09:49 clock: 16 TID: 3 spec: HEAD state: AWAITING_PARTNERS] Got REQUEST_JOB from 4 for job_id = 1. Sending ACK_JOB
+[17:15:19 clock: 18 TID: 6 spec: HEAD state: REQUESTING_JOB] Got ACK_JOB from 2. Incrementing ack count for job_id = 1 to 1 of 5 needed.
 
-[17:09:49 clock: 18 TID: 2 spec: TAIL state: REQUESTING_JOB] Changing state to AWAITING_PARTNERS
+[17:15:19 clock: 19 TID: 6 spec: HEAD state: REQUESTING_JOB] Got ACK_JOB from 3. Incrementing ack count for job_id = 1 to 2 of 5 needed.
 
-[17:09:49 clock: 19 TID: 1 spec: BODY state: AWAITING_PARTNERS] Got HELLO from 2 for job_id = 0
+[17:15:19 clock: 20 TID: 6 spec: HEAD state: REQUESTING_JOB] Got ACK_JOB from 5. Incrementing ack count for job_id = 1 to 3 of 5 needed.
 
-[17:09:49 clock: 19 TID: 1 spec: BODY state: AWAITING_PARTNERS] Changing state to AWAITING_DESK
+[17:15:19 clock: 2 TID: 4 spec: BODY state: REQUESTING_JOB] Sending REQUEST_JOBs for job_id = 0
 
-[17:09:49 clock: 19 TID: 4 spec: BODY state: REQUESTING_JOB] Got ACK_JOB from 3. Incrementing ack count for job_id = 1 to 2 of 3 needed.
+[17:15:19 clock: 18 TID: 2 spec: TAIL state: REQUESTING_JOB] Got REQUEST_JOB from 4 for job_id = 0. Sending ACK_JOB
 
-[17:09:49 clock: 20 TID: 4 spec: BODY state: REQUESTING_JOB] Got HELLO from 2 for job_id = 0
+[17:15:19 clock: 21 TID: 5 spec: TAIL state: REQUESTING_JOB] Got REQUEST_JOB from 4 for job_id = 0. Sending ACK_JOB
 
-[17:09:49 clock: 19 TID: 3 spec: HEAD state: AWAITING_PARTNERS] Got HELLO from 2 for job_id = 0
+[17:15:19 clock: 4 TID: 4 spec: BODY state: REQUESTING_JOB] Got REQUEST_JOB from 2 for job_id = 0. Sending ACK_JOB
 
-[17:09:49 clock: 19 TID: 1 spec: BODY state: AWAITING_DESK] Broadcasting REQUEST_DESK.
+[17:15:19 clock: 21 TID: 6 spec: HEAD state: REQUESTING_JOB] Got REQUEST_JOB from 4 for job_id = 0. Sending ACK_JOB
 
-[17:09:49 clock: 19 TID: 3 spec: HEAD state: AWAITING_PARTNERS] Changing state to AWAITING_START
+[17:15:19 clock: 18 TID: 3 spec: HEAD state: REQUESTING_JOB] Got REQUEST_JOB from 4 for job_id = 0. Sending ACK_JOB
 
-[17:09:49 clock: 21 TID: 4 spec: BODY state: REQUESTING_JOB] Got REQUEST_DESK from 1. Responding with ACK_DESK
+[17:15:19 clock: 20 TID: 2 spec: TAIL state: REQUESTING_JOB] Got ACK_JOB from 4. Incrementing ack count for job_id = 0 to 4 of 5 needed.
 
-[17:09:49 clock: 19 TID: 2 spec: TAIL state: AWAITING_PARTNERS] Got REQUEST_JOB from 4 for job_id = 1. Sending ACK_JOB
+[17:15:19 clock: 6 TID: 4 spec: BODY state: REQUESTING_JOB] Got REQUEST_JOB from 3 for job_id = 0. Sending ACK_JOB
 
-[17:09:49 clock: 23 TID: 4 spec: BODY state: REQUESTING_JOB] Got ACK_JOB from 2. Incrementing ack count for job_id = 1 to 3 of 3 needed.
+[17:15:19 clock: 20 TID: 3 spec: HEAD state: REQUESTING_JOB] Got ACK_JOB from 4. Incrementing ack count for job_id = 0 to 4 of 5 needed.
 
-[17:09:49 clock: 23 TID: 4 spec: BODY state: REQUESTING_JOB] Received all job ACKs. Broadcasting HELLO.
+[17:15:19 clock: 8 TID: 4 spec: BODY state: REQUESTING_JOB] Got REQUEST_JOB from 5 for job_id = 0. Sending ACK_JOB
 
-[17:09:49 clock: 23 TID: 1 spec: BODY state: AWAITING_DESK] Got ACK_DESK from 4. Incrementing DESK_QUEUE_ACK to 1 of 2 needed
+[17:15:19 clock: 10 TID: 4 spec: BODY state: REQUESTING_JOB] Got REQUEST_JOB from 6 for job_id = 0. Sending ACK_JOB
 
-[17:09:49 clock: 21 TID: 2 spec: TAIL state: AWAITING_PARTNERS] Got HELLO from 3 for job_id = 0
+[17:15:19 clock: 12 TID: 4 spec: BODY state: REQUESTING_JOB] Got NEW_JOB with job_id = 1
 
-[17:09:49 clock: 25 TID: 1 spec: BODY state: AWAITING_DESK] Got HELLO from 4 for job_id = 1
+[17:15:19 clock: 13 TID: 4 spec: BODY state: REQUESTING_JOB] Got REQUEST_JOB from 5 for job_id = 1. Sending ACK_JOB
 
-[17:09:49 clock: 24 TID: 4 spec: BODY state: REQUESTING_JOB] Changing state to AWAITING_PARTNERS
+[17:15:19 clock: 24 TID: 5 spec: TAIL state: REQUESTING_JOB] Got ACK_JOB from 4. Incrementing ack count for job_id = 1 to 4 of 5 needed.
 
-[17:09:49 clock: 21 TID: 2 spec: TAIL state: AWAITING_PARTNERS] Changing state to AWAITING_START
+[17:15:19 clock: 15 TID: 4 spec: BODY state: REQUESTING_JOB] Got REQUEST_JOB from 6 for job_id = 1. Sending ACK_JOB
 
-[17:09:49 clock: 25 TID: 3 spec: HEAD state: AWAITING_START] Got HELLO from 4 for job_id = 1
+[17:15:19 clock: 24 TID: 6 spec: HEAD state: REQUESTING_JOB] Got ACK_JOB from 4. Incrementing ack count for job_id = 1 to 4 of 5 needed.
 
-[17:09:49 clock: 25 TID: 2 spec: TAIL state: AWAITING_START] Got HELLO from 4 for job_id = 1
+[17:15:19 clock: 20 TID: 4 spec: BODY state: REQUESTING_JOB] Got ACK_JOB from 2. Incrementing ack count for job_id = 0 to 1 of 5 needed.
+
+[17:15:19 clock: 21 TID: 4 spec: BODY state: REQUESTING_JOB] Got ACK_JOB from 3. Incrementing ack count for job_id = 0 to 2 of 5 needed.
+
+[17:15:19 clock: 23 TID: 4 spec: BODY state: REQUESTING_JOB] Got ACK_JOB from 5. Incrementing ack count for job_id = 0 to 3 of 5 needed.
+
+[17:15:19 clock: 24 TID: 4 spec: BODY state: REQUESTING_JOB] Got ACK_JOB from 6. Incrementing ack count for job_id = 0 to 4 of 5 needed.
+
+[17:15:19 clock: 2 TID: 1 spec: BODY state: AWAITING_JOB] Got NEW_JOB with job_id = 0
+
+[17:15:19 clock: 2 TID: 1 spec: BODY state: AWAITING_JOB] Changing state to REQUESTING_JOB
+
+[17:15:19 clock: 2 TID: 1 spec: BODY state: REQUESTING_JOB] Sending REQUEST_JOBs for job_id = 0
+
+[17:15:19 clock: 25 TID: 5 spec: TAIL state: REQUESTING_JOB] Got REQUEST_JOB from 1 for job_id = 0. Sending ACK_JOB
+
+[17:15:19 clock: 21 TID: 2 spec: TAIL state: REQUESTING_JOB] Got REQUEST_JOB from 1 for job_id = 0. Sending ACK_JOB
+
+[17:15:19 clock: 25 TID: 4 spec: BODY state: REQUESTING_JOB] Got REQUEST_JOB from 1 for job_id = 0. Sending ACK_JOB
+
+[17:15:19 clock: 21 TID: 3 spec: HEAD state: REQUESTING_JOB] Got REQUEST_JOB from 1 for job_id = 0. Sending ACK_JOB
+
+[17:15:19 clock: 4 TID: 1 spec: BODY state: REQUESTING_JOB] Got REQUEST_JOB from 2 for job_id = 0. Sending ACK_JOB
+
+[17:15:19 clock: 25 TID: 6 spec: HEAD state: REQUESTING_JOB] Got REQUEST_JOB from 1 for job_id = 0. Sending ACK_JOB
+
+[17:15:19 clock: 23 TID: 2 spec: TAIL state: REQUESTING_JOB] Got ACK_JOB from 1. Incrementing ack count for job_id = 0 to 5 of 5 needed.
+
+[17:15:19 clock: 6 TID: 1 spec: BODY state: REQUESTING_JOB] Got REQUEST_JOB from 3 for job_id = 0. Sending ACK_JOB
+
+[17:15:19 clock: 23 TID: 2 spec: TAIL state: REQUESTING_JOB] Received all job ACKs. Broadcasting HELLO.
+
+[17:15:19 clock: 8 TID: 1 spec: BODY state: REQUESTING_JOB] Got REQUEST_JOB from 4 for job_id = 0. Sending REJECT_JOB
+
+[17:15:19 clock: 24 TID: 2 spec: TAIL state: REQUESTING_JOB] Changing state to AWAITING_PARTNERS
+
+[17:15:19 clock: 27 TID: 4 spec: BODY state: REQUESTING_JOB] Got HELLO from 2 for job_id = 0
+
+[17:15:19 clock: 23 TID: 3 spec: HEAD state: REQUESTING_JOB] Got ACK_JOB from 1. Incrementing ack count for job_id = 0 to 5 of 5 needed.
+
+[17:15:19 clock: 27 TID: 5 spec: TAIL state: REQUESTING_JOB] Got HELLO from 2 for job_id = 0
+
+[17:15:19 clock: 27 TID: 6 spec: HEAD state: REQUESTING_JOB] Got HELLO from 2 for job_id = 0
+
+[17:15:19 clock: 23 TID: 3 spec: HEAD state: REQUESTING_JOB] Received all job ACKs. Broadcasting HELLO.
+
+[17:15:19 clock: 10 TID: 1 spec: BODY state: REQUESTING_JOB] Got REQUEST_JOB from 5 for job_id = 0. Sending ACK_JOB
+
+[17:15:19 clock: 28 TID: 4 spec: BODY state: REQUESTING_JOB] Got REJECT_JOB from 1. Changing state to AWAITING_JOB
+
+[17:15:19 clock: 25 TID: 2 spec: TAIL state: AWAITING_PARTNERS] Got HELLO from 3 for job_id = 0
+
+[17:15:19 clock: 28 TID: 6 spec: HEAD state: REQUESTING_JOB] Got HELLO from 3 for job_id = 0
+
+[17:15:19 clock: 24 TID: 3 spec: HEAD state: REQUESTING_JOB] Changing state to AWAITING_PARTNERS
+
+[17:15:19 clock: 28 TID: 4 spec: BODY state: AWAITING_JOB] Changing state to REQUESTING_JOB
+
+[17:15:19 clock: 28 TID: 4 spec: BODY state: REQUESTING_JOB] Sending REQUEST_JOBs for job_id = 1
+
+[17:15:19 clock: 28 TID: 5 spec: TAIL state: REQUESTING_JOB] Got HELLO from 3 for job_id = 0
+
+[17:15:19 clock: 25 TID: 3 spec: HEAD state: AWAITING_PARTNERS] Got HELLO from 2 for job_id = 0
+
+[17:15:19 clock: 12 TID: 1 spec: BODY state: REQUESTING_JOB] Got REQUEST_JOB from 6 for job_id = 0. Sending ACK_JOB
+
+[17:15:19 clock: 30 TID: 2 spec: TAIL state: AWAITING_PARTNERS] Got REQUEST_JOB from 4 for job_id = 1. Sending ACK_JOB
+
+[17:15:19 clock: 30 TID: 5 spec: TAIL state: REQUESTING_JOB] Got REQUEST_JOB from 4 for job_id = 1. Sending ACK_JOB
+
+[17:15:19 clock: 30 TID: 6 spec: HEAD state: REQUESTING_JOB] Got REQUEST_JOB from 4 for job_id = 1. Sending ACK_JOB
+
+[17:15:19 clock: 30 TID: 4 spec: BODY state: REQUESTING_JOB] Got HELLO from 3 for job_id = 0
+
+[17:15:19 clock: 32 TID: 4 spec: BODY state: REQUESTING_JOB] Got ACK_JOB from 2. Incrementing ack count for job_id = 1 to 1 of 5 needed.
+
+[17:15:19 clock: 30 TID: 3 spec: HEAD state: AWAITING_PARTNERS] Got REQUEST_JOB from 4 for job_id = 1. Sending ACK_JOB
+
+[17:15:19 clock: 14 TID: 1 spec: BODY state: REQUESTING_JOB] Got NEW_JOB with job_id = 1
+
+[17:15:19 clock: 15 TID: 1 spec: BODY state: REQUESTING_JOB] Got REQUEST_JOB from 5 for job_id = 1. Sending ACK_JOB
+
+[17:15:19 clock: 33 TID: 4 spec: BODY state: REQUESTING_JOB] Got ACK_JOB from 3. Incrementing ack count for job_id = 1 to 2 of 5 needed.
+
+[17:15:19 clock: 32 TID: 5 spec: TAIL state: REQUESTING_JOB] Got ACK_JOB from 1. Incrementing ack count for job_id = 1 to 5 of 5 needed.
+
+[17:15:19 clock: 32 TID: 5 spec: TAIL state: REQUESTING_JOB] Received all job ACKs. Broadcasting HELLO.
+
+[17:15:19 clock: 17 TID: 1 spec: BODY state: REQUESTING_JOB] Got REQUEST_JOB from 6 for job_id = 1. Sending ACK_JOB
+
+[17:15:19 clock: 34 TID: 4 spec: BODY state: REQUESTING_JOB] Got ACK_JOB from 5. Incrementing ack count for job_id = 1 to 3 of 5 needed.
+
+[17:15:19 clock: 33 TID: 6 spec: HEAD state: REQUESTING_JOB] Got ACK_JOB from 1. Incrementing ack count for job_id = 1 to 5 of 5 needed.
+
+[17:15:19 clock: 34 TID: 2 spec: TAIL state: AWAITING_PARTNERS] Got HELLO from 5 for job_id = 1
+
+[17:15:19 clock: 33 TID: 5 spec: TAIL state: REQUESTING_JOB] Changing state to AWAITING_PARTNERS
+
+[17:15:19 clock: 34 TID: 3 spec: HEAD state: AWAITING_PARTNERS] Got HELLO from 5 for job_id = 1
+
+[17:15:19 clock: 35 TID: 4 spec: BODY state: REQUESTING_JOB] Got ACK_JOB from 6. Incrementing ack count for job_id = 1 to 4 of 5 needed.
+
+[17:15:19 clock: 33 TID: 6 spec: HEAD state: REQUESTING_JOB] Received all job ACKs. Broadcasting HELLO.
+
+[17:15:19 clock: 23 TID: 1 spec: BODY state: REQUESTING_JOB] Got ACK_JOB from 2. Incrementing ack count for job_id = 0 to 1 of 5 needed.
+
+[17:15:19 clock: 36 TID: 4 spec: BODY state: REQUESTING_JOB] Got HELLO from 5 for job_id = 1
+
+[17:15:19 clock: 35 TID: 2 spec: TAIL state: AWAITING_PARTNERS] Got HELLO from 6 for job_id = 1
+
+[17:15:19 clock: 34 TID: 6 spec: HEAD state: REQUESTING_JOB] Changing state to AWAITING_PARTNERS
+
+[17:15:19 clock: 25 TID: 1 spec: BODY state: REQUESTING_JOB] Got HELLO from 2 for job_id = 0
+
+[17:15:19 clock: 35 TID: 3 spec: HEAD state: AWAITING_PARTNERS] Got HELLO from 6 for job_id = 1
+
+[17:15:19 clock: 37 TID: 4 spec: BODY state: REQUESTING_JOB] Got HELLO from 6 for job_id = 1
+
+[17:15:19 clock: 35 TID: 5 spec: TAIL state: AWAITING_PARTNERS] Got HELLO from 6 for job_id = 1
+
+[17:15:19 clock: 26 TID: 1 spec: BODY state: REQUESTING_JOB] Got ACK_JOB from 3. Incrementing ack count for job_id = 0 to 2 of 5 needed.
+
+[17:15:19 clock: 35 TID: 6 spec: HEAD state: AWAITING_PARTNERS] Got HELLO from 5 for job_id = 1
+
+[17:15:19 clock: 27 TID: 1 spec: BODY state: REQUESTING_JOB] Got ACK_JOB from 4. Incrementing ack count for job_id = 0 to 3 of 5 needed.
+
+[17:15:19 clock: 28 TID: 1 spec: BODY state: REQUESTING_JOB] Got ACK_JOB from 5. Incrementing ack count for job_id = 0 to 4 of 5 needed.
+
+[17:15:19 clock: 29 TID: 1 spec: BODY state: REQUESTING_JOB] Got ACK_JOB from 6. Incrementing ack count for job_id = 0 to 5 of 5 needed.
+
+[17:15:19 clock: 29 TID: 1 spec: BODY state: REQUESTING_JOB] Received all job ACKs. Broadcasting HELLO.
+
+[17:15:19 clock: 36 TID: 2 spec: TAIL state: AWAITING_PARTNERS] Got HELLO from 1 for job_id = 0
+
+[17:15:19 clock: 36 TID: 5 spec: TAIL state: AWAITING_PARTNERS] Got HELLO from 1 for job_id = 0
+
+[17:15:19 clock: 36 TID: 3 spec: HEAD state: AWAITING_PARTNERS] Got HELLO from 1 for job_id = 0
+
+[17:15:19 clock: 36 TID: 3 spec: HEAD state: AWAITING_PARTNERS] Changing state to AWAITING_START
+
+[17:15:19 clock: 38 TID: 4 spec: BODY state: REQUESTING_JOB] Got HELLO from 1 for job_id = 0
+
+[17:15:19 clock: 30 TID: 1 spec: BODY state: REQUESTING_JOB] Changing state to AWAITING_PARTNERS
+
+[17:15:19 clock: 31 TID: 1 spec: BODY state: AWAITING_PARTNERS] Got HELLO from 3 for job_id = 0
+
+[17:15:19 clock: 36 TID: 2 spec: TAIL state: AWAITING_PARTNERS] Changing state to AWAITING_START
+
+[17:15:19 clock: 31 TID: 1 spec: BODY state: AWAITING_PARTNERS] Changing state to AWAITING_DESK
+
+[17:15:19 clock: 31 TID: 1 spec: BODY state: AWAITING_DESK] Broadcasting REQUEST_DESK.
+
+[17:15:19 clock: 36 TID: 6 spec: HEAD state: AWAITING_PARTNERS] Got HELLO from 1 for job_id = 0
+
+[17:15:19 clock: 38 TID: 2 spec: TAIL state: AWAITING_START] Got REQUEST_DESK from 1. Sending ACK_DESK
+
+[17:15:19 clock: 37 TID: 6 spec: HEAD state: AWAITING_PARTNERS] Got REQUEST_DESK from 1. Responding with ACK_DESK
+
+[17:15:19 clock: 33 TID: 1 spec: BODY state: AWAITING_DESK] Got REQUEST_JOB from 4 for job_id = 1. Sending ACK_JOB
+
+[17:15:19 clock: 37 TID: 5 spec: TAIL state: AWAITING_PARTNERS] Got REQUEST_DESK from 1. Responding with ACK_DESK
+
+[17:15:19 clock: 38 TID: 3 spec: HEAD state: AWAITING_START] Got REQUEST_DESK from 1. Sending ACK_DESK
+
+[17:15:19 clock: 39 TID: 4 spec: BODY state: REQUESTING_JOB] Got REQUEST_DESK from 1. Responding with ACK_DESK
+
+[17:15:19 clock: 35 TID: 1 spec: BODY state: AWAITING_DESK] Got HELLO from 5 for job_id = 1
+
+[17:15:19 clock: 41 TID: 4 spec: BODY state: REQUESTING_JOB] Got ACK_JOB from 1. Incrementing ack count for job_id = 1 to 5 of 5 needed.
+
+[17:15:19 clock: 41 TID: 4 spec: BODY state: REQUESTING_JOB] Received all job ACKs. Broadcasting HELLO.
+
+[17:15:19 clock: 36 TID: 1 spec: BODY state: AWAITING_DESK] Got HELLO from 6 for job_id = 1
+
+[17:15:19 clock: 43 TID: 2 spec: TAIL state: AWAITING_START] Got HELLO from 4 for job_id = 1
+
+[17:15:19 clock: 43 TID: 5 spec: TAIL state: AWAITING_PARTNERS] Got HELLO from 4 for job_id = 1
+
+[17:15:19 clock: 43 TID: 5 spec: TAIL state: AWAITING_PARTNERS] Changing state to AWAITING_START
+
+[17:15:19 clock: 43 TID: 3 spec: HEAD state: AWAITING_START] Got HELLO from 4 for job_id = 1
+
+[17:15:19 clock: 39 TID: 1 spec: BODY state: AWAITING_DESK] Got ACK_DESK from 6. Incrementing DESK_QUEUE_ACK to 1 of 5 needed
+
+[17:15:19 clock: 43 TID: 6 spec: HEAD state: AWAITING_PARTNERS] Got HELLO from 4 for job_id = 1
+
+[17:15:19 clock: 42 TID: 4 spec: BODY state: REQUESTING_JOB] Changing state to AWAITING_DESK
+
+[17:15:19 clock: 42 TID: 4 spec: BODY state: AWAITING_DESK] Broadcasting REQUEST_DESK.
+
+[17:15:19 clock: 40 TID: 1 spec: BODY state: AWAITING_DESK] Got ACK_DESK from 2. Incrementing DESK_QUEUE_ACK to 2 of 5 needed
+
+[17:15:19 clock: 43 TID: 6 spec: HEAD state: AWAITING_PARTNERS] Changing state to AWAITING_START
+
+[17:15:19 clock: 45 TID: 2 spec: TAIL state: AWAITING_START] Got REQUEST_DESK from 4. Sending ACK_DESK
+
+[17:15:19 clock: 45 TID: 3 spec: HEAD state: AWAITING_START] Got REQUEST_DESK from 4. Sending ACK_DESK
+
+[17:15:19 clock: 41 TID: 1 spec: BODY state: AWAITING_DESK] Got ACK_DESK from 3. Incrementing DESK_QUEUE_ACK to 3 of 5 needed
+
+[17:15:19 clock: 45 TID: 5 spec: TAIL state: AWAITING_START] Got REQUEST_DESK from 4. Sending ACK_DESK
+
+[17:15:19 clock: 46 TID: 4 spec: BODY state: AWAITING_DESK] Got ACK_DESK from 2. Incrementing DESK_QUEUE_ACK to 1 of 5 needed
+
+[17:15:19 clock: 45 TID: 6 spec: HEAD state: AWAITING_START] Got REQUEST_DESK from 4. Sending ACK_DESK
+
+[17:15:19 clock: 42 TID: 1 spec: BODY state: AWAITING_DESK] Got ACK_DESK from 4. Incrementing DESK_QUEUE_ACK to 4 of 5 needed
+
+[17:15:19 clock: 47 TID: 4 spec: BODY state: AWAITING_DESK] Got ACK_DESK from 5. Incrementing DESK_QUEUE_ACK to 2 of 5 needed
+
+[17:15:19 clock: 43 TID: 1 spec: BODY state: AWAITING_DESK] Got ACK_DESK from 5. Incrementing DESK_QUEUE_ACK to 5 of 5 needed
+
+[17:15:19 clock: 48 TID: 4 spec: BODY state: AWAITING_DESK] Got ACK_DESK from 3. Incrementing DESK_QUEUE_ACK to 3 of 5 needed
+
+[17:15:19 clock: 43 TID: 1 spec: BODY state: AWAITING_DESK] Got all desk ACKs. Changing state to PAPER_WORK.
+
+[17:15:19 clock: 44 TID: 1 spec: BODY state: PAPER_WORK] Got HELLO from 4 for job_id = 1
+
+[17:15:19 clock: 49 TID: 4 spec: BODY state: AWAITING_DESK] Got ACK_DESK from 6. Incrementing DESK_QUEUE_ACK to 4 of 5 needed
 
