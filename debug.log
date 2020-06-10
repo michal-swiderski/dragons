@@ -1,432 +1,246 @@
-[18:57:10 clock: 2 TID: 2 spec: TAIL state: AWAITING_JOB] Got NEW_JOB with job_id = 0
+[19:54:36 clock: 74 TID: 1 spec: BODY state: ACQUIRE_SKELETON] Broadcasting REQUEST_SKELETON.
 
-[18:57:10 clock: 2 TID: 2 spec: TAIL state: AWAITING_JOB] Changing state to REQUESTING_JOB
+[19:54:36 clock: 76 TID: 2 spec: TAIL state: AWAITING_START] Got REQUEST_SKELETON from 1, sent ACK_SKELETON
 
-[18:57:10 clock: 2 TID: 2 spec: TAIL state: REQUESTING_JOB] Sending REQUEST_JOBs for job_id = 0
+[19:54:36 clock: 76 TID: 5 spec: TAIL state: AWAITING_JOB] Got REQUEST_SKELETON from 1, sent ACK_SKELETON
 
-[18:57:10 clock: 2 TID: 4 spec: BODY state: AWAITING_JOB] Got NEW_JOB with job_id = 0
+[19:54:36 clock: 76 TID: 6 spec: HEAD state: AWAITING_JOB] Got REQUEST_SKELETON from 1, sent ACK_SKELETON
 
-[18:57:10 clock: 2 TID: 4 spec: BODY state: AWAITING_JOB] Changing state to REQUESTING_JOB
+[19:54:36 clock: 76 TID: 4 spec: BODY state: AWAITING_JOB] Got REQUEST_SKELETON from 1, sent ACK_SKELETON
 
-[18:57:10 clock: 2 TID: 3 spec: HEAD state: AWAITING_JOB] Got NEW_JOB with job_id = 0
+[19:54:36 clock: 76 TID: 7 spec: BODY state: AWAITING_JOB] Got REQUEST_SKELETON from 1, sent ACK_SKELETON
 
-[18:57:10 clock: 2 TID: 4 spec: BODY state: REQUESTING_JOB] Sending REQUEST_JOBs for job_id = 0
+[19:54:36 clock: 76 TID: 8 spec: TAIL state: AWAITING_JOB] Got REQUEST_SKELETON from 1, sent ACK_SKELETON
 
-[18:57:10 clock: 2 TID: 3 spec: HEAD state: AWAITING_JOB] Changing state to REQUESTING_JOB
+[19:54:36 clock: 76 TID: 9 spec: HEAD state: AWAITING_JOB] Got REQUEST_SKELETON from 1, sent ACK_SKELETON
 
-[18:57:10 clock: 2 TID: 3 spec: HEAD state: REQUESTING_JOB] Sending REQUEST_JOBs for job_id = 0
+[19:54:36 clock: 76 TID: 10 spec: BODY state: AWAITING_JOB] Got REQUEST_SKELETON from 1, sent ACK_SKELETON
 
-[18:57:10 clock: 4 TID: 2 spec: TAIL state: REQUESTING_JOB] Got REQUEST_JOB from 4 for job_id = 0. Sending ACK_JOB
+[19:54:36 clock: 78 TID: 1 spec: BODY state: ACQUIRE_SKELETON] Got ACK_SKELETON from 6. Incrementing skeleton_queue_ack to 1 of 9 needed
 
-[18:57:10 clock: 4 TID: 3 spec: HEAD state: REQUESTING_JOB] Got REQUEST_JOB from 2 for job_id = 0. Sending ACK_JOB
+[19:54:36 clock: 79 TID: 1 spec: BODY state: ACQUIRE_SKELETON] Got ACK_SKELETON from 5. Incrementing skeleton_queue_ack to 2 of 9 needed
 
-[18:57:10 clock: 6 TID: 2 spec: TAIL state: REQUESTING_JOB] Got REQUEST_JOB from 3 for job_id = 0. Sending ACK_JOB
+[19:54:36 clock: 76 TID: 3 spec: HEAD state: AWAITING_START] Got REQUEST_SKELETON from 1, sent ACK_SKELETON
 
-[18:57:10 clock: 6 TID: 3 spec: HEAD state: REQUESTING_JOB] Got REQUEST_JOB from 4 for job_id = 0. Sending ACK_JOB
+[19:54:36 clock: 80 TID: 1 spec: BODY state: ACQUIRE_SKELETON] Got ACK_SKELETON from 4. Incrementing skeleton_queue_ack to 3 of 9 needed
 
-[18:57:10 clock: 4 TID: 4 spec: BODY state: REQUESTING_JOB] Got REQUEST_JOB from 2 for job_id = 0. Sending ACK_JOB
+[19:54:36 clock: 81 TID: 1 spec: BODY state: ACQUIRE_SKELETON] Got ACK_SKELETON from 7. Incrementing skeleton_queue_ack to 4 of 9 needed
 
-[18:57:10 clock: 8 TID: 2 spec: TAIL state: REQUESTING_JOB] Got ACK_JOB from 3. Incrementing ack count for job_id = 0 to 1 of 5 needed.
+[19:54:36 clock: 82 TID: 1 spec: BODY state: ACQUIRE_SKELETON] Got ACK_SKELETON from 8. Incrementing skeleton_queue_ack to 5 of 9 needed
 
-[18:57:10 clock: 8 TID: 3 spec: HEAD state: REQUESTING_JOB] Got ACK_JOB from 2. Incrementing ack count for job_id = 0 to 1 of 5 needed.
+[19:54:36 clock: 83 TID: 1 spec: BODY state: ACQUIRE_SKELETON] Got ACK_SKELETON from 9. Incrementing skeleton_queue_ack to 6 of 9 needed
 
-[18:57:10 clock: 9 TID: 2 spec: TAIL state: REQUESTING_JOB] Got ACK_JOB from 4. Incrementing ack count for job_id = 0 to 2 of 5 needed.
+[19:54:36 clock: 84 TID: 1 spec: BODY state: ACQUIRE_SKELETON] Got ACK_SKELETON from 10. Incrementing skeleton_queue_ack to 7 of 9 needed
 
-[18:57:10 clock: 6 TID: 4 spec: BODY state: REQUESTING_JOB] Got ACK_JOB from 2. Incrementing ack count for job_id = 0 to 1 of 5 needed.
+[19:54:36 clock: 85 TID: 1 spec: BODY state: ACQUIRE_SKELETON] Got ACK_SKELETON from 3. Incrementing skeleton_queue_ack to 8 of 9 needed
 
-[18:57:10 clock: 7 TID: 4 spec: BODY state: REQUESTING_JOB] Got REQUEST_JOB from 3 for job_id = 0. Sending ACK_JOB
+[19:54:36 clock: 86 TID: 1 spec: BODY state: ACQUIRE_SKELETON] Got ACK_SKELETON from 2. Incrementing skeleton_queue_ack to 9 of 9 needed
 
-[18:57:10 clock: 9 TID: 3 spec: HEAD state: REQUESTING_JOB] Got ACK_JOB from 4. Incrementing ack count for job_id = 0 to 2 of 5 needed.
+[19:54:36 clock: 86 TID: 1 spec: BODY state: ACQUIRE_SKELETON] Got all ACKs. Broadcasting SKELETON_TAKEN. Sending ACK_SKELETON to local queue. Sending START to partners ([2, 3] in job 0)
 
-[18:57:10 clock: 9 TID: 4 spec: BODY state: REQUESTING_JOB] Got ACK_JOB from 3. Incrementing ack count for job_id = 0 to 2 of 5 needed.
+[19:54:36 clock: 88 TID: 10 spec: BODY state: AWAITING_JOB] Got SKELETON_TAKEN from 1. Decrementing skeleton count to 1
 
-[18:57:10 clock: 2 TID: 1 spec: BODY state: AWAITING_JOB] Got NEW_JOB with job_id = 0
+[19:54:36 clock: 88 TID: 3 spec: HEAD state: AWAITING_START] Got SKELETON_TAKEN from 1. Decrementing skeleton count to 1
 
-[18:57:10 clock: 2 TID: 1 spec: BODY state: AWAITING_JOB] Changing state to REQUESTING_JOB
+[19:54:36 clock: 88 TID: 6 spec: HEAD state: AWAITING_JOB] Got SKELETON_TAKEN from 1. Decrementing skeleton count to 1
 
-[18:57:10 clock: 2 TID: 1 spec: BODY state: REQUESTING_JOB] Sending REQUEST_JOBs for job_id = 0
+[19:54:36 clock: 88 TID: 2 spec: TAIL state: AWAITING_START] Got SKELETON_TAKEN from 1. Decrementing skeleton count to 1
 
-[18:57:10 clock: 10 TID: 4 spec: BODY state: REQUESTING_JOB] Got REQUEST_JOB from 1 for job_id = 0. Sending ACK_JOB
+[19:54:36 clock: 88 TID: 5 spec: TAIL state: AWAITING_JOB] Got SKELETON_TAKEN from 1. Decrementing skeleton count to 1
 
-[18:57:10 clock: 10 TID: 3 spec: HEAD state: REQUESTING_JOB] Got REQUEST_JOB from 1 for job_id = 0. Sending ACK_JOB
+[19:54:36 clock: 88 TID: 4 spec: BODY state: AWAITING_JOB] Got SKELETON_TAKEN from 1. Decrementing skeleton count to 1
 
-[18:57:10 clock: 10 TID: 2 spec: TAIL state: REQUESTING_JOB] Got REQUEST_JOB from 1 for job_id = 0. Sending ACK_JOB
+[19:54:36 clock: 88 TID: 7 spec: BODY state: AWAITING_JOB] Got SKELETON_TAKEN from 1. Decrementing skeleton count to 1
 
-[18:57:10 clock: 4 TID: 1 spec: BODY state: REQUESTING_JOB] Got REQUEST_JOB from 2 for job_id = 0. Sending ACK_JOB
+[19:54:36 clock: 88 TID: 8 spec: TAIL state: AWAITING_JOB] Got SKELETON_TAKEN from 1. Decrementing skeleton count to 1
 
-[18:57:10 clock: 12 TID: 2 spec: TAIL state: REQUESTING_JOB] Got ACK_JOB from 1. Incrementing ack count for job_id = 0 to 3 of 5 needed.
+[19:54:36 clock: 88 TID: 9 spec: HEAD state: AWAITING_JOB] Got SKELETON_TAKEN from 1. Decrementing skeleton count to 1
 
-[18:57:10 clock: 6 TID: 1 spec: BODY state: REQUESTING_JOB] Got REQUEST_JOB from 3 for job_id = 0. Sending ACK_JOB
+[19:54:36 clock: 76 TID: 11 spec: TAIL state: AWAITING_JOB] Got REQUEST_SKELETON from 1, sent ACK_SKELETON
 
-[18:57:10 clock: 12 TID: 3 spec: HEAD state: REQUESTING_JOB] Got ACK_JOB from 1. Incrementing ack count for job_id = 0 to 3 of 5 needed.
+[19:54:36 clock: 88 TID: 11 spec: TAIL state: AWAITING_JOB] Got SKELETON_TAKEN from 1. Decrementing skeleton count to 1
 
-[18:57:10 clock: 8 TID: 1 spec: BODY state: REQUESTING_JOB] Got REQUEST_JOB from 4 for job_id = 0. Sending REJECT_JOB
+[19:54:39 clock: 127 TID: 4 spec: BODY state: ACQUIRE_SKELETON] Broadcasting REQUEST_SKELETON.
 
-[18:57:10 clock: 12 TID: 4 spec: BODY state: REQUESTING_JOB] Got REJECT_JOB from 1. Changing state to AWAITING_JOB
+[19:54:39 clock: 129 TID: 1 spec: BODY state: REVIVING] Got REQUEST_SKELETON from 4, sent ACK_SKELETON
 
-[18:57:10 clock: 12 TID: 1 spec: BODY state: REQUESTING_JOB] Got ACK_JOB from 4. Incrementing ack count for job_id = 0 to 1 of 5 needed.
+[19:54:39 clock: 129 TID: 2 spec: TAIL state: REVIVING] Got REQUEST_SKELETON from 4, sent ACK_SKELETON
 
-[18:57:10 clock: 13 TID: 1 spec: BODY state: REQUESTING_JOB] Got ACK_JOB from 2. Incrementing ack count for job_id = 0 to 2 of 5 needed.
+[19:54:39 clock: 129 TID: 5 spec: TAIL state: AWAITING_START] Got REQUEST_SKELETON from 4, sent ACK_SKELETON
 
-[18:57:10 clock: 14 TID: 1 spec: BODY state: REQUESTING_JOB] Got ACK_JOB from 3. Incrementing ack count for job_id = 0 to 3 of 5 needed.
+[19:54:39 clock: 129 TID: 3 spec: HEAD state: REVIVING] Got REQUEST_SKELETON from 4, sent ACK_SKELETON
 
-[18:57:10 clock: 2 TID: 5 spec: TAIL state: AWAITING_JOB] Got NEW_JOB with job_id = 0
+[19:54:39 clock: 129 TID: 6 spec: HEAD state: AWAITING_START] Got REQUEST_SKELETON from 4, sent ACK_SKELETON
 
-[18:57:10 clock: 2 TID: 6 spec: HEAD state: AWAITING_JOB] Got NEW_JOB with job_id = 0
+[19:54:39 clock: 129 TID: 7 spec: BODY state: AWAITING_JOB] Got REQUEST_SKELETON from 4, sent ACK_SKELETON
 
-[18:57:10 clock: 2 TID: 5 spec: TAIL state: AWAITING_JOB] Changing state to REQUESTING_JOB
+[19:54:39 clock: 129 TID: 8 spec: TAIL state: AWAITING_JOB] Got REQUEST_SKELETON from 4, sent ACK_SKELETON
 
-[18:57:10 clock: 2 TID: 6 spec: HEAD state: AWAITING_JOB] Changing state to REQUESTING_JOB
+[19:54:39 clock: 131 TID: 4 spec: BODY state: ACQUIRE_SKELETON] Got ACK_SKELETON from 5. Incrementing skeleton_queue_ack to 1 of 10 needed
 
-[18:57:10 clock: 2 TID: 5 spec: TAIL state: REQUESTING_JOB] Sending REQUEST_JOBs for job_id = 0
+[19:54:39 clock: 129 TID: 10 spec: BODY state: AWAITING_JOB] Got REQUEST_SKELETON from 4, sent ACK_SKELETON
 
-[18:57:10 clock: 2 TID: 6 spec: HEAD state: REQUESTING_JOB] Sending REQUEST_JOBs for job_id = 0
+[19:54:39 clock: 132 TID: 4 spec: BODY state: ACQUIRE_SKELETON] Got ACK_SKELETON from 2. Incrementing skeleton_queue_ack to 2 of 10 needed
 
-[18:57:10 clock: 15 TID: 1 spec: BODY state: REQUESTING_JOB] Got REQUEST_JOB from 6 for job_id = 0. Sending ACK_JOB
+[19:54:39 clock: 133 TID: 4 spec: BODY state: ACQUIRE_SKELETON] Got ACK_SKELETON from 1. Incrementing skeleton_queue_ack to 3 of 10 needed
 
-[18:57:10 clock: 13 TID: 2 spec: TAIL state: REQUESTING_JOB] Got REQUEST_JOB from 6 for job_id = 0. Sending ACK_JOB
+[19:54:39 clock: 134 TID: 4 spec: BODY state: ACQUIRE_SKELETON] Got ACK_SKELETON from 3. Incrementing skeleton_queue_ack to 4 of 10 needed
 
-[18:57:10 clock: 13 TID: 3 spec: HEAD state: REQUESTING_JOB] Got REQUEST_JOB from 6 for job_id = 0. Sending REJECT_JOB
+[19:54:39 clock: 135 TID: 4 spec: BODY state: ACQUIRE_SKELETON] Got ACK_SKELETON from 6. Incrementing skeleton_queue_ack to 5 of 10 needed
 
-[18:57:10 clock: 4 TID: 6 spec: HEAD state: REQUESTING_JOB] Got REQUEST_JOB from 1 for job_id = 0. Sending ACK_JOB
+[19:54:39 clock: 136 TID: 4 spec: BODY state: ACQUIRE_SKELETON] Got ACK_SKELETON from 7. Incrementing skeleton_queue_ack to 6 of 10 needed
 
-[18:57:10 clock: 4 TID: 5 spec: TAIL state: REQUESTING_JOB] Got REQUEST_JOB from 1 for job_id = 0. Sending ACK_JOB
+[19:54:39 clock: 137 TID: 4 spec: BODY state: ACQUIRE_SKELETON] Got ACK_SKELETON from 8. Incrementing skeleton_queue_ack to 7 of 10 needed
 
-[18:57:10 clock: 17 TID: 1 spec: BODY state: REQUESTING_JOB] Got REQUEST_JOB from 5 for job_id = 0. Sending ACK_JOB
+[19:54:39 clock: 138 TID: 4 spec: BODY state: ACQUIRE_SKELETON] Got ACK_SKELETON from 10. Incrementing skeleton_queue_ack to 8 of 10 needed
 
-[18:57:10 clock: 6 TID: 5 spec: TAIL state: REQUESTING_JOB] Got REQUEST_JOB from 2 for job_id = 0. Sending ACK_JOB
+[19:54:39 clock: 129 TID: 11 spec: TAIL state: AWAITING_JOB] Got REQUEST_SKELETON from 4, sent ACK_SKELETON
 
-[18:57:10 clock: 15 TID: 2 spec: TAIL state: REQUESTING_JOB] Got REQUEST_JOB from 5 for job_id = 0. Sending REJECT_JOB
+[19:54:39 clock: 139 TID: 4 spec: BODY state: ACQUIRE_SKELETON] Got ACK_SKELETON from 11. Incrementing skeleton_queue_ack to 9 of 10 needed
 
-[18:57:10 clock: 15 TID: 3 spec: HEAD state: REQUESTING_JOB] Got REQUEST_JOB from 5 for job_id = 0. Sending ACK_JOB
+[19:54:39 clock: 129 TID: 9 spec: HEAD state: AWAITING_JOB] Got REQUEST_SKELETON from 4, sent ACK_SKELETON
 
-[18:57:10 clock: 6 TID: 6 spec: HEAD state: REQUESTING_JOB] Got REQUEST_JOB from 2 for job_id = 0. Sending ACK_JOB
+[19:54:39 clock: 140 TID: 4 spec: BODY state: ACQUIRE_SKELETON] Got ACK_SKELETON from 9. Incrementing skeleton_queue_ack to 10 of 10 needed
 
-[18:57:10 clock: 19 TID: 1 spec: BODY state: REQUESTING_JOB] Got ACK_JOB from 5. Incrementing ack count for job_id = 0 to 4 of 5 needed.
+[19:54:39 clock: 140 TID: 4 spec: BODY state: ACQUIRE_SKELETON] Got all ACKs. Broadcasting SKELETON_TAKEN. Sending ACK_SKELETON to local queue. Sending START to partners ([6, 5] in job 1)
 
-[18:57:10 clock: 20 TID: 1 spec: BODY state: REQUESTING_JOB] Got ACK_JOB from 6. Incrementing ack count for job_id = 0 to 5 of 5 needed.
+[19:54:39 clock: 142 TID: 1 spec: BODY state: REVIVING] Got SKELETON_TAKEN from 4. Decrementing skeleton count to 0
 
-[18:57:10 clock: 8 TID: 6 spec: HEAD state: REQUESTING_JOB] Got REQUEST_JOB from 3 for job_id = 0. Sending ACK_JOB
+[19:54:39 clock: 142 TID: 2 spec: TAIL state: REVIVING] Got SKELETON_TAKEN from 4. Decrementing skeleton count to 0
 
-[18:57:10 clock: 8 TID: 5 spec: TAIL state: REQUESTING_JOB] Got REQUEST_JOB from 3 for job_id = 0. Sending ACK_JOB
+[19:54:39 clock: 142 TID: 9 spec: HEAD state: AWAITING_JOB] Got SKELETON_TAKEN from 4. Decrementing skeleton count to 0
 
-[18:57:10 clock: 17 TID: 2 spec: TAIL state: REQUESTING_JOB] Got ACK_JOB from 5. Incrementing ack count for job_id = 0 to 4 of 5 needed.
+[19:54:39 clock: 142 TID: 8 spec: TAIL state: AWAITING_JOB] Got SKELETON_TAKEN from 4. Decrementing skeleton count to 0
 
-[18:57:10 clock: 20 TID: 1 spec: BODY state: REQUESTING_JOB] Received all job ACKs. Broadcasting HELLO.
+[19:54:39 clock: 142 TID: 10 spec: BODY state: AWAITING_JOB] Got SKELETON_TAKEN from 4. Decrementing skeleton count to 0
 
-[18:57:10 clock: 18 TID: 2 spec: TAIL state: REQUESTING_JOB] Got ACK_JOB from 6. Incrementing ack count for job_id = 0 to 5 of 5 needed.
+[19:54:39 clock: 142 TID: 5 spec: TAIL state: AWAITING_START] Got SKELETON_TAKEN from 4. Decrementing skeleton count to 0
 
-[18:57:10 clock: 22 TID: 4 spec: BODY state: AWAITING_JOB] Got HELLO from 1 for job_id = 0
+[19:54:39 clock: 142 TID: 3 spec: HEAD state: REVIVING] Got SKELETON_TAKEN from 4. Decrementing skeleton count to 0
 
-[18:57:10 clock: 10 TID: 6 spec: HEAD state: REQUESTING_JOB] Got REQUEST_JOB from 4 for job_id = 0. Sending ACK_JOB
+[19:54:39 clock: 142 TID: 6 spec: HEAD state: AWAITING_START] Got SKELETON_TAKEN from 4. Decrementing skeleton count to 0
 
-[18:57:10 clock: 10 TID: 5 spec: TAIL state: REQUESTING_JOB] Got REQUEST_JOB from 4 for job_id = 0. Sending ACK_JOB
+[19:54:39 clock: 142 TID: 7 spec: BODY state: AWAITING_JOB] Got SKELETON_TAKEN from 4. Decrementing skeleton count to 0
 
-[18:57:10 clock: 22 TID: 3 spec: HEAD state: REQUESTING_JOB] Got HELLO from 1 for job_id = 0
+[19:54:39 clock: 142 TID: 11 spec: TAIL state: AWAITING_JOB] Got SKELETON_TAKEN from 4. Decrementing skeleton count to 0
 
-[18:57:10 clock: 21 TID: 1 spec: BODY state: REQUESTING_JOB] Changing state to AWAITING_PARTNERS
+[19:54:42 clock: 197 TID: 7 spec: BODY state: ACQUIRE_SKELETON] Broadcasting REQUEST_SKELETON.
 
-[18:57:10 clock: 18 TID: 2 spec: TAIL state: REQUESTING_JOB] Received all job ACKs. Broadcasting HELLO.
+[19:54:42 clock: 199 TID: 9 spec: HEAD state: AWAITING_START] Got REQUEST_SKELETON from 7, sent ACK_SKELETON
 
-[18:57:10 clock: 23 TID: 3 spec: HEAD state: REQUESTING_JOB] Got ACK_JOB from 6. Incrementing ack count for job_id = 0 to 4 of 5 needed.
+[19:54:42 clock: 199 TID: 8 spec: TAIL state: AWAITING_START] Got REQUEST_SKELETON from 7, sent ACK_SKELETON
 
-[18:57:10 clock: 24 TID: 3 spec: HEAD state: REQUESTING_JOB] Got ACK_JOB from 5. Incrementing ack count for job_id = 0 to 5 of 5 needed.
+[19:54:42 clock: 199 TID: 5 spec: TAIL state: AWAITING_JOB] Got REQUEST_SKELETON from 7, sent ACK_SKELETON
 
-[18:57:10 clock: 22 TID: 1 spec: BODY state: AWAITING_PARTNERS] Got HELLO from 2 for job_id = 0
+[19:54:42 clock: 199 TID: 4 spec: BODY state: AWAITING_JOB] Got REQUEST_SKELETON from 7, sent ACK_SKELETON
 
-[18:57:10 clock: 23 TID: 4 spec: BODY state: AWAITING_JOB] Got HELLO from 2 for job_id = 0
+[19:54:42 clock: 199 TID: 1 spec: BODY state: AWAITING_JOB] Got REQUEST_SKELETON from 7, sent ACK_SKELETON
 
-[18:57:10 clock: 19 TID: 2 spec: TAIL state: REQUESTING_JOB] Changing state to AWAITING_PARTNERS
+[19:54:42 clock: 199 TID: 3 spec: HEAD state: AWAITING_JOB] Got REQUEST_SKELETON from 7, sent ACK_SKELETON
 
-[18:57:10 clock: 24 TID: 3 spec: HEAD state: REQUESTING_JOB] Received all job ACKs. Broadcasting HELLO.
+[19:54:42 clock: 199 TID: 6 spec: HEAD state: AWAITING_JOB] Got REQUEST_SKELETON from 7, sent ACK_SKELETON
 
-[18:57:10 clock: 22 TID: 2 spec: TAIL state: AWAITING_PARTNERS] Got HELLO from 1 for job_id = 0
+[19:54:42 clock: 199 TID: 10 spec: BODY state: AWAITING_JOB] Got REQUEST_SKELETON from 7, sent ACK_SKELETON
 
-[18:57:10 clock: 12 TID: 6 spec: HEAD state: REQUESTING_JOB] Got REQUEST_JOB from 5 for job_id = 0. Sending ACK_JOB
+[19:54:42 clock: 201 TID: 7 spec: BODY state: ACQUIRE_SKELETON] Got ACK_SKELETON from 3. Incrementing skeleton_queue_ack to 1 of 11 needed
 
-[18:57:10 clock: 12 TID: 5 spec: TAIL state: REQUESTING_JOB] Got REQUEST_JOB from 6 for job_id = 0. Sending ACK_JOB
+[19:54:42 clock: 202 TID: 7 spec: BODY state: ACQUIRE_SKELETON] Got ACK_SKELETON from 5. Incrementing skeleton_queue_ack to 2 of 11 needed
 
-[18:57:10 clock: 26 TID: 4 spec: BODY state: AWAITING_JOB] Got HELLO from 3 for job_id = 0
+[19:54:42 clock: 203 TID: 7 spec: BODY state: ACQUIRE_SKELETON] Got ACK_SKELETON from 4. Incrementing skeleton_queue_ack to 3 of 11 needed
 
-[18:57:10 clock: 25 TID: 3 spec: HEAD state: REQUESTING_JOB] Changing state to AWAITING_PARTNERS
+[19:54:42 clock: 204 TID: 7 spec: BODY state: ACQUIRE_SKELETON] Got ACK_SKELETON from 6. Incrementing skeleton_queue_ack to 4 of 11 needed
 
-[18:57:10 clock: 26 TID: 1 spec: BODY state: AWAITING_PARTNERS] Got HELLO from 3 for job_id = 0
+[19:54:42 clock: 205 TID: 7 spec: BODY state: ACQUIRE_SKELETON] Got ACK_SKELETON from 9. Incrementing skeleton_queue_ack to 5 of 11 needed
 
-[18:57:10 clock: 19 TID: 5 spec: TAIL state: REQUESTING_JOB] Got ACK_JOB from 1. Incrementing ack count for job_id = 0 to 1 of 5 needed.
+[19:54:42 clock: 206 TID: 7 spec: BODY state: ACQUIRE_SKELETON] Got ACK_SKELETON from 10. Incrementing skeleton_queue_ack to 6 of 11 needed
 
-[18:57:10 clock: 26 TID: 3 spec: HEAD state: AWAITING_PARTNERS] Got HELLO from 2 for job_id = 0
+[19:54:42 clock: 207 TID: 7 spec: BODY state: ACQUIRE_SKELETON] Got ACK_SKELETON from 1. Incrementing skeleton_queue_ack to 7 of 11 needed
 
-[18:57:10 clock: 26 TID: 2 spec: TAIL state: AWAITING_PARTNERS] Got HELLO from 3 for job_id = 0
+[19:54:42 clock: 199 TID: 2 spec: TAIL state: AWAITING_JOB] Got REQUEST_SKELETON from 7, sent ACK_SKELETON
 
-[18:57:10 clock: 26 TID: 2 spec: TAIL state: AWAITING_PARTNERS] Changing state to AWAITING_START
+[19:54:42 clock: 208 TID: 7 spec: BODY state: ACQUIRE_SKELETON] Got ACK_SKELETON from 8. Incrementing skeleton_queue_ack to 8 of 11 needed
 
-[18:57:10 clock: 17 TID: 6 spec: HEAD state: REQUESTING_JOB] Got ACK_JOB from 1. Incrementing ack count for job_id = 0 to 1 of 5 needed.
+[19:54:42 clock: 209 TID: 7 spec: BODY state: ACQUIRE_SKELETON] Got ACK_SKELETON from 2. Incrementing skeleton_queue_ack to 9 of 11 needed
 
-[18:57:10 clock: 26 TID: 1 spec: BODY state: AWAITING_PARTNERS] Changing state to AWAITING_DESK
+[19:54:42 clock: 199 TID: 11 spec: TAIL state: AWAITING_JOB] Got REQUEST_SKELETON from 7, sent ACK_SKELETON
 
-[18:57:10 clock: 26 TID: 1 spec: BODY state: AWAITING_DESK] Broadcasting REQUEST_DESK.
+[19:54:42 clock: 210 TID: 7 spec: BODY state: ACQUIRE_SKELETON] Got ACK_SKELETON from 11. Incrementing skeleton_queue_ack to 10 of 11 needed
 
-[18:57:10 clock: 18 TID: 6 spec: HEAD state: REQUESTING_JOB] Got ACK_JOB from 2. Incrementing ack count for job_id = 0 to 2 of 5 needed.
+[19:54:45 clock: 251 TID: 3 spec: HEAD state: ACQUIRE_SKELETON] Broadcasting REQUEST_SKELETON.
 
-[18:57:10 clock: 20 TID: 5 spec: TAIL state: REQUESTING_JOB] Got REJECT_JOB from 2. Changing state to AWAITING_JOB
+[19:54:45 clock: 253 TID: 6 spec: HEAD state: AWAITING_JOB] Got REQUEST_SKELETON from 3, sent ACK_SKELETON
 
-[18:57:10 clock: 26 TID: 3 spec: HEAD state: AWAITING_PARTNERS] Changing state to AWAITING_START
+[19:54:45 clock: 253 TID: 8 spec: TAIL state: AWAITING_START] Got REQUEST_SKELETON from 3, sent ACK_SKELETON
 
-[18:57:10 clock: 28 TID: 4 spec: BODY state: AWAITING_JOB] Got REQUEST_DESK from 1. Responding with ACK_DESK
+[19:54:45 clock: 253 TID: 5 spec: TAIL state: AWAITING_JOB] Got REQUEST_SKELETON from 3, sent ACK_SKELETON
 
-[18:57:10 clock: 19 TID: 6 spec: HEAD state: REQUESTING_JOB] Got REJECT_JOB from 3. Changing state to AWAITING_JOB
+[19:54:45 clock: 253 TID: 4 spec: BODY state: AWAITING_JOB] Got REQUEST_SKELETON from 3, sent ACK_SKELETON
 
-[18:57:10 clock: 22 TID: 5 spec: TAIL state: AWAITING_JOB] Got HELLO from 1 for job_id = 0
+[19:54:45 clock: 253 TID: 11 spec: TAIL state: AWAITING_START] Got REQUEST_SKELETON from 3, sent ACK_SKELETON
 
-[18:57:10 clock: 28 TID: 2 spec: TAIL state: AWAITING_START] Got REQUEST_DESK from 1. Sending ACK_DESK
+[19:54:45 clock: 253 TID: 1 spec: BODY state: AWAITING_JOB] Got REQUEST_SKELETON from 3, sent ACK_SKELETON
 
-[18:57:10 clock: 28 TID: 3 spec: HEAD state: AWAITING_START] Got REQUEST_DESK from 1. Sending ACK_DESK
+[19:54:45 clock: 253 TID: 7 spec: BODY state: ACQUIRE_SKELETON] Got REQUEST_SKELETON from 3. Adding it to local queue
 
-[18:57:10 clock: 30 TID: 1 spec: BODY state: AWAITING_DESK] Got ACK_DESK from 3. Incrementing DESK_QUEUE_ACK to 1 of 5 needed
+[19:54:45 clock: 253 TID: 2 spec: TAIL state: AWAITING_JOB] Got REQUEST_SKELETON from 3, sent ACK_SKELETON
 
-[18:57:10 clock: 22 TID: 6 spec: HEAD state: AWAITING_JOB] Got HELLO from 1 for job_id = 0
+[19:54:45 clock: 253 TID: 10 spec: BODY state: AWAITING_START] Got REQUEST_SKELETON from 3, sent ACK_SKELETON
 
-[18:57:10 clock: 23 TID: 5 spec: TAIL state: AWAITING_JOB] Got HELLO from 2 for job_id = 0
+[19:54:45 clock: 253 TID: 9 spec: HEAD state: AWAITING_START] Got REQUEST_SKELETON from 3, sent ACK_SKELETON
 
-[18:57:10 clock: 31 TID: 1 spec: BODY state: AWAITING_DESK] Got ACK_DESK from 2. Incrementing DESK_QUEUE_ACK to 2 of 5 needed
+[19:54:45 clock: 255 TID: 3 spec: HEAD state: ACQUIRE_SKELETON] Got ACK_SKELETON from 5. Incrementing skeleton_queue_ack to 1 of 11 needed
 
-[18:57:10 clock: 23 TID: 6 spec: HEAD state: AWAITING_JOB] Got HELLO from 2 for job_id = 0
+[19:54:45 clock: 256 TID: 3 spec: HEAD state: ACQUIRE_SKELETON] Got ACK_SKELETON from 1. Incrementing skeleton_queue_ack to 2 of 11 needed
 
-[18:57:10 clock: 26 TID: 5 spec: TAIL state: AWAITING_JOB] Got HELLO from 3 for job_id = 0
+[19:54:45 clock: 257 TID: 3 spec: HEAD state: ACQUIRE_SKELETON] Got ACK_SKELETON from 2. Incrementing skeleton_queue_ack to 3 of 11 needed
 
-[18:57:10 clock: 32 TID: 1 spec: BODY state: AWAITING_DESK] Got ACK_DESK from 4. Incrementing DESK_QUEUE_ACK to 3 of 5 needed
+[19:54:45 clock: 258 TID: 3 spec: HEAD state: ACQUIRE_SKELETON] Got ACK_SKELETON from 4. Incrementing skeleton_queue_ack to 4 of 11 needed
 
-[18:57:10 clock: 26 TID: 6 spec: HEAD state: AWAITING_JOB] Got HELLO from 3 for job_id = 0
+[19:54:45 clock: 259 TID: 3 spec: HEAD state: ACQUIRE_SKELETON] Got ACK_SKELETON from 6. Incrementing skeleton_queue_ack to 5 of 11 needed
 
-[18:57:10 clock: 28 TID: 5 spec: TAIL state: AWAITING_JOB] Got REQUEST_DESK from 1. Responding with ACK_DESK
+[19:54:45 clock: 260 TID: 3 spec: HEAD state: ACQUIRE_SKELETON] Got ACK_SKELETON from 8. Incrementing skeleton_queue_ack to 6 of 11 needed
 
-[18:57:10 clock: 28 TID: 6 spec: HEAD state: AWAITING_JOB] Got REQUEST_DESK from 1. Responding with ACK_DESK
+[19:54:45 clock: 261 TID: 3 spec: HEAD state: ACQUIRE_SKELETON] Got ACK_SKELETON from 9. Incrementing skeleton_queue_ack to 7 of 11 needed
 
-[18:57:10 clock: 33 TID: 1 spec: BODY state: AWAITING_DESK] Got ACK_DESK from 5. Incrementing DESK_QUEUE_ACK to 4 of 5 needed
+[19:54:45 clock: 262 TID: 3 spec: HEAD state: ACQUIRE_SKELETON] Got ACK_SKELETON from 10. Incrementing skeleton_queue_ack to 8 of 11 needed
 
-[18:57:10 clock: 34 TID: 1 spec: BODY state: AWAITING_DESK] Got ACK_DESK from 6. Incrementing DESK_QUEUE_ACK to 5 of 5 needed
+[19:54:45 clock: 263 TID: 3 spec: HEAD state: ACQUIRE_SKELETON] Got ACK_SKELETON from 11. Incrementing skeleton_queue_ack to 9 of 11 needed
 
-[18:57:10 clock: 34 TID: 1 spec: BODY state: AWAITING_DESK] Got all desk ACKs. Changing state to PAPER_WORK.
+[19:54:48 clock: 293 TID: 1 spec: BODY state: ACQUIRE_SKELETON] Broadcasting REQUEST_SKELETON.
 
-[18:57:11 clock: 34 TID: 1 spec: BODY state: PAPER_WORK] Done doing paperwork. Sending ACK_DESK to local queue. Changing state to ACQUIRE SKELETON
+[19:54:48 clock: 295 TID: 2 spec: TAIL state: AWAITING_START] Got REQUEST_SKELETON from 1, sent ACK_SKELETON
 
-[18:57:11 clock: 35 TID: 1 spec: BODY state: ACQUIRE_SKELETON] Broadcasting REQUEST_SKELETON.
+[19:54:48 clock: 295 TID: 10 spec: BODY state: AWAITING_START] Got REQUEST_SKELETON from 1, sent ACK_SKELETON
 
-[18:57:11 clock: 37 TID: 4 spec: BODY state: AWAITING_JOB] Got REQUEST_SKELETON from 1, sent ACK_SKELETON
+[19:54:48 clock: 295 TID: 9 spec: HEAD state: AWAITING_START] Got REQUEST_SKELETON from 1, sent ACK_SKELETON
 
-[18:57:11 clock: 37 TID: 5 spec: TAIL state: AWAITING_JOB] Got REQUEST_SKELETON from 1, sent ACK_SKELETON
+[19:54:48 clock: 295 TID: 6 spec: HEAD state: AWAITING_START] Got REQUEST_SKELETON from 1, sent ACK_SKELETON
 
-[18:57:11 clock: 37 TID: 3 spec: HEAD state: AWAITING_START] Got REQUEST_SKELETON from 1, sent ACK_SKELETON
+[19:54:48 clock: 295 TID: 8 spec: TAIL state: AWAITING_START] Got REQUEST_SKELETON from 1, sent ACK_SKELETON
 
-[18:57:11 clock: 37 TID: 2 spec: TAIL state: AWAITING_START] Got REQUEST_SKELETON from 1, sent ACK_SKELETON
+[19:54:48 clock: 295 TID: 5 spec: TAIL state: AWAITING_JOB] Got REQUEST_SKELETON from 1, sent ACK_SKELETON
 
-[18:57:11 clock: 37 TID: 6 spec: HEAD state: AWAITING_JOB] Got REQUEST_SKELETON from 1, sent ACK_SKELETON
+[19:54:48 clock: 295 TID: 4 spec: BODY state: AWAITING_JOB] Got REQUEST_SKELETON from 1, sent ACK_SKELETON
 
-[18:57:11 clock: 39 TID: 1 spec: BODY state: ACQUIRE_SKELETON] Got ACK_SKELETON from 4. Incrementing skeleton_queue_ack to 1 of -4 needed
+[19:54:48 clock: 295 TID: 11 spec: TAIL state: AWAITING_START] Got REQUEST_SKELETON from 1, sent ACK_SKELETON
 
-[18:57:11 clock: 39 TID: 1 spec: BODY state: ACQUIRE_SKELETON] Got all ACKs. Broadcasting SKELETON_TAKEN. Sending ACK_SKELETON to local queue. Sending START to partners ([2, 3] in job 0)
+[19:54:48 clock: 295 TID: 3 spec: HEAD state: ACQUIRE_SKELETON] Got REQUEST_SKELETON from 1. Adding it to local queue
 
-[18:57:11 clock: 41 TID: 5 spec: TAIL state: AWAITING_JOB] Got SKELETON_TAKEN from 1. Decrementing skeleton count to 9
+[19:54:48 clock: 295 TID: 7 spec: BODY state: ACQUIRE_SKELETON] Got REQUEST_SKELETON from 1. Adding it to local queue
 
-[18:57:11 clock: 41 TID: 3 spec: HEAD state: AWAITING_START] Got SKELETON_TAKEN from 1. Decrementing skeleton count to 9
+[19:54:48 clock: 297 TID: 1 spec: BODY state: ACQUIRE_SKELETON] Got ACK_SKELETON from 4. Incrementing skeleton_queue_ack to 1 of 11 needed
 
-[18:57:11 clock: 41 TID: 6 spec: HEAD state: AWAITING_JOB] Got SKELETON_TAKEN from 1. Decrementing skeleton count to 9
+[19:54:48 clock: 298 TID: 1 spec: BODY state: ACQUIRE_SKELETON] Got ACK_SKELETON from 11. Incrementing skeleton_queue_ack to 2 of 11 needed
 
-[18:57:11 clock: 41 TID: 2 spec: TAIL state: AWAITING_START] Got SKELETON_TAKEN from 1. Decrementing skeleton count to 9
+[19:54:48 clock: 299 TID: 1 spec: BODY state: ACQUIRE_SKELETON] Got ACK_SKELETON from 2. Incrementing skeleton_queue_ack to 3 of 11 needed
 
-[18:57:11 clock: 41 TID: 4 spec: BODY state: AWAITING_JOB] Got SKELETON_TAKEN from 1. Decrementing skeleton count to 9
+[19:54:48 clock: 300 TID: 1 spec: BODY state: ACQUIRE_SKELETON] Got ACK_SKELETON from 5. Incrementing skeleton_queue_ack to 4 of 11 needed
 
-1
-[18:57:11 clock: 43 TID: 3 spec: HEAD state: AWAITING_START] Got START, changing state to REVIVING
+[19:54:48 clock: 301 TID: 1 spec: BODY state: ACQUIRE_SKELETON] Got ACK_SKELETON from 6. Incrementing skeleton_queue_ack to 5 of 11 needed
 
-[18:57:11 clock: 43 TID: 2 spec: TAIL state: AWAITING_START] Got START, changing state to REVIVING
+[19:54:48 clock: 302 TID: 1 spec: BODY state: ACQUIRE_SKELETON] Got ACK_SKELETON from 8. Incrementing skeleton_queue_ack to 6 of 11 needed
 
-[18:57:13 clock: 42 TID: 5 spec: TAIL state: AWAITING_JOB] Got NEW_JOB with job_id = 1
+[19:54:48 clock: 303 TID: 1 spec: BODY state: ACQUIRE_SKELETON] Got ACK_SKELETON from 9. Incrementing skeleton_queue_ack to 7 of 11 needed
 
-[18:57:13 clock: 42 TID: 5 spec: TAIL state: AWAITING_JOB] Changing state to REQUESTING_JOB
-
-[18:57:13 clock: 47 TID: 1 spec: BODY state: REVIVING] Got NEW_JOB with job_id = 1
-
-[18:57:13 clock: 42 TID: 6 spec: HEAD state: AWAITING_JOB] Got NEW_JOB with job_id = 1
-
-[18:57:13 clock: 42 TID: 6 spec: HEAD state: AWAITING_JOB] Changing state to REQUESTING_JOB
-
-[18:57:13 clock: 44 TID: 3 spec: HEAD state: REVIVING] Got NEW_JOB with job_id = 1
-
-[18:57:13 clock: 44 TID: 2 spec: TAIL state: REVIVING] Got NEW_JOB with job_id = 1
-
-[18:57:13 clock: 42 TID: 4 spec: BODY state: AWAITING_JOB] Got NEW_JOB with job_id = 1
-
-[18:57:13 clock: 42 TID: 4 spec: BODY state: AWAITING_JOB] Changing state to REQUESTING_JOB
-
-[18:57:13 clock: 42 TID: 4 spec: BODY state: REQUESTING_JOB] Sending REQUEST_JOBs for job_id = 1
-
-[18:57:13 clock: 42 TID: 5 spec: TAIL state: REQUESTING_JOB] Sending REQUEST_JOBs for job_id = 1
-
-[18:57:13 clock: 48 TID: 1 spec: BODY state: REVIVING] Got REQEST_JOB from 5, sent ACK_JOB
-
-[18:57:13 clock: 42 TID: 6 spec: HEAD state: REQUESTING_JOB] Sending REQUEST_JOBs for job_id = 1
-
-[18:57:13 clock: 44 TID: 5 spec: TAIL state: REQUESTING_JOB] Got REQUEST_JOB from 4 for job_id = 1. Sending ACK_JOB
-
-[18:57:13 clock: 46 TID: 5 spec: TAIL state: REQUESTING_JOB] Got REQUEST_JOB from 6 for job_id = 1. Sending ACK_JOB
-
-[18:57:13 clock: 45 TID: 2 spec: TAIL state: REVIVING] Got REQEST_JOB from 5, sent ACK_JOB
-
-[18:57:13 clock: 47 TID: 2 spec: TAIL state: REVIVING] Got REQEST_JOB from 4, sent ACK_JOB
-
-[18:57:13 clock: 45 TID: 3 spec: HEAD state: REVIVING] Got REQEST_JOB from 5, sent ACK_JOB
-
-[18:57:13 clock: 47 TID: 3 spec: HEAD state: REVIVING] Got REQEST_JOB from 4, sent ACK_JOB
-
-[18:57:13 clock: 44 TID: 4 spec: BODY state: REQUESTING_JOB] Got REQUEST_JOB from 5 for job_id = 1. Sending ACK_JOB
-
-[18:57:13 clock: 46 TID: 4 spec: BODY state: REQUESTING_JOB] Got REQUEST_JOB from 6 for job_id = 1. Sending ACK_JOB
-
-[18:57:13 clock: 44 TID: 6 spec: HEAD state: REQUESTING_JOB] Got REQUEST_JOB from 5 for job_id = 1. Sending ACK_JOB
-
-[18:57:13 clock: 50 TID: 1 spec: BODY state: REVIVING] Got REQEST_JOB from 4, sent ACK_JOB
-
-[18:57:13 clock: 48 TID: 5 spec: TAIL state: REQUESTING_JOB] Got ACK_JOB from 4. Incrementing ack count for job_id = 1 to 1 of 5 needed.
-
-[18:57:13 clock: 49 TID: 5 spec: TAIL state: REQUESTING_JOB] Got ACK_JOB from 2. Incrementing ack count for job_id = 1 to 2 of 5 needed.
-
-[18:57:13 clock: 49 TID: 2 spec: TAIL state: REVIVING] Got REQEST_JOB from 6, sent ACK_JOB
-
-[18:57:13 clock: 49 TID: 3 spec: HEAD state: REVIVING] Got REQEST_JOB from 6, sent ACK_JOB
-
-[18:57:13 clock: 48 TID: 4 spec: BODY state: REQUESTING_JOB] Got ACK_JOB from 5. Incrementing ack count for job_id = 1 to 1 of 5 needed.
-
-[18:57:13 clock: 52 TID: 4 spec: BODY state: REQUESTING_JOB] Got ACK_JOB from 1. Incrementing ack count for job_id = 1 to 2 of 5 needed.
-
-[18:57:13 clock: 53 TID: 4 spec: BODY state: REQUESTING_JOB] Got ACK_JOB from 2. Incrementing ack count for job_id = 1 to 3 of 5 needed.
-
-[18:57:13 clock: 46 TID: 6 spec: HEAD state: REQUESTING_JOB] Got REQUEST_JOB from 4 for job_id = 1. Sending ACK_JOB
-
-[18:57:13 clock: 48 TID: 6 spec: HEAD state: REQUESTING_JOB] Got ACK_JOB from 5. Incrementing ack count for job_id = 1 to 1 of 5 needed.
-
-[18:57:13 clock: 52 TID: 1 spec: BODY state: REVIVING] Got REQEST_JOB from 6, sent ACK_JOB
-
-[18:57:13 clock: 54 TID: 6 spec: HEAD state: REQUESTING_JOB] Got ACK_JOB from 1. Incrementing ack count for job_id = 1 to 2 of 5 needed.
-
-[18:57:13 clock: 55 TID: 6 spec: HEAD state: REQUESTING_JOB] Got ACK_JOB from 4. Incrementing ack count for job_id = 1 to 3 of 5 needed.
-
-[18:57:13 clock: 50 TID: 5 spec: TAIL state: REQUESTING_JOB] Got ACK_JOB from 3. Incrementing ack count for job_id = 1 to 3 of 5 needed.
-
-[18:57:13 clock: 51 TID: 5 spec: TAIL state: REQUESTING_JOB] Got ACK_JOB from 6. Incrementing ack count for job_id = 1 to 4 of 5 needed.
-
-[18:57:13 clock: 52 TID: 5 spec: TAIL state: REQUESTING_JOB] Got ACK_JOB from 1. Incrementing ack count for job_id = 1 to 5 of 5 needed.
-
-[18:57:13 clock: 52 TID: 5 spec: TAIL state: REQUESTING_JOB] Received all job ACKs. Broadcasting HELLO.
-
-[18:57:13 clock: 54 TID: 4 spec: BODY state: REQUESTING_JOB] Got ACK_JOB from 3. Incrementing ack count for job_id = 1 to 4 of 5 needed.
-
-[18:57:13 clock: 55 TID: 4 spec: BODY state: REQUESTING_JOB] Got ACK_JOB from 6. Incrementing ack count for job_id = 1 to 5 of 5 needed.
-
-[18:57:13 clock: 55 TID: 4 spec: BODY state: REQUESTING_JOB] Received all job ACKs. Broadcasting HELLO.
-
-[18:57:13 clock: 56 TID: 6 spec: HEAD state: REQUESTING_JOB] Got ACK_JOB from 2. Incrementing ack count for job_id = 1 to 4 of 5 needed.
-
-[18:57:13 clock: 57 TID: 1 spec: BODY state: REVIVING] Got HELLO from 4 for job_id = 1
-
-[18:57:13 clock: 56 TID: 4 spec: BODY state: REQUESTING_JOB] Changing state to AWAITING_PARTNERS
-
-[18:57:13 clock: 57 TID: 2 spec: TAIL state: REVIVING] Got HELLO from 4 for job_id = 1
-
-[18:57:13 clock: 57 TID: 3 spec: HEAD state: REVIVING] Got HELLO from 4 for job_id = 1
-
-[18:57:13 clock: 53 TID: 5 spec: TAIL state: REQUESTING_JOB] Changing state to AWAITING_PARTNERS
-
-[18:57:13 clock: 57 TID: 6 spec: HEAD state: REQUESTING_JOB] Got ACK_JOB from 3. Incrementing ack count for job_id = 1 to 5 of 5 needed.
-
-[18:57:13 clock: 57 TID: 6 spec: HEAD state: REQUESTING_JOB] Received all job ACKs. Broadcasting HELLO.
-
-[18:57:13 clock: 57 TID: 5 spec: TAIL state: AWAITING_PARTNERS] Got HELLO from 4 for job_id = 1
-
-[18:57:13 clock: 58 TID: 1 spec: BODY state: REVIVING] Got HELLO from 5 for job_id = 1
-
-[18:57:13 clock: 57 TID: 4 spec: BODY state: AWAITING_PARTNERS] Got HELLO from 5 for job_id = 1
-
-[18:57:13 clock: 58 TID: 2 spec: TAIL state: REVIVING] Got HELLO from 5 for job_id = 1
-
-[18:57:13 clock: 58 TID: 3 spec: HEAD state: REVIVING] Got HELLO from 5 for job_id = 1
-
-[18:57:13 clock: 59 TID: 3 spec: HEAD state: REVIVING] Got HELLO from 6 for job_id = 1
-
-[18:57:13 clock: 58 TID: 6 spec: HEAD state: REQUESTING_JOB] Changing state to AWAITING_PARTNERS
-
-[18:57:13 clock: 59 TID: 6 spec: HEAD state: AWAITING_PARTNERS] Got HELLO from 4 for job_id = 1
-
-[18:57:13 clock: 59 TID: 5 spec: TAIL state: AWAITING_PARTNERS] Got HELLO from 6 for job_id = 1
-
-[18:57:13 clock: 59 TID: 5 spec: TAIL state: AWAITING_PARTNERS] Changing state to AWAITING_START
-
-[18:57:13 clock: 59 TID: 1 spec: BODY state: REVIVING] Got HELLO from 6 for job_id = 1
-
-[18:57:13 clock: 59 TID: 4 spec: BODY state: AWAITING_PARTNERS] Got HELLO from 6 for job_id = 1
-
-[18:57:13 clock: 59 TID: 4 spec: BODY state: AWAITING_PARTNERS] Changing state to AWAITING_DESK
-
-[18:57:13 clock: 59 TID: 4 spec: BODY state: AWAITING_DESK] Broadcasting REQUEST_DESK.
-
-[18:57:13 clock: 59 TID: 2 spec: TAIL state: REVIVING] Got HELLO from 6 for job_id = 1
-
-[18:57:13 clock: 61 TID: 3 spec: HEAD state: REVIVING] Got REQUEST_DESK from 4. Sending ACK_DESK
-
-[18:57:13 clock: 60 TID: 6 spec: HEAD state: AWAITING_PARTNERS] Got HELLO from 5 for job_id = 1
-
-[18:57:13 clock: 60 TID: 6 spec: HEAD state: AWAITING_PARTNERS] Changing state to AWAITING_START
-
-[18:57:13 clock: 61 TID: 5 spec: TAIL state: AWAITING_START] Got REQUEST_DESK from 4. Sending ACK_DESK
-
-[18:57:13 clock: 61 TID: 1 spec: BODY state: REVIVING] Got REQUEST_DESK from 4. Sending ACK_DESK
-
-[18:57:13 clock: 63 TID: 4 spec: BODY state: AWAITING_DESK] Got ACK_DESK from 1. Incrementing DESK_QUEUE_ACK to 1 of 5 needed
-
-[18:57:13 clock: 61 TID: 2 spec: TAIL state: REVIVING] Got REQUEST_DESK from 4. Sending ACK_DESK
-
-[18:57:13 clock: 64 TID: 4 spec: BODY state: AWAITING_DESK] Got ACK_DESK from 2. Incrementing DESK_QUEUE_ACK to 2 of 5 needed
-
-[18:57:13 clock: 65 TID: 4 spec: BODY state: AWAITING_DESK] Got ACK_DESK from 5. Incrementing DESK_QUEUE_ACK to 3 of 5 needed
-
-[18:57:13 clock: 61 TID: 6 spec: HEAD state: AWAITING_START] Got REQUEST_DESK from 4. Sending ACK_DESK
-
-[18:57:13 clock: 66 TID: 4 spec: BODY state: AWAITING_DESK] Got ACK_DESK from 3. Incrementing DESK_QUEUE_ACK to 4 of 5 needed
-
-[18:57:13 clock: 67 TID: 4 spec: BODY state: AWAITING_DESK] Got ACK_DESK from 6. Incrementing DESK_QUEUE_ACK to 5 of 5 needed
-
-[18:57:13 clock: 67 TID: 4 spec: BODY state: AWAITING_DESK] Got all desk ACKs. Changing state to PAPER_WORK.
-
-[18:57:14 clock: 67 TID: 4 spec: BODY state: PAPER_WORK] Done doing paperwork. Sending ACK_DESK to local queue. Changing state to ACQUIRE SKELETON
-
-[18:57:14 clock: 68 TID: 4 spec: BODY state: ACQUIRE_SKELETON] Broadcasting REQUEST_SKELETON.
-
-[18:57:14 clock: 70 TID: 2 spec: TAIL state: REVIVING] Got REQUEST_SKELETON from 4, sent ACK_SKELETON
-
-[18:57:14 clock: 70 TID: 3 spec: HEAD state: REVIVING] Got REQUEST_SKELETON from 4, sent ACK_SKELETON
-
-[18:57:14 clock: 70 TID: 6 spec: HEAD state: AWAITING_START] Got REQUEST_SKELETON from 4, sent ACK_SKELETON
-
-[18:57:14 clock: 70 TID: 5 spec: TAIL state: AWAITING_START] Got REQUEST_SKELETON from 4, sent ACK_SKELETON
-
-[18:57:14 clock: 70 TID: 1 spec: BODY state: REVIVING] Got REQUEST_SKELETON from 4, sent ACK_SKELETON
-
-[18:57:14 clock: 72 TID: 4 spec: BODY state: ACQUIRE_SKELETON] Got ACK_SKELETON from 3. Incrementing skeleton_queue_ack to 1 of -3 needed
-
-[18:57:14 clock: 72 TID: 4 spec: BODY state: ACQUIRE_SKELETON] Got all ACKs. Broadcasting SKELETON_TAKEN. Sending ACK_SKELETON to local queue. Sending START to partners ([5, 6] in job 1)
-
-[18:57:14 clock: 74 TID: 1 spec: BODY state: REVIVING] Got SKELETON_TAKEN from 4. Decrementing skeleton count to 8
-
-[18:57:14 clock: 74 TID: 2 spec: TAIL state: REVIVING] Got SKELETON_TAKEN from 4. Decrementing skeleton count to 8
-
-[18:57:14 clock: 74 TID: 3 spec: HEAD state: REVIVING] Got SKELETON_TAKEN from 4. Decrementing skeleton count to 8
-
-[18:57:14 clock: 74 TID: 6 spec: HEAD state: AWAITING_START] Got SKELETON_TAKEN from 4. Decrementing skeleton count to 8
-
-[18:57:14 clock: 74 TID: 5 spec: TAIL state: AWAITING_START] Got SKELETON_TAKEN from 4. Decrementing skeleton count to 8
-
-4
-[18:57:14 clock: 76 TID: 5 spec: TAIL state: AWAITING_START] Got START, changing state to REVIVING
-
-[18:57:14 clock: 76 TID: 6 spec: HEAD state: AWAITING_START] Got START, changing state to REVIVING
+[19:54:48 clock: 304 TID: 1 spec: BODY state: ACQUIRE_SKELETON] Got ACK_SKELETON from 10. Incrementing skeleton_queue_ack to 8 of 11 needed
 

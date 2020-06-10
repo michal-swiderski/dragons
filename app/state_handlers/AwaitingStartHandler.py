@@ -26,7 +26,10 @@ class AwaitingStartHandler(GenericHandler):
             self._send({}, dest=source, tag=Message.ACK_SKELETON)
 
         elif tag == Message.REQUEST_JOB:
+            job_id = msg['job_id']
             self.log(f'Got REQEST_JOB from {source}, sent ACK_JOB', [
                 Message.REQUEST_JOB, Message.ACK_JOB])
             self._send({'job_id': msg['job_id']},
                        dest=source, tag=Message.ACK_JOB)
+            if data.specialization == msg['specialization']:
+                data.job_map[job_id] = -1

@@ -7,6 +7,7 @@ class RequestingJobHandler(GenericHandler):
         super().__init__(comm=comm, data=data, state=state)
 
     def _on_state_enter(self):
+        self._data.request_timestamp = self._data.timestamp
         self.log(
             f'Sending REQUEST_JOBs for job_id = {self._data.current_job_id}', [Message.REQUEST_JOB])
         self._broadcast({'job_id': self._data.current_job_id, 'jobs_done': self._data.jobs_done},

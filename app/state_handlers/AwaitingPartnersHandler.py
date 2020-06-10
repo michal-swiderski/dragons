@@ -26,6 +26,8 @@ class AwaitingPartnersHandler(GenericHandler):
                 Message.ACK_JOB, Message.REQUEST_JOB])
             self._send({'job_id': job_id}, dest=source,
                        tag=Message.ACK_JOB)
+            if data.specialization == msg['specialization']:
+                data.job_map[job_id] = -1
 
         elif tag == Message.REQUEST_DESK:
             self.log(f'Got REQUEST_DESK from {source}. Responding with ACK_DESK', [

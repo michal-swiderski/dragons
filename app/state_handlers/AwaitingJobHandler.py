@@ -10,7 +10,7 @@ class AwaitingJobHandler(GenericHandler):
         for job in self._data.job_map:
             if self._data.job_map[job] == 0:
                 # print(job)
-                self._data.request_timestamp = self._data.timestamp
+                # self._data.request_timestamp = self._data.timestamp
                 self._data.current_job_id = job
                 self._data.job_timeout = 0
 
@@ -42,14 +42,17 @@ class AwaitingJobHandler(GenericHandler):
         elif tag == Message.REQUEST_JOB:
             if msg['specialization'] == data.specialization:
                 data.job_map[msg['job_id']] = -1
-                self._send({'job_id': msg['job_id']},
-                           dest=source, tag=Message.ACK_JOB)
+            self.log(f'Got REQUEST_JOB from {source}. Sending ACK_JOB', [
+                     Message.REQUEST_JOB, Message.ACK_JOB])
+            self._send({'job_id': msg['job_id']},
+                       dest=source, tag=Message.ACK_JOB)
 
         elif tag == Message.REJECT_JOB:
             job_id = msg['job_id']
             if data.last_requested_job == job_id:
                 data.job_timeout += 1
-                self.log()
+                self.log(f'Got REJECT_JOB from {source}. Incrementing job_timeout to {data.job_timeout}.', [
+                         Message.REJECT_JOB])
 
         elif tag == Message.REQUEST_DESK:
             self.log(f'Got REQUEST_DESK from {source}. Responding with ACK_DESK', [

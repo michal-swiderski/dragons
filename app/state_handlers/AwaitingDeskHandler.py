@@ -54,6 +54,8 @@ class AwaitingDeskHandler(GenericHandler):
                 Message.ACK_JOB, Message.REQUEST_JOB])
             self._send({'job_id': job_id}, dest=source,
                        tag=Message.ACK_JOB)
+            if data.specialization == msg['specialization']:
+                data.job_map[job_id] = -1
 
         elif tag == Message.REQUEST_SKELETON:
             self.log(f'Got REQUEST_SKELETON from {status.source}, sent ACK_SKELETON', [
