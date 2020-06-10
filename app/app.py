@@ -11,6 +11,7 @@ from app.state_handlers.AwaitingDeskHandler import AwaitingDeskHandler
 from app.state_handlers.AwaitingStartHandler import AwaitingStartHandler
 from app.state_handlers.PaperWorkHandler import PaperWorkHandler
 from app.state_handlers.AcquireSkeletonHandler import AcquireSkeletonHandler
+from app.state_handlers.RevivingHandler import RevivingHandler
 
 
 def run():
@@ -43,6 +44,8 @@ def run():
             comm=comm, data=data, state=State.PAPER_WORK)
         acquire_skeleton_handler = AcquireSkeletonHandler(
             comm=comm, data=data, state=State.ACQUIRE_SKELETON)
+        reviving_handler = RevivingHandler(
+            comm=comm, data=data, state=State.REVIVING)
 
         # main loop
         data.state = State.AWAITING_JOB
@@ -84,4 +87,4 @@ def run():
             elif data.state == State.AWAITING_START:
                 awaiting_start_handler(msg=msg, status=status)
             elif data.state == State.REVIVING:
-                pass
+                reviving_handler(msg=msg, status=status)

@@ -28,6 +28,7 @@ class AcquireSkeletonHandler(GenericHandler):
             if data.skeleton_queue_ack >= needed:
                 self.log(f'Got all ACKs. Broadcasting SKELETON_TAKEN. Sending ACK_SKELETON to local queue. Sending START to partners ({data.partners[data.current_job_id]} in job {data.current_job_id})', [
                          Message.ACK_SKELETON, Message.START, Message.SKELETON_TAKEN])
+                data.skeleton_count -= 1
                 self._broadcast({}, tag=Message.SKELETON_TAKEN)
                 self._send_to_targets(
                     {}, targets=data.local_queue, tag=Message.ACK_SKELETON)

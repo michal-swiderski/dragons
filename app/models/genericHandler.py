@@ -1,7 +1,7 @@
 from datetime import datetime
 
 from app.models.data import Data
-from app.models.models import State, Specialization
+from app.models.models import State, Specialization, Message
 
 
 class GenericHandler:
@@ -52,10 +52,10 @@ class GenericHandler:
     def log(self, msg, msg_types=[]):
         data = self._data
         messages_to_check = []
-        # messages_to_check = [Message.REQUEST_JOB]
+        # messages_to_check = [Message.REJECT_JOB]
 
         tids_to_check = []
-        # tids_to_check = [4]
+        # tids_to_check = [3]
 
         now = datetime.now().strftime("%H:%M:%S")
         s = State(data.state).name if data.state != - \
