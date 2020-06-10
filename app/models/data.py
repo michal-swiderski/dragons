@@ -10,7 +10,7 @@ class Data:
         self.desk_count = desk_count
         self.skeleton_count = skeleton_count
         self.specialist_count = specialist_count
-        self.partners = []
+        self.partners = {}
         self.job_map = {}
         self.desk_queue_ack = 0
         self.skeleton_queue_ack = 0
@@ -28,11 +28,11 @@ class Data:
     def state(self):
         return self.__state
 
-    @property.setter
+    @state.setter
     def state(self, state):
         self.__state = state
         for cb in self.__callbacks:
-            cb()
+            cb(state)
 
     def subscribe_to_state_change(self, cb):
         self.__callbacks.append(cb)
