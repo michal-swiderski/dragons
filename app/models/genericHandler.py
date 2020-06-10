@@ -52,8 +52,8 @@ class GenericHandler:
     def log(self, msg, msg_types=[]):
         data = self._data
         messages_to_check = []
-        messages_to_check = [Message.REQUEST_SKELETON,
-                             Message.ACK_SKELETON, Message.SKELETON_TAKEN]
+        # messages_to_check = [Message.REQUEST_SKELETON,
+        #                      Message.ACK_SKELETON, Message.SKELETON_TAKEN]
 
         tids_to_check = []
         # tids_to_check = [3]

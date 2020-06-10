@@ -19,10 +19,10 @@ def run():
     rank = comm.Get_rank()
     size = comm.Get_size()
 
-    DESK_COUNT = 1
-    SKELETON_COUNT = 2
+    DESK_COUNT = 2
+    SKELETON_COUNT = 20
     SPECIALIST_COUNT = size - 1
-    JOBS = 10
+    JOBS = 30
 
     if rank == 0:
         generator(comm, size, JOBS)
@@ -57,9 +57,6 @@ def run():
             source = status.Get_source()
 
             data.timestamp = max(data.timestamp, msg['timestamp']) + 1
-
-            # if tag == Message.REQUEST_JOB:
-            #     print(data.rank, source, State(data.state))
 
             if tag == Message.NEW_JOB:
                 data.job_map[msg['job_id']] = 0
