@@ -41,6 +41,14 @@ class GenericHandler:
             if proc != data.rank:
                 self._comm.send(msg, dest=proc, tag=tag)
 
+    def _send_to_targets(self, msg, *, targets, tag):
+        self._data.timestamp += 1
+        msg['specialization'] = self._data.specialization
+        msg['timestamp'] = self._data.timestamp
+
+        for target in targets:
+            self._comm.send(msg, dest=target, tag=tag)
+
     def log(self, msg, msg_types=[]):
         data = self._data
         messages_to_check = []

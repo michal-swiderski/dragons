@@ -11,3 +11,4 @@ def generator(comm, size, jobs):
             comm.send(msg, dest=proc, tag=Message.NEW_JOB)
 
         # sleep(randint(0, 5))
+        sleep(3)

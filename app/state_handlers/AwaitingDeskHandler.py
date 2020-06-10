@@ -36,7 +36,7 @@ class AwaitingDeskHandler(GenericHandler):
             elif data.request_timestamp > msg['timestamp']:
                 self.log(f'Got REQUEST_DESK from {source}, sent ACK_DESK',
                          [Message.REQUEST_DESK, Message.REQUEST_SKELETON])
-                self.send({}, dest=source, tag=Message.ACK_DESK)
+                self._send({}, dest=source, tag=Message.ACK_DESK)
             elif data.rank < source:
                 data.local_queue.append(source)
                 self.log(f'Got REQUEST_DESK from {source}. Adding it to local queue', [
@@ -44,7 +44,7 @@ class AwaitingDeskHandler(GenericHandler):
             else:
                 self.log(f'Got REQUEST_DESK from {source}, sent ACK_DESK',
                          [Message.REQUEST_DESK, Message.REQUEST_SKELETON])
-                self.send({}, dest=source, tag=Message.ACK_DESK)
+                self._send({}, dest=source, tag=Message.ACK_DESK)
 
         # respond with acks
 
