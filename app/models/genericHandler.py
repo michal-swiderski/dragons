@@ -2,6 +2,7 @@ from datetime import datetime
 
 from app.models.data import Data
 from app.models.models import State, Specialization, Message
+from termcolor import colored
 
 
 class GenericHandler:
@@ -64,4 +65,4 @@ class GenericHandler:
         if len(messages_to_check) == 0 or any(i in messages_to_check for i in msg_types):
             if len(tids_to_check) == 0 or data.rank in tids_to_check:
                 print(
-                    f'[{now} clock: {data.timestamp} TID: {data.rank} spec: {Specialization(data.specialization).name} state: {s}] {msg}', end='\n\n')
+                    f'[{colored(str(now), "yellow")} clock: {colored(str(data.timestamp), "yellow")} TID: {colored(str(data.rank), "yellow")} spec: {colored(str(Specialization(data.specialization).name), "yellow")} state: {colored(str(s), "yellow")}] {msg}', end='\n\n')
