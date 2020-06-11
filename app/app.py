@@ -1,46 +1,17 @@
 from mpi4py import MPI
-from enum import IntEnum
-from time import sleep
-from random import randint
-# import datetime
 
-from app.models.models import Message, State, Specialization
-from app.logger.log import log
-from app.state_handlers import (
-    generator,
-    requesting_job
-)
+from app.state_handlers.generator import generator
+from app.models.data import Data
+from app.models.models import Message, State
 
-from app.state_handlers.awaiting_job import AwaitingJobHandler
-from app.state_handlers.requesting_job import RequestingJobHandler
-from app.state_handlers.awaiting_partners import AwaitingPartnersHandler
-from app.state_handlers.awaiting_desk import AwaitingDeskHandler
-from app.state_handlers.awaiting_start import AwaitingStartHandler
-from app.state_handlers.paper_work import PaperWorkHandler
-from app.state_handlers.acquire_skeleton import AcquireSkeletonHandler
-from app.state_handlers.reviving import RevivingHandler
-
-
-class Data:
-    def __init__(self, rank, skeleton_count, specialist_count, desk_count):
-        super().__init__()
-        self.rank = rank
-        self.specialization = Specialization(rank % 3)
-        self.jobs_done = 0
-        self.state = State.AWAITING_JOB
-        self.desk_count = desk_count
-        self.skeleton_count = skeleton_count
-        self.specialist_count = specialist_count
-        self.partners = {}
-        self.job_map = {}
-        self.desk_queue_ack = 0
-        self.skeleton_queue_ack = 0
-        self.job_timeout = 0
-        self.last_requested_job = None
-        self.timestamp = 1
-        self.current_job_id = None
-        self.request_timestamp = None
-        self.local_queue = []
+from app.state_handlers.AwaitingJobHandler import AwaitingJobHandler
+from app.state_handlers.RequestingJobHandler import RequestingJobHandler
+from app.state_handlers.AwaitingPartnersHandler import AwaitingPartnersHandler
+from app.state_handlers.AwaitingDeskHandler import AwaitingDeskHandler
+from app.state_handlers.AwaitingStartHandler import AwaitingStartHandler
+from app.state_handlers.PaperWorkHandler import PaperWorkHandler
+from app.state_handlers.AcquireSkeletonHandler import AcquireSkeletonHandler
+from app.state_handlers.RevivingHandler import RevivingHandler
 
 
 def run():
@@ -49,25 +20,35 @@ def run():
     size = comm.Get_size()
 
     DESK_COUNT = 2
-    SKELETON_COUNT = 100
+    SKELETON_COUNT = 20
     SPECIALIST_COUNT = size - 1
+    JOBS = 30
 
     if rank == 0:
-        generator.generator(comm, size)
+        generator(comm, size, JOBS)
 
     else:
         data = Data(rank, SKELETON_COUNT, SPECIALIST_COUNT, DESK_COUNT)
-
-        awaiting_job_handler = AwaitingJobHandler(comm=comm, data=data)
-        requesting_job_handler = RequestingJobHandler(comm=comm, data=data)
+        # handlers init
+        awaiting_job_handler = AwaitingJobHandler(
+            comm=comm, data=data, state=State.AWAITING_JOB)
+        requesting_job_handler = RequestingJobHandler(
+            comm=comm, data=data, state=State.REQUESTING_JOB)
         awaiting_partners_handler = AwaitingPartnersHandler(
-            comm=comm, data=data)
-        awaiting_desk_handler = AwaitingDeskHandler(comm=comm, data=data)
-        awaiting_start_handler = AwaitingStartHandler(comm=comm, data=data)
-        paper_work_handler = PaperWorkHandler(comm=comm, data=data)
-        acquire_skeleton_handler = AcquireSkeletonHandler(comm=comm, data=data)
-        reviving_handler = RevivingHandler(comm=comm, data=data)
+            comm=comm, data=data, state=State.AWAITING_PARTNERS)
+        awaiting_desk_handler = AwaitingDeskHandler(
+            comm=comm, data=data, state=State.AWAITING_DESK)
+        awaiting_start_handler = AwaitingStartHandler(
+            comm=comm, data=data, state=State.AWAITING_START)
+        paper_work_handler = PaperWorkHandler(
+            comm=comm, data=data, state=State.PAPER_WORK)
+        acquire_skeleton_handler = AcquireSkeletonHandler(
+            comm=comm, data=data, state=State.ACQUIRE_SKELETON)
+        reviving_handler = RevivingHandler(
+            comm=comm, data=data, state=State.REVIVING)
 
+        # main loop
+        data.state = State.AWAITING_JOB
         while True:
             status = MPI.Status()
             msg = comm.recv(source=MPI.ANY_SOURCE,
@@ -75,46 +56,35 @@ def run():
             tag = status.Get_tag()
             source = status.Get_source()
 
-            data.timestamp = max(data.timestamp, msg['timestamp'])
+            data.timestamp = max(data.timestamp, msg['timestamp']) + 1
 
-            if tag == Message.SKELETON_TAKEN:
-                data.skeleton_count -= 1
-                log(f'Got SKELETON_TAKEN from {status.Get_source()}. Decrementing skeleton count to {data.skeleton_count} \n', data.rank,
-                    msg_types=[Message.SKELETON_TAKEN])
-
-            if data.state != State.AWAITING_JOB and tag == Message.NEW_JOB:
-                if msg['job_id'] not in data.job_map:
-                    data.job_map[msg['job_id']] = 0
-
+            if tag == Message.NEW_JOB:
+                data.job_map[msg['job_id']] = 0
                 data.partners[msg['job_id']] = []
-                # print(data.partners)
-
-            if data.rank == 1:
-                print(data.partners)
-
-            if data.state != State.AWAITING_PARTNERS and tag == Message.HELLO:
+                awaiting_job_handler.log(
+                    f'Got NEW_JOB with job_id = {msg["job_id"]}', [Message.NEW_JOB])
+            elif tag == Message.HELLO:
                 data.partners[msg['job_id']].append(source)
+                awaiting_job_handler.log(
+                    f'Got HELLO from {source} for job_id = {msg["job_id"]}', [Message.HELLO])
+            elif tag == Message.SKELETON_TAKEN:
+                data.skeleton_count -= 1
+                awaiting_job_handler.log(f'Got SKELETON_TAKEN from {source}. Decrementing skeleton count to {data.skeleton_count}', [
+                                         Message.SKELETON_TAKEN])
 
             if data.state == State.AWAITING_JOB:
                 awaiting_job_handler(msg=msg, status=status)
-
             elif data.state == State.REQUESTING_JOB:
                 requesting_job_handler(msg=msg, status=status)
-
             elif data.state == State.AWAITING_PARTNERS:
                 awaiting_partners_handler(msg=msg, status=status)
-
             elif data.state == State.AWAITING_DESK:
                 awaiting_desk_handler(msg=msg, status=status)
-
             elif data.state == State.PAPER_WORK:
                 paper_work_handler(msg=msg, status=status)
-
             elif data.state == State.ACQUIRE_SKELETON:
                 acquire_skeleton_handler(msg=msg, status=status)
-
             elif data.state == State.AWAITING_START:
                 awaiting_start_handler(msg=msg, status=status)
-
             elif data.state == State.REVIVING:
                 reviving_handler(msg=msg, status=status)
